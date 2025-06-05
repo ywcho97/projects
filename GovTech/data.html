@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>2024년 GovTech 창업 경진대회</title>
+  <link rel="stylesheet" href="./resources/css/setting.css">
+  <link rel="stylesheet" href="./resources/css/plugin.css">
+  <link rel="stylesheet" href="./resources/css/template.css">
+  <link rel="stylesheet" href="./resources/css/common.css">
+  <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+
+<body onload="scrollToPosition()">
+  
+  <header class="top_wrap">
+    <div class="header-container">
+      <div class="header-left">
+        <h1 class="header-title">
+          <a href="index.html">
+            <img src="./resources/images/logo.png" alt="로고">
+          </a>
+        </h1>
+      </div>
+      <div class="header-center">
+        <ul class="menu_wrap">
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub1.html">
+              <span>아이디어 기획 분야</span>
+            </a>
+             <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub1.html#menu1">
+                  <span>모집요강<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub1.html#menu2">
+                  <span>접수하기<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub1.html#menu3">
+                  <span>접수확인<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub2.html">
+              <span>제품 및 서비스 개발 분야</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub2.html#menu1">
+                  <span>모집요강<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub2.html#menu2">
+                  <span>접수하기<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub2.html#menu3">
+                  <span>접수확인<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub3_1.html">
+              <span>문의하기</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub3_1.html">
+                  <span>FAQ<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub3_2.html">
+                  <span>Q&A<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="#none">
+              <span>공공데이터 활용</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="education.html">
+                  <span>공공데이터 기초교육<i></i></span>
+                </a>
+                <a href="data.html">
+                  <span>데이터활용<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub4.html">
+              <span>공지사항</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub4.html">
+                  <span>공지사항<i></i></span>
+                </a>
+              </li>
+              <!-- <li class="menu_link">
+                <a href="javascript:void(0)">
+                  <span>결과발표<i></i></span>
+                </a>
+              </li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="sub_wrap">
+    <div class="sub_banner">
+      <img src="./resources/images/sub_banner2.png" alt="img">
+    </div>
+    <div class="sub_content">
+      <div class="tab-container" id="tab-container">
+        <div class="page_title">
+          <h2>데이터 활용</h2>
+        </div>
+        <div class="tabs">
+            <div class="tab_btns">
+              <button class="tab-link" onclick="openTab(event, 'menu1')">분야별 빅데이터 플랫폼 목록</button>
+              <button class="tab-link" onclick="openTab(event, 'menu2')">지정공모 과제별 제공 공공데이터 목록</button>
+              <!-- <button class="tab-link" onclick="openTab(event, 'menu2'); showWriteContent(1)">접수하기</button> -->
+              <!-- <button class="tab-link" onclick="openTab(event, 'menu3')">접수확인</button> -->
+            </div>
+        </div>
+        <div id="menu1" class="tab_content">
+            <!-- <h2>경진대회개요</h2> -->
+            <div class="tab_ex">
+              <div class="info_tbl top_tbl center">
+                <table>
+                  <caption>tit</caption>
+                  <thead>
+                    <tr>
+                      <th>분야</th>
+                      <th>플랫폼 명</th>
+                      <th>바로가기</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>문화</td>
+                      <td>문화 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-culture.kr/bigdata/user/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>통신</td>
+                      <td>KT통신 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-telecom.kr/invoke/SOKBP0000/?ver=2.0" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>유통</td>
+                      <td>KDX 한국데이터거래소</td>
+                      <td><a href="https://kdx.kr/main" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>헬스케어</td>
+                      <td>국립암센터 CONNECT</td>
+                      <td><a href="https://www.bigdata-cancer.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>교통</td>
+                      <td>교통 데이터 거래소</td>
+                      <td><a href="https://www.bigdata-transportation.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>환경</td>
+                      <td>환경 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-environment.kr/user/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>금융</td>
+                      <td>금융 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-finance.kr/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>중소기업</td>
+                      <td>중소 중견기업 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-sme.kr/#/datastore/landing" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>지역경제</td>
+                      <td>경기지역경제포털</td>
+                      <td><a href="https://www.bigdata-region.kr/#/new-main" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>산림</td>
+                      <td>산림 빅데이터 거래소</td>
+                      <td><a href="https://www.bigdata-forest.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>소방안전</td>
+                      <td>소방안전 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-119.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>스마트치안</td>
+                      <td>스마트치안 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-policing.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>해양수산</td>
+                      <td>해양수산 빅데이터 거래소</td>
+                      <td><a href="https://www.bigdata-sea.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>농식품</td>
+                      <td>농식품 빅데이터 거래소</td>
+                      <td><a href="https://kadx.co.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>라이프로그</td>
+                      <td>라이프로그 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-lifelog.kr/portal" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>디지털산업혁신</td>
+                      <td>디지털산업혁신 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-dx.kr/frn/index" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>감염병</td>
+                      <td>감염병 빅데이터 거래소</td>
+                      <td><a href="https://www.bigdata-covid.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공간융합</td>
+                      <td>공간융합 빅데이터 플랫폼</td>
+                      <td><a href="https://bigdata-geo.kr/user/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>부동산</td>
+                      <td>부동산 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-realestate.kr/user/main/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>스마트팜</td>
+                      <td>스마트팜 빅데이터 플랫폼</td>
+                      <td><a href="https://www.n-farm.kr/" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>연안</td>
+                      <td>연안 빅데이터 플랫폼</td>
+                      <td><a href="https://www.bigdata-coast.kr/main.do" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+        <div id="menu2" class="tab_content">
+          <div class="tab_ex">
+            <div class="info_tbl top_tbl center">
+              <table>
+                <caption>tit</caption>
+                <thead>
+                  <tr>
+                    <th>연번</th>
+                    <th>수요기관</th>
+                    <th>공모주제</th>
+                    <th>바로가기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>①</td>
+                    <td>여성가족부</td>
+                    <td class="td_tit">지역별 긴급돌봄서비스 수요 예측을 통한 매칭률 향상 서비스</td>
+                    <td><a href="https://works.do/xiQEm9J" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>②</td>
+                    <td>서울올림픽기념국민체육진흥공단</td>
+                    <td class="td_tit">한눈에 보는 전국 체육시설 강좌목록 제공 서비스</td>
+                    <td><a href="https://works.do/Ge1A4Xg" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>③</td>
+                    <td>예금보험공사</td>
+                    <td class="td_tit">부동산, 미술품 등 통합 공매 물건 조회 서비스</td>
+                    <td><a href="https://works.do/FiCGvhF" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>④</td>
+                    <td>한국방송광고진흥공사</td>
+                    <td class="td_tit">광고 데이터를 활용한 마케팅 지원 서비스</td>
+                    <td><a href="https://works.do/FOurFlj" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>⑤</td>
+                    <td>한국조폐공사</td>
+                    <td class="td_tit">전국 지역사랑상품권 정보 제공 및 연계 서비스</td>
+                    <td><a href="https://works.do/xDORnQr" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>⑥</td>
+                    <td>한국조폐공사</td>
+                    <td class="td_tit">전국 지역사랑상품권 가맹점 연계 맞춤형 관광 추천 서비스</td>
+                    <td><a href="https://works.do/G47gQq9" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>⑦</td>
+                    <td>한국환경연구원</td>
+                    <td class="td_tit">인구주거 및 환경정보를 활용한 시민 생활환경 개선 서비스</td>
+                    <td><a href="https://works.do/G97QPyY" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="caption">※ [공통] 제공되는 공공데이터를 활용하여 추가적인 기능 및 서비스 제안 가능</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <ul>
+      <li><img src="./resources/images/footer_logo1.png" alt="img"></li>
+      <li><img src="./resources/images/footer_logo2.png" alt="img"></li>
+    </ul>
+  </div>
+  
+  
+  <!-- <script src="./resources/js/plugin.js"></script> -->
+  <script src="./resources/js/script.js"></script>
+</body>

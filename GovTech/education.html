@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="imagetoolbar" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>2024년 GovTech 창업 경진대회</title>
+  <link rel="stylesheet" href="./resources/css/setting.css">
+  <link rel="stylesheet" href="./resources/css/plugin.css">
+  <link rel="stylesheet" href="./resources/css/template.css">
+  <link rel="stylesheet" href="./resources/css/common.css">
+  <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+
+<body onload="scrollToPosition()">
+  
+  <header class="top_wrap">
+    <div class="header-container">
+      <div class="header-left">
+        <h1 class="header-title">
+          <a href="index.html">
+            <img src="./resources/images/logo.png" alt="로고">
+          </a>
+        </h1>
+      </div>
+      <div class="header-center">
+        <ul class="menu_wrap">
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub1.html">
+              <span>아이디어 기획 분야</span>
+            </a>
+             <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub1.html#menu1">
+                  <span>모집요강<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub1.html#menu2">
+                  <span>접수하기<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub1.html#menu3">
+                  <span>접수확인<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub2.html">
+              <span>제품 및 서비스 개발 분야</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub2.html#menu1">
+                  <span>모집요강<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub2.html#menu2">
+                  <span>접수하기<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub2.html#menu3">
+                  <span>접수확인<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub3_1.html">
+              <span>문의하기</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub3_1.html">
+                  <span>FAQ<i></i></span>
+                </a>
+              </li>
+              <li class="menu_link">
+                <a href="sub3_2.html">
+                  <span>Q&A<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="#none">
+              <span>공공데이터 활용</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="education.html">
+                  <span>공공데이터 기초교육<i></i></span>
+                </a>
+                <a href="data.html">
+                  <span>데이터활용<i></i></span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="head_menu">
+            <a class="header-gnblink" href="sub4.html">
+              <span>공지사항</span>
+            </a>
+            <ul class="menu_list">
+              <li class="menu_link">
+                <a href="sub4.html">
+                  <span>공지사항<i></i></span>
+                </a>
+              </li>
+              <!-- <li class="menu_link">
+                <a href="javascript:void(0)">
+                  <span>결과발표<i></i></span>
+                </a>
+              </li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="sub_wrap">
+    <div class="sub_banner">
+      <img src="./resources/images/sub_banner2.png" alt="img">
+    </div>
+    <div class="sub_content">
+      <div class="tab-container" id="tab-container">
+        <div class="page_title">
+          <h2>공공데이터 기초 교육</h2>
+        </div>
+        <div class="tabs">
+            <div class="tab_btns">
+              <button class="tab-link" onclick="openTab(event, 'menu1')">필수 이수교육</button>
+              <button class="tab-link" onclick="openTab(event, 'menu2')">선택 이수교육</button>
+              <!-- <button class="tab-link" onclick="openTab(event, 'menu2'); showWriteContent(1)">접수하기</button> -->
+              <!-- <button class="tab-link" onclick="openTab(event, 'menu3')">접수확인</button> -->
+            </div>
+        </div>
+        <div id="menu1" class="tab_content">
+            <!-- <h2>경진대회개요</h2> -->
+            <div class="tab_ex">
+              <div class="info_tbl top_tbl center">
+                <table>
+                  <colgroup>
+                    <col width="40%">
+                    <col width="40%">
+                    <col width="10%">
+                  </colgroup>
+                  <caption>tit</caption>
+                  <thead>
+                    <tr>
+                      <th>강의주제</th>
+                      <th>강의내용</th>
+                      <th>바로가기</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>설치없이 웹에서 파이썬 활용하기</td>
+                      <td>구글 코랩 환경 이해하기</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=32" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 활용 사례</td>
+                      <td>적재적소! 사례로 알아보는 공공데이터 활용 서비스</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=27" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 요청 안내</td>
+                      <td>이럴땐? 공공데이터를 부탁해</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=26" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 활용 방법</td>
+                      <td>내손안의 공공데이터? 이렇게 활용해보게!</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=25" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 찾기</td>
+                      <td>누구나 쉽게! 쓸데많은 공공데이터 탐색스킬</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=24" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 이용</td>
+                      <td>아는만큼 보이는 국가데이터맵 활용!</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=23" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>공공데이터 이해</td>
+                      <td>어서와~ 공공데이터는 처음이지?</td>
+                      <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=22" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+        <div id="menu2" class="tab_content">
+          <div class="tab_ex">
+            <div class="info_tbl top_tbl center">
+              <table>
+                <colgroup>
+                  <col width="40%">
+                  <col width="40%">
+                  <col width="10%">
+                </colgroup>
+                <caption>tit</caption>
+                <thead>
+                  <tr>
+                    <th>강의주제</th>
+                    <th>강의내용</th>
+                    <th>바로가기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>자체 개방 포털</td>
+                    <td>공공데이터 자체 개방 포털</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=47" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 법제도 변화</td>
+                    <td>공공데이터 활용 관련 법제도</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=46" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 서비스 구상</td>
+                    <td>공공데이터 활용 기획 노하우</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=42" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>세계의 공공데이터</td>
+                    <td>다양한 공공데이터 활용 사례 검토</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=41" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 인터뷰 사례</td>
+                    <td>인터뷰로 알아보는 공공데이터 활용사례</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=40" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터</td>
+                    <td>당신을 이롭게! 세상을 새롭게!</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=39" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 AI 실습 3</td>
+                    <td>딥러닝 첫걸음</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=38" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 AI 실습 2</td>
+                    <td>머신러닝 핵심만 콕콕</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=37" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 AI 실습 1</td>
+                    <td>선형회귀 알아보기</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=36" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 분석/시각화 실습 3</td>
+                    <td>지도 시각화</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=35" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 분석/시각화 실습 2</td>
+                    <td>버거지수, 상관계수 구하기</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=34" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td>공공데이터 활용 분석/시각화 실습 1</td>
+                    <td>데이터셋 소개와 로드 전처리</td>
+                    <td><a href="https://www.data.go.kr/osd/selectEduDetail.do?eduContentId=33" target="_blank"><i class="mdi mdi-open-in-new"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <ul>
+      <li><img src="./resources/images/footer_logo1.png" alt="img"></li>
+      <li><img src="./resources/images/footer_logo2.png" alt="img"></li>
+    </ul>
+  </div>
+  
+  
+  <!-- <script src="./resources/js/plugin.js"></script> -->
+  <script src="./resources/js/script.js"></script>
+</body>
