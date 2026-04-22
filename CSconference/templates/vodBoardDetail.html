@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+</head>
+<body layout:fragment="content">
+    <div class="subBg">
+        <img src="../static/img/subBg.png" alt="img">
+    </div>
+	
+	    <div class="subCont">
+            <div class="container content">
+       	        <!-- Title and Search Section -->
+                <p class="subTop_title black">VOD</p>
+        		
+                <div class="archiveTop">
+    	            <!-- 뉴스 제목 -->
+                     <div class="type"></div>
+               	 	<div class="news-title" th:text="${detail.subject}" >제목</div>
+                    <div class="news-info">
+                        <span th:text="${detail.cdate}">2025.01.01</span>
+                    </div>
+                </div>
+                <!-- 뉴스 본문 -->
+                <div class="news-content" style="padding-bottom: 100px;">
+                    <div class="video_wrap" th:if="${detail.video != null and detail.video != ''}">
+                        <div class="video-wrapper">
+                            <img th:src="@{/file/fileView(fileId=${detail.thumbnailImage})}" alt="img" class="video-thumb">
+                              <div class="play-btn">
+                                <svg viewBox="0 0 100 100" class="play-icon">
+                                <defs>
+                                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#0a7ce9" />
+                                        <stop offset="100%" stop-color="#28ea87" />
+                                    </linearGradient>
+                                </defs>
+                                <polygon points="35,25 75,50 35,75"
+                                        fill="none"
+                                        stroke="url(#grad)"
+                                        stroke-width="6"
+                                        stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+               	         <video id="newsVideo" style="display: none;" controls="controls" th:if="${detail.video != null and detail.video != ''}">
+                 			<source th:src="@{/file/fileView(fileId=${detail.video})}" >
+                 		</video>
+                    </div>
+                	<div th:utext="${detail.content}" style="white-space: pre-line;"></div>
+                </div>
+                <div class="list-area">
+                    <div class="list_link next-cont" th:if="${pre != null}">
+                    	<a th:href="@{/vod/vodBoardDetail(id=${pre.id},trackId = ${detail.trackId})}"><span><i class="mdi mdi-chevron-up"></i> 이전글</span><span style="color:black;" th:text="${pre.subject}"></span></a>
+                    </div>
+                    <div class="list_link next-cont" th:unless="${pre != null}">
+                    	<a href="#none" style="color:#c0c0c0;"><span style="color: #c0c0c0;"><i class="mdi mdi-chevron-up"></i> 이전글</span> 이전글이 없습니다</a>
+                    </div>
+                    
+                    <div class="list_link prev-cont" th:if="${next != null}">
+                   		<a th:href="@{/vod/vodBoardDetail(id=${next.id},trackId = ${detail.trackId})}"><span><i class="mdi mdi-chevron-down"></i> 다음글</span><span style="color:black;" th:text="${next.subject}"></span></a>
+                    </div>
+                    <div class="list_link prev-cont" th:unless="${next != null}">
+                    	<a href="#none" style="color:#c0c0c0;" ><span style="color: #c0c0c0;"><i class="mdi mdi-chevron-down"></i> 다음글</span> 다음글이 없습니다</a>
+                    </div>
+                </div>
+                <div class="list_btn">
+                    <button type="button" class="btn btn_main"  th:onclick="|location.href='@{/vod/vodBoardList}'|">목록보기</button>
+                </div>
+            </div>
+    	</div>
+	
+	<script>
+		document.querySelector('.video-wrapper').addEventListener('click', function() {
+		    this.style.display = 'none';
+		    const video = document.getElementById('newsVideo');
+		    video.style.display = 'block';
+		    video.play();
+		});
+	</script>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

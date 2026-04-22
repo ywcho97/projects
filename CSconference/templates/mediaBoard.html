@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+<!-- <link th:replace="/fragments/Elements.html :: fragment-header"></link> -->
+<script type="text/javascript">
+$(document).ready(function() {
+	setYear();
+});
+
+function doSearch(){
+	$("#pagingPage").val(1);
+	var query = $("input").serialize() + "&" + $("select").serialize();
+	document.location.href = "/_conference/media/mediaBoard?"+query;
+}
+function goDetail(idx,boardId,url){
+
+	const board = document.querySelector('#boardId').value;
+	const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}(\/[^\s]*)?$/;
+	
+	if(url && urlPattern.test(url)){
+		window.open(url, '_blank');
+		return;
+	}else{
+		if(board){
+			location.href ='/_conference/media/mediaBoardDetail?idx=' + idx + '&boardId=' + boardId;
+		}else{
+			location.href ='/_conference/media/mediaBoardDetail?idx=' + idx;
+		}
+	}
+}
+function goPage(page){
+	$("#pagingPage").val(page);
+	var query = $("input").serialize() + "&" + $("select").serialize();
+	document.location.href = "/_conference/media/mediaBoard?"+query;
+}
+function setYear(){
+	const selectElement = document.querySelector('.newsYear');
+	const curYear = new Date().getFullYear();
+	const searchYear = '[[${searchParam.year}]]';
+
+    for (var i = 0; i <= 10; i++) {
+        var year = curYear - i;
+        var option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+
+        if (year == searchYear) {
+            option.selected = true;
+        }
+
+        selectElement.appendChild(option);
+    }
+
+}
+</script>
+</head>
+<body  layout:fragment="content"> <!-- subWrap -->
+    <div class="subBg">
+        <img src="../static/img/subBg.png" alt="img">
+    </div>
+        <!-- 헤더: 로고 | 메뉴 | D-DAY -->
+        <!-- //gnb -->
+        <div class="subCont">
+            <div class="container content">
+            	<input type="hidden" name="boardId" id="boardId" th:value="${searchParam.category}">
+            	<input type="hidden" name="pagingPage" id="pagingPage" value="">
+                <!-- Title and Search Section -->
+                <h3 class="subTop_title blue">Media</h3>
+                <div class="mediaSearchWrap">
+                    <select class="newsYear" name="year">
+                    	<option value="" selected>전체</option>
+                    </select>
+    
+    				<select class="category" name="category">
+    					<option value="">전체</option>
+    					<option value="news" th:selected="${searchParam.category == 'news'}">언론보도</option>
+    					<option value="eventPhoto" th:selected="${searchParam.category == 'eventPhoto'}">행사사진</option>
+    					<option value="eventVideo" th:selected="${searchParam.category == 'eventVideo'}">행사영상</option>
+                    </select>
+                    
+                    <!-- <select class="newsTitleSelect" name="keyField">
+                        <option value="subject">제목</option>
+                    </select>  -->
+                    
+                    <div class="schWrap" >
+                        <input type="text" class="form-control" name="keyWord" placeholder="검색" th:value="${searchParam.keyWord}">
+                        <button type="button" onclick="doSearch()">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                    </div>
+                </div>
+    			<div class="news-list">
+                    <div class="news-item" onclick="" th:each="item : ${mediaList}" th:onclick="goDetail([[${item.idx}]],[[${item.boardId}]],[[${item.url}]])">
+                        <div class="thumbnail-box">
+                            <img th:if="${item.thumbnailImage != ''}" th:src="@{/file/fileView(fileId=${item.thumbnailImage})}" alt="News Image">
+                        </div>
+                        <div class="news-item-content">
+                            <div class="news-item_top">
+                                <div class="news-tit">
+                                    <div class="news-item-title" th:text="${item.subject}"></div>
+                                    <div class="news-item-date" th:text="${item.cdate}"></div>
+                                </div>
+                                <div class="type">
+                                    <p class="video" th:if="${item.boardId == 'eventVideo'}">VIDEO</p>
+                                    <p class="news" th:if="${item.boardId == 'eventPhoto'}">PHOTOS</p>
+                                    <p class="news" th:if="${item.boardId == 'news'}">NEWS</p>
+                                </div>
+                            </div>
+                            <div class="news-item-description" th:utext="${item.content}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div th:if="${#lists.isEmpty(mediaList)}" style="font-weight: 500;text-align: center;font-size: 18px;color: #555;">해당하는 자료가 없습니다.</div>
+    			</div>
+    
+    			<div class="paging_area">
+    				<script type="text/javascript">
+    				 /*<![CDATA[*/
+    					var pagingPage = '[[ ${searchParam.pagingPage} ]]';
+    					var totalNumberOfEntries = '[[ ${totalNumberOfEntries} ]]';
+    					document.write( makePageHtml2( pagingPage, 5, totalNumberOfEntries, 5) );
+    				/*]]>*/		
+    				</script>
+    			</div>
+            </div>
+         </div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+<script type="text/javascript" src="/_conference/js/script.js"></script>
+</html>

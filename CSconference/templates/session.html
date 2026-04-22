@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+<script type="text/javascript">
+function doWriteQuestion(){
+	//return;
+	jQuery.ajax({
+		type : 'post',
+		url : '/_conference/program/doSessionQuestionWrite',
+		data : formToJsonString("#questionForm") ,
+		dataType : 'json',
+		contentType: 'application/json',
+		error: function(xhr, status, errror){
+			alert("doWriteQuestion 오류 발생으로 처리되지 못했습니다."+ xhr);
+		},
+		success : function(json){
+			alert("등록되었습니다.");
+			sessionTogglePopup('nameModal');
+		}
+	});
+
+}
+function sessionTogglePopup(popupId,t) {
+	const popup = document.getElementById(popupId);
+	const layer = document.getElementById("Modal_layer");
+	const session =  document.querySelector('.tab-btn.active').textContent;
+	const title = document.querySelector('#question_tit');
+
+	
+	if (!popup) return; // 요소 없으면 중단
+	const frm = document.getElementById("questionForm");
+	frm.reset();
+	if(t){
+		
+		const td = t.closest('td');
+		const sessionTopic = td.querySelector('.sessionTopic').innerText;
+		const nameElement = td.querySelector('.sessionName p');
+		const positionElement = td.querySelector('.sessionName span');
+		const name = nameElement ? nameElement.innerText : '';
+		const position = positionElement ? positionElement.innerText : '';
+		const th = td.closest('tr').querySelector('th'); // 시간 
+		const time = th.innerText;
+		title.textContent = session + ' : ' + sessionTopic + ' [' + name + ' ' + position+']';
+		
+		frm.querySelector('input[name="time"]').value = time;
+		frm.querySelector('input[name="name"]').value = name; 
+		frm.querySelector('input[name="session"]').value = session;
+		frm.querySelector('input[name="track"]').value = title.textContent;
+	}
+
+	if (popup.style.display === 'block') {
+		popup.style.display = 'none';
+		layer.classList.remove('show');
+		document.body.style.overflow = ''; // 스크롤 잠금 해제
+	} else {
+		popup.style.display = 'block';
+		layer.classList.add('show');
+		
+		document.body.style.overflow = 'hidden'; // 스크롤 잠금
+	}
+}
+function waiting(){
+	alert("준비중입니다.");
+	return;
+}
+
+function goToScroll(event) {
+	var location = document.querySelector("." + event).offsetTop;
+	window.scrollTo({top: location - 150, behavior: 'smooth'});
+}
+
+function openSessionTab(event, tabName) {
+    // session 페이지의 탭 콘텐츠만 숨깁니다.
+    const tabContents = document.querySelectorAll('.session-section .tab_detail');
+    tabContents.forEach(tabContent => tabContent.classList.remove('active'));
+
+    // session 페이지의 탭 링크에서 active 클래스를 제거합니다.
+    const tabLinks = document.querySelectorAll('.session-section .tab-btn');
+    tabLinks.forEach(tabLink => tabLink.classList.remove('active'));
+
+    // 모든 tabTop 숨기기
+    const tabTops = document.querySelectorAll('.session-section .tabTop');
+    tabTops.forEach(tabTop => tabTop.style.display = 'none');
+
+    // 선택한 탭 콘텐츠를 표시합니다.
+    const tabEl = document.getElementById(tabName);
+    if (tabEl) {
+        tabEl.classList.add('active');
+    }
+
+    // 클릭한 탭 버튼 활성화
+    if (event) {
+        event.currentTarget.classList.add('active');
+    }
+}
+
+function viewSchedule() {
+	const imgPath = '../static/img/sessionSchedule.png';
+    const url = new URL(imgPath, window.location.origin);
+    window.open(url.href, '_blank', 'noopener');
+}
+
+function downloadSchedule() {
+	const fileUrl = new URL("../static/img/sessionSchedule.png", window.location.origin);
+	 const link = document.createElement("a");
+	 link.href = fileUrl.href;
+	 link.download = "전체시간표.png"; // 다운로드될 파일 이름
+	 document.body.appendChild(link);
+	 link.click();
+	 document.body.removeChild(link);
+}
+</script>
+</head>
+<body layout:fragment="content">
+	<div th:fragment="session-content" class="session-section">
+	<div class="modal session" id="nameModal">
+		<div class="bg"></div>
+		<div class="box">
+			<div class="modal_tit">
+				<h2>사전질문</h2>
+				<p id="question_tit">CX TRACK 1-1 김종윤 야놀자 클라우드 대표</p>
+			</div>
+			<div class="modal_cont">
+				<form id="questionForm" name="questionForm" method="POST">
+					<input type="hidden" name="time" value="" >
+					<input type="hidden" name="name" value= "">
+					<input type="hidden" name="session" value= "">
+					<input type="hidden" name="track" value="" />
+					<div class="modalCont">
+						<dl class="company">
+							<dt><i class="mdi mdi-circle"></i> 기업명</dt>
+							<dd><input type="text" name="questionCompany" value="" /></dd>
+						</dl>
+						<dl class="company">
+							<dt><i class="mdi mdi-circle"></i> 부서명</dt>
+							<dd><input type="text" name="questionDept" value="" /></dd>
+						</dl>
+						<dl>
+							<dd>
+								<textarea name="content" style="width: 100%;height: 200px" placeholder="강연과 관련하여 궁금한 점을 질문해주세요. 연사자께서 현장 강연시 답변해드립니다!"></textarea>
+							</dd>
+						</dl>
+							<!-- <h3>* 사전질문하기는 모든 세션 확정 후 오픈예정입니다.</h3> -->
+						<div class="btn_wrap">
+							<button class="btn btn_main" type="button" onclick="doWriteQuestion()">확인</button>
+							<button class="btn btn_gray" type="button" onclick="sessionTogglePopup('nameModal')">닫기</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="subCont">
+		<div class="container content">
+			<section>
+				<h2 class="subTop_title blue">Concurrent Session</h2>
+				<h3 class="subTop_title blue" style="font-size: 2.2rem;text-align: right;">(Time : 14:00 ~ 17:40)</h3>
+				<div class="tab_content">
+					<div class="sessionBtn">
+						<button type="button" class="btn btn_main" onclick="viewSchedule()">전체세션 보기</button>
+<!-- 						<button type="button" class="btn btn_main" onclick="downloadSchedule()">전체세션 다운로드<i class="mdi mdi-download"></i></button> -->
+					</div>
+					<div class="tabs">
+						<div class="tab_btns sub_tab">
+							<!-- <button class="tab-btn active" onclick="openSessionTab(event, 'tabCont0'); goToScroll('tab_cont');">Special</button> -->
+							<button class="tab-btn active" onclick="openSessionTab(event, 'tabCont1'); goToScroll('tab_cont');">CX</button>
+							<button class="tab-btn" onclick="openSessionTab(event, 'tabCont2'); goToScroll('tab_cont');">EX</button>
+							<button class="tab-btn " onclick="openSessionTab(event, 'tabCont3'); goToScroll('tab_cont');">DX/AX</button>
+						
+							<button class="tab-btn" onclick="openSessionTab(event, 'tabCont4'); goToScroll('tab_cont');">PX/SX</button>
+							<button class="tab-btn " onclick="openSessionTab(event, 'tabCont5'); goToScroll('tab_cont');">BX</button>
+							<!-- <button class="tab-btn" onclick="openTab(event, 'tabCont6')">Special/Global</button>  -->
+						<!-- 	<button class="tab-btn" onclick="waiting()">EX</button>
+							<button class="tab-btn " onclick="waiting()">DX/AX</button>
+						
+							<button class="tab-btn" onclick="waiting()">PX/SX</button>
+							<button class="tab-btn " onclick="waiting()">BX</button>
+							<button class="tab-btn" onclick="waiting()">Special/Global</button> -->
+						</div>
+					</div>
+					<div class="caption">
+						<p>*강연을 클릭하여 강연자에게 사전질문이 가능합니다.</p>
+					</div>
+					<div class="tab_cont">
+						<div class="sub_wrap tab_detail " id="tabCont0">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>2026 Trend Forecasting</th> 
+												<th>Entertainment X Leadership</th>
+												<th>K-Food to Global</th>
+												<th>Global Attraction to Korea</th> 
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																프로파일링 데이터로 전망하는 2026 트렌드
+															</h3>
+															<div class="sessionName">
+																<p>최형용</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/remember.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																승리의 법칙 : 프로야구에서 배우는 팀워크와 리더십
+															</h3>
+															<div class="sessionName">
+																<p>박용택</p>
+															<span>해설위원</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<!-- <div class="nation">
+																<img src="../static/img/nation/tbl_japan.png" alt="img">
+																<span>일본</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/sevenbank.png" alt="img">
+															</div> -->
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																K-브랜드의 글로벌 여정과 고객중심 혁신
+															</h3>
+															<div class="sessionName">
+																<p>김형섭</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															<!--  <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/bbq.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																배민으로 주문한 한 끼, 세계가 경험한 K-라이프
+															</h3>
+															<div class="sessionName">
+																<p>이철성</p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/배달의민족.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																2026 고객경험의 미래 코드
+															</h3>
+															<div class="sessionName">
+																<p>권정윤</p>
+																<span>박사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																트렌드코리아
+																<!-- <img src="../static/img/sessionCompany/lgu+.png" alt="img"> -->
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																국내를 대표하는 테마파크 에버랜드
+															</h3>
+															<div class="sessionName">
+																<p>조민서</p>
+																<span>수석</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/Logoeverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																K-Food의 세계화에서 배우는 글로벌 브랜딩 인사이트
+															</h3>
+															<div class="sessionName">
+																<p>노희영</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															<!--  <img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span> -->
+															</div>
+															<div class="company">
+																식음연구소
+																<!-- <img src="../static/img/sessionCompany/SK텔레콤.png" alt="img"> -->
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																부산에서 세계로, 어묵 한입의 혁신
+															</h3>
+															<div class="sessionName">
+																<p>박용준</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/삼진어묵.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+															데이터로 읽는 생활변화, 경험으로 완성하는 고객가치
+															</h3>
+															<div class="sessionName">
+																<p>박현영</p>
+																<span>소장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/생활변화관측소.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<!-- <div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI 콜봇을 통한 새로운 고객 커뮤니케이션 경험
+															</h3>
+															<div class="sessionName">
+																<p>허승혁</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/callgate.png" alt="img">
+															</div>
+														</div>
+													</div> -->
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<!-- <div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI 기반 VOC 분석의 고도화, KAIV를 활용한 공공 CX 혁신 방향
+															</h3>
+															<div class="sessionName">
+																<p>박정오</p>
+																<span>디렉터</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div> -->
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																로컬 베이커리가 글로벌 관광 성지로 거듭나다
+															</h3>
+															<div class="sessionName">
+																<p>박삼화</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/성심당.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail active" id="tabCont1">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>Value Chain to<br> CX Chain</th> 
+												<th>AI Contact Center</th>
+												<th>Data-driven CX<br>design</th>
+												<th>Strategic Brand <br>Experience Design</th> 
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																디지털 전환시대, 고객경험을 재설계하다 KMAC CX Chain 1.0
+															</h3>
+															<div class="sessionName">
+																<p>최형용</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/univ.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																ATM 한 대가 여는 세계 - 세븐은행의 다국적 고객 응대 노하우
+															</h3>
+															<div class="sessionName">
+																<p>야마다 요코/호키야마</p>
+																<span>소장/부장</span>
+															<span></span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_japan.png" alt="img">
+																<span>일본</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/sevenbank.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																공공 맞춤형 서비스 추진을 위한 데이터 분석 및 활용 전략
+															</h3>
+															<div class="sessionName">
+																<p>송상화</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															<!--  <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/인천대학교.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																[AI로 보는 내일] 우리 브랜드의 팬덤, AI와 데이터로 사로잡다
+															</h3>
+															<div class="sessionName">
+																<p>백경혜</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/vaiv.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI 기반 고객경험(CX) 혁신 전략 및 사례
+															</h3>
+															<div class="sessionName">
+																<p>정영훈</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/lgu+.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																보고·예측·성과·지식, 모두 연결되는 AICC 경험 (흥국화재 사례를 중심으로)
+															</h3>
+															<div class="sessionName">
+																<p>우래구</p>
+																<span>차장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/tsis.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																생성형 AI와 VOC 텍스트 분석, 고객의 숨은 니즈 발굴
+															</h3>
+															<div class="sessionName">
+																<p>박수경</p>
+																<span>부장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															<!--  <img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/SK텔레콤.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																[도시는 브랜드다] 로열파크씨티가 만드는 거주를 넘어선 하이엔드 경험 디자인
+															</h3>
+															<div class="sessionName">
+																<p>조현욱</p>
+																<span>전무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/dkasia.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																B2B 고객 경험,리서치로 들여다본 의사결정자의 여정
+															</h3>
+															<div class="sessionName">
+																<p>주대웅</p>
+																<span>실장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/remember.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI UX 미니멀리즘: 기술의 복잡함을 경험의 단순함으로
+															</h3>
+															<div class="sessionName">
+																<p>허승혁</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/callgate.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI 기반 VOC 분석의 고도화, KAIV를 활용한 공공 CX 혁신 방향
+															</h3>
+															<div class="sessionName">
+																<p>이재희</p>
+																<span>센터장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																[체험하는 광고] 브랜드 경험 시대의 몰입형 옴니채널 커뮤니케이션 진화
+															</h3>
+															<div class="sessionName">
+																<p>이재근</p>
+																<span>대리</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kobaco.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>17:00-17:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+															AI 기반 지능형 민원 대응 솔루션을 활용한 서울시의 민원 대응 방안 및 사례
+															</h3>
+															<div class="sessionName">
+																<p>김영수 (모던웨이브)</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/seoul.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="" >
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																사람 중심 AI, 연결된 CX – 90일 Quick Win 전략
+															</h3>
+															<div class="sessionName">
+																<p></p>
+																<span></span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+<!-- 																<img src="../static/img/nation/tbl_chile.png" alt="img"> -->
+<!-- 																<span>칠레</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div> 
+												</td>
+												<td class="">
+													<!-- <div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div> -->
+												</td>
+												<td class="" >
+													<!-- <div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div> -->
+												</td>
+												
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail" id="tabCont2">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="40%">
+											<col width="40%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>Connected Growth (TECH)</th>
+												<th>Connected Growth (Humanity)</th>
+											
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+															2026 HR 트렌드 : Shape what’s NEXT
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')">이중학</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/dguniv.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																소통만을 강조하는 조직문화에서의 변화, 조직개발로 성과를 촉진하다
+															</h3>
+															<div class="sessionName">
+																<p>장혜림 </p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/hanwahocean.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI를 통한 업무혁신은 제도에서 시작된다, AI와 HR제도가 함께 가는 법
+															</h3>
+															<div class="sessionName">
+																<p>박종성</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company smLogo">
+																<!-- <img src="../static/img/tblEverland.png" alt="img"> -->
+																<img src="../static/img/sessionCompany/dongwon.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																거부할 수 없는 노동정책변화가 다가온다, HR이 준비해야 할 길
+															</h3>
+															<div class="sessionName">
+																<p>최지수/정호석</p>
+																<span>변호사/디렉터(공인노무사)</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span> -->
+															</div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/린kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+											
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																HR Agent의 진화; 인간 직관을 AI가 이끄는 데이터 혁신으로
+															</h3>
+															<div class="sessionName">
+																<p>윤재연</p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/LG CNS.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																구성원 성장을 위한 자극과 연결
+															</h3>
+															<div class="sessionName">
+																<p>김희봉</p>
+																<span>박사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<!-- <img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span> -->
+															</div>
+															<div class="company">
+<!-- 																<img src="../static/img/sessionCompany/현대자동차.jpg" alt="img"> -->
+																
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail" id="tabCont3">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="40%">
+											<col width="40%">
+											<!-- <col width="26.6%"> -->
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>DX, the road to AX</th>
+												<th>Agentic AI for AX</th>
+												<!-- <th>AI 대전환 시대, 미래 대학 모델</th> -->
+											
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																생성형AI와 함께하는 Bottom-up DAX
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')">지동한</p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/gscaltex.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																Agentic AI로 변화하는 기업 혁신 사례와 구현 전략
+															</h3>
+															<div class="sessionName">
+																<p>최효근</p>
+																<span>매니저</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/마이크로소프트.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																대학의 공공성과 미래 전략 : ‘서울대 10 개 만들기’
+															</h3>
+															<div class="sessionName">
+																<p>김종영</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/khuniv.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+												
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI가 여는 디지털 서비스의 Next Page: 고객 경험을 실험하는 시대, 실험으로 발견한 고객 경험의 원칙
+															</h3>
+															<div class="sessionName">
+																<p>조연주</p>
+																<span>책임</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/현대자동차.jpg" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																CX 경험 제고를 위한 AI Agent 활용 전략
+															</h3>
+															<div class="sessionName">
+																<p>배상근</p>
+																<span>총괄부문장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/salesforce.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																부산대 A.I 혁신 전략 : A.U.R.A 프로젝트
+															</h3>
+															<div class="sessionName">
+																<p>박상후</p>
+																<span>부총장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/busanuniv.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																하이브리드 클라우드로 여는 AX 운영: 데이터·AI 플랫폼의 설계 전략
+															</h3>
+															<div class="sessionName">
+																<p>조재영</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/nhn.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI agent를 활용한 Workflow 혁신
+															</h3>
+															<div class="sessionName">
+																<p>김중보</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/sap.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																학생의 Real Voice, 대학 혁신을 말하다: ‘KMAC X 에브리타임’ 학생 수요 조사 발표
+															</h3>
+															<div class="sessionName">
+																<p>문창희</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/vinu.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>17:00-17:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AX 시대, '고영향 AI' 규제를 회피하는 법적 전략: 데이터·플랫폼 컴플라이언스와 책임 최소화 방안
+															</h3>
+															<div class="sessionName">
+																<p>구태언</p>
+																<span>변호사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/법무법인린.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																AI Agent 구현을 위한 LakeHouse 기반 서비스
+															</h3>
+															<div class="sessionName">
+																<p>이동우</p>
+																<span>상무</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/테라데이터kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="" >
+													<div class="td">
+														
+													</div>
+												</td> -->
+											
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail" id="tabCont4">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>Beyond Public, Toward Sustainability</th>
+												<th>Beyond Public, Toward Global (BP to Global)</th>
+												<th>the Road to Green Tech</th>
+												<th>Balanced growth with ESG</th>
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)" rowspan="3">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																자율·책임경영 기반의 공공기관 이슈별 역할과 대응방안
+																<br/>
+																<span style="font-size:1rem;font-weight:normal;padding-left: 10px;display: inline-block;padding-top: 30px;" >
+																	- AI 혁신을 통한 공공기관 AX 활용방안
+																</span>
+																<span style="font-size:1rem;font-weight:normal;padding-left: 10px;display: inline-block;padding-top: 5px;" >
+																	- 탄소중립 등 친환경 경영을 향한 ESG 전략방향과 우수기관 사례
+																</span>
+																<span style="font-size:1rem;font-weight:normal;padding-left: 10px;display: inline-block;padding-top: 5px;" >
+																	- 안전한 일터 조성을 위한 공공기관의 관리체계방안
+																</span>
+																<span style="font-size:1rem;font-weight:normal;padding-left: 10px;display: inline-block;padding-top: 5px;padding-bottom: 40px;" >
+																	- 대전환시대에 부합하는 공공기관 성과관리체계 변화의 필요성
+																</span>
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">이종욱</p>
+																<span style="margin-bottom: 5px;display: inline-block;">교수 (서울과학기술대학교 / 국정기획위원회)</span>
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">강승준</p>
+																<span style="margin-bottom: 5px;display: inline-block;">부회장 (서울과학기술대학교)</span>
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">김완희</p>
+																<span style="margin-bottom: 5px;display: inline-block;">교수 (가천대학교 / 공공기관운영위원회)</span>
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">채상미</p>
+																<span style="margin-bottom: 5px;display: inline-block;">교수 (이화여자대학교)</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="company" style="max-width:100%; max-height:100%;">
+																<img src="../static/img/sessionCompany/px대학교.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																해외 인프라 진출을 위한 정책 및 금융 활용 전략
+															</h3>
+															<div class="sessionName">
+																<p>이혜선/김대근</p>
+																<span>과장/팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company"  style="max-width:100%; max-height:100%;">
+																<img src="../static/img/sessionCompany/국토교통부산업은행.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)" rowspan="2">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																기후 위기, 배출권 자산에 집중하라 : 탄소시장, 파생상품 시대의 도래 <br/> ▷ 강연 및 패널토의 
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">김태선</p>
+																<span style="margin-bottom: 5px;display: inline-block;">대표 (나무이엔알)</span>
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">신소희</p>
+																<span style="margin-bottom: 5px;display: inline-block;">차장 (한국거래소)</span>
+																<p onclick="sessionTogglePopup('nameModal')" style="margin:0px;">이채성</p>
+																<span style="margin-bottom: 5px;display: inline-block;">본부장 (KMAC)</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company" style="max-width:100%; max-height:100%;">
+																<img src="../static/img/sessionCompany/road1.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																MSCI ESG Ratings analysis and Upgrade Case Studies in APAC
+															</h3>
+															<div class="sessionName">
+																<p>김선경</p>
+																<span>이사</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/msci.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+<!-- 												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)"> -->
+<!-- 													<div class="td"> -->
+<!-- 														<div class="tdTop"> -->
+<!-- 															<h3 class="sessionTopic"> -->
+<!-- 																안전도 혁신! 안전경영 혁신 방안 디자인 및 적용 방안 -->
+<!-- 															</h3> -->
+<!-- 															<div class="sessionName"> -->
+<!-- 																<p>고기동</p> -->
+<!-- 																<span>前 차관</span> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 														<div class="tdBottom"> -->
+<!-- 															<div class="nation"></div> -->
+<!-- 															<div class="company"> -->
+<!-- 																<img src="../static/img/sessionCompany/mois.png" alt="img"> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</td> -->
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																사례를 통해 보는 글로벌 확장과 전략
+															</h3>
+															<div class="sessionName">
+																<p>이상용/조은채</p>
+																<span>본부장/단장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company"  style="max-width:100%; max-height:100%;">
+																<img src="../static/img/sessionCompany/한국수자원공사(국문좌우병기)CI.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+<!-- 												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)"> -->
+<!-- 													<div class="td"> -->
+<!-- 														<div class="tdTop"> -->
+<!-- 															<h3 class="sessionTopic"> -->
+<!-- 																파생상품 거래 및 배출권 선물시장 이해 -->
+<!-- 															</h3> -->
+<!-- 															<div class="sessionName"> -->
+<!-- 																<p>박용진</p> -->
+<!-- 																<span>상무</span> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 														<div class="tdBottom"> -->
+<!-- 															<div class="nation"></div> -->
+<!-- 															<div class="company"> -->
+<!-- 																<img src="../static/img/sessionCompany/kis.png" alt="img"> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</td> -->
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																카테나-X 기반의 글로벌 공급망 ESG 대응 전략
+															</h3>
+															<div class="sessionName">
+																<p>최은경</p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/sk_ax.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+<!-- 												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)"> -->
+<!-- 													<div class="td"> -->
+<!-- 														<div class="tdTop"> -->
+<!-- 															<h3 class="sessionTopic"> -->
+<!-- 																이제는 KRI , 조직문화감사 등 리스크관리를 통한 조직 성장 방향 -->
+<!-- 															</h3> -->
+<!-- 															<div class="sessionName"> -->
+<!-- 																<p>정한규</p> -->
+<!-- 																<span>파트너</span> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 														<div class="tdBottom"> -->
+<!-- 															<div class="nation"></div> -->
+<!-- 															<div class="company smLogo"> -->
+<!-- 																<img src="../static/img/sessionCompany/kmac.png" alt="img"> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</td> -->
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																세계 혁신 경제속 우리의 역할 (토크콘서트)
+															</h3>
+															<div class="sessionName">
+																<p>조경민</p>
+																<span>CPO</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)" rowspan="2">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																에너지 위기, 도시가 답하다: 기후위기 시대의 회복탄력 인프라 <br/> ▷ 강연 및 패널토의 
+															</h3>
+															<div class="sessionName">
+																<p></p>
+																<span></span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company" style="max-width:100%; max-height:100%;">
+																<img src="../static/img/sessionCompany/road2.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																자연자본 공시(TNFD)의 부상과 기업 대응 전략
+															</h3>
+															<div class="sessionName">
+																<p>이아선</p>
+																<span>본부장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/sdg.png" alt="img"> 
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>17:00-17:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																전략적 자율경영 추진을 위한 성과관리 대응방안
+															</h3>
+															<div class="sessionName">
+																<p></p>
+																<span></span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td >
+													
+												</td>
+<!-- 												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)"> -->
+<!-- 													<div class="td"> -->
+<!-- 														<div class="tdTop"> -->
+<!-- 															<h3 class="sessionTopic"> -->
+<!-- 																온실가스 국제감축 확대 전략 : LFG 사례 기반 -->
+<!-- 															</h3> -->
+<!-- 															<div class="sessionName"> -->
+<!-- 																<p>강신현</p> -->
+<!-- 																<span>대표</span> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 														<div class="tdBottom"> -->
+<!-- 															<div class="nation"></div> -->
+<!-- 															<div class="company"> -->
+<!-- 																<img src="../static/img/sessionCompany/kecc.png" alt="img"> -->
+<!-- 															</div> -->
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</td> -->
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																KOSPI 5000 시대를 열어 갈 Value Driver, ESG
+															</h3>
+															<div class="sessionName">
+																<p>최용환</p>
+																<span>팀장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/nh_bank.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail" id="tabCont5">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="26.6%">
+											<col width="26.6%">
+											<col width="26.6%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>Future of Sports: Marketing · Tech · Sustainability</th>
+												<th>AI Driven Global Expension : Fintech</th>
+												<th>Connecting Brands, Creating Value</th>
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																브랜드를 경기장 너머로: K-스포츠 마케팅 인사이트 
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')">박영훈</p>
+																<span>본부장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/브리온스포츠 로고.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																기술트렌드 #1. AI 확대에 따른 결제시장의 변화 예측
+															</h3>
+															<div class="sessionName">
+																<p>김경동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/올링크 로고.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																Scoring을 활용한 진료과 전략 수립 및 사례
+															</h3>
+															<div class="sessionName">
+																<p>나종익</p>
+																<span>회장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company smLogo">
+																병원원가협회
+<!-- 																<img src="../static/img/sessionCompany/kmac.png" alt="img"> -->
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																스포츠테크의 미래: 기술이 이끄는 산업 혁신
+															</h3>
+															<div class="sessionName">
+																<p>강현수</p>
+																<span>부장</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/laonpeople.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																기술트렌드 #2. 마이데이터를 통한 금융과 이종산업의 결합 사례<br/>(온디바이스 AI 활용을 중심으로)
+															</h3>
+															<div class="sessionName">
+																<p>이재영</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/khuniv.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																병원 전략 실행을 위한 서비스디자인 접근방법 및 적용사례
+															</h3>
+															<div class="sessionName">
+																<p>구정하</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+<!-- 																<img src="../static/img/nation/tbl_maleisia.png" alt="img"> -->
+<!-- 																<span>말레이시아</span> -->
+															</div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/디자인케어랩.avif" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																ESG로 스포츠 산업의 글로벌 경쟁력 쌓기
+															</h3>
+															<div class="sessionName">
+																<p>이재혁</p>
+																<span>회장/교수</span>
+															</div>
+														</div>
+														<div class="tdBottom" style="height:40px;">
+															<div class="nation"></div>
+															<div class="company"  style="max-width: 100%;max-height: 100%;">
+																<img src="../static/img/sessionCompany/고대esg.png?v=2" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																기술트렌드 #3. AI-Driven Connected Finance 2030: 초개인화/예측/자율형 금융 경험의 미래
+															</h3>
+															<div class="sessionName">
+																<p>강송희</p>
+																<span>교수</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/한국공학대.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																환자경험 개선 : 국내 병원의 우수 사례를 중심으로
+															</h3>
+															<div class="sessionName">
+																<p>박재상</p>
+																<span>디렉터</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/sessionCompany/kmac.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="sub_wrap tab_detail" id="tabCont6">
+							<div class="tbl_wrap">
+								<div class="tbl_scroll">
+									<table class="tbl_top leftSticky">
+										<caption>tit</caption>
+										<colgroup>
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<col width="20%">
+											<!-- <col width="16%"> -->
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>TRACK 1</th>
+												<th>TRACK 2</th>
+												<th>TRACK 3</th>
+												<th>TRACK 4</th>
+												<!-- <th>TRACK 5</th> -->
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>14:00-14:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																에버랜드
+																CS전략 사례
+															</h3>
+															<div class="sessionName">
+																<p onclick="sessionTogglePopup('nameModal')">김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation"></div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																Predictiv Care,
+																Inc. First Abu
+																Dhabi Bank(FAB)
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblMicro.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>15:00-15:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																연결과 확장을 통한
+																교육 경험 혁신 사례
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>16:00-16:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주토피아
+																& 유토피아
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+											<tr>
+												<th>17:00-17:40</th>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주토피아
+																& 유토피아
+															</h3>
+															<div class="sessionName">
+																<p>김종윤</p>
+																<span>야놀자 클라우드대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_usa.png" alt="img">
+																<span>미국</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_chile.png" alt="img">
+																<span>칠레</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_turkey.png" alt="img">
+																<span>터키</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_brazil.png" alt="img">
+																<span>브라질</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td>
+												<!-- <td class="sessionInfo" onclick="sessionTogglePopup('nameModal',this)">
+													<div class="td">
+														<div class="tdTop">
+															<h3 class="sessionTopic">
+																주제
+															</h3>
+															<div class="sessionName">
+																<p>홍길동</p>
+																<span>대표</span>
+															</div>
+														</div>
+														<div class="tdBottom">
+															<div class="nation">
+																<img src="../static/img/nation/tbl_iran.png" alt="img">
+																<span>이란</span>
+															</div>
+															<div class="company">
+																<img src="../static/img/tblEverland.png" alt="img">
+															</div>
+														</div>
+													</div>
+												</td> -->
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

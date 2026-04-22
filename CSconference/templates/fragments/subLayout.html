@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!-- <meta charset="UTF-8">
+<title>conference</title> -->
+<link th:replace="/fragments/Elements.html :: fragment-header"></link>
+<script type="text/javascript">
+</script>
+</head>
+<body> 
+	<!-- sub 레이아웃 white 배경 -->
+	<div id="Modal_layer" class="layer" onclick="togglePopup('nameModal')"></div>
+	<div class="subWrap">
+	       <div class="gnb">	<!-- header -->
+	           <div class="top_logo logo">
+	            <a href="/_conference/index">
+	                <img src="../static/img/subLogo.png" alt="img">
+	            </a>
+	           </div>
+	           <th:block th:replace="fragments/Header::Header"></th:block>
+	          </div>
+		
+		<!-- content -->
+		<th:block layout:fragment="content" ></th:block>
+		<!-- // -->
+		
+		<!-- 푸터 -->
+		<div class="footer">
+			<div class="footerCont">
+				<img src="../static/img/kmacLogo.png" alt="img">
+				<div class="footerTop">
+					<div class="footerText">
+						<h3>Asia CSCON 운영사무국</h3>
+						<p>
+							T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+							(07241) 서울특별시 영등포구 여의공원로 101, 8층
+						</p>
+						<p>
+							사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+							한국능률협회컨설팅 대표자 한수희
+						</p>
+						<b>ⓒ 2025 KMAC. All rights reserved.</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/_conference/js/script.js?v=25101722"></script>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

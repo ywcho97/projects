@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+</head>
+<body>
+	<div class="subWrap">
+		<div class="gnb">
+			<div class="top_logo logo">
+				<a href="index.html">
+					<img src="../static/img/logo.png" alt="img">
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<li>
+					<a style="cursor:pointer;" >Asia CSCON</a>
+					<ul class="twoD">
+						<li>
+							<a href="./csCon.html">About</a>
+							<a href="./theme.html">Asia CSCON25</a>
+							<a href="./sponsorship.html">Sponsorship</a>
+							<a href="./location.html">Location</a>
+						</li>
+					</ul>
+					</li>
+					<li>
+						<a style="cursor:pointer;">Program</a>
+						<ul class="twoD">
+							<li>
+							<a href="./programAll.html?section=plenary">Plenary Session</a>
+							<a href="./programAll.html?section=special">Special Session</a>
+							<a href="./programAll.html?section=session">Concurrent Session</a>
+							<a href="./programAll.html?section=luckydraw">Lucky Draw</a>
+							<a href="./programAll.html?section=guide">Guide Map</a>
+						</li>
+						</ul>
+					</li>
+					<li>
+						<a style="cursor:pointer;">Archive</a>
+						<ul class="twoD">
+							<li>
+								<a href="./mediaBoard.html">Media</a>
+								<a href="./vodBoardList.html">Contents</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="./faq.html" style="cursor:pointer;">FAQ</a>
+					</li>
+					<li>
+						<a href="./applyInfo.html"style="cursor:pointer;" class="join">참가신청</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="top_right pc_only">
+				<div class="dday" id="dday">D-60</div>
+			</div>
+			<div class="mob_menu">
+				<div class="dday mobile_only" id="dday_m">D-60</div>
+				<button type="button" class="hamber">
+					<i></i>
+					<i></i>
+					<i></i>
+				</button>
+			</div>
+		</div> <!-- //gnb -->
+		<div class="subBg" style="top: 250px; z-index: 2;">
+			<img src="../static/img/subBgMap.png" alt="img">
+		</div>
+		<div class="subCont">
+			<div class="container content">
+				<div class="subTop_wrap">
+					<h2 class="subTop_title">Xs-Chain</h2>
+					<p>
+					Accelerating Growth Through Connected Experience<br/>
+					기업의 즉각적인 성과 창출을 위한 연결된 경험 혁신 방안
+					</p>
+				</div>
+				<section>
+					<div class="theme_depth">
+					<div class="theme_box content">
+						<h2>CX <span>Customer eXperience</span></h2>
+						<p>
+							고객 여정 전반에 긍정적 경험을 설계하고 운영하는 고객경험관리(CXM)가 경쟁력 제고를 위한 핵심 과제로 자리매김하고 있습니다. 
+							디지털 기술의 고도화로 모든 접점에서 고객 행동 데이터를 수집·분석할 수 있게 됨에 따라,
+							기업은 고도화된 개인화 서비스를 제공할 수 있게 되었습니다.
+							이와 같이 온·오프라인 전 채널에서 일관되고 몰입감 높은 ‘연결된 경험’을 창출하는 것은
+							즉각적인 매출 증대와 장기적 고객 충성도를 확보하기 위한 필수 전략이 될 것입니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· Value Chain to CX Chain</dd>
+							<dd>· AI Contact Center  *AICC</dd>
+							<dd>· Strategic Brand Experience Design</dd>
+							<dd>· Data-driven CX Re-design</dd>
+							
+						</dl>
+					</div>
+					<div class="theme_box content">
+						<h2>EX <span>Employee eXperience</span></h2>
+						<p>
+							조직의 지속가능 성장은 회사와 구성원이 함께 성장할 수 있는 환경,
+							즉 직원경험관리(EXM)를 통해 달성할 수 있습니다.
+							채용부터 퇴사까지 일관된 커리어 성장 지원과 공정한 피드백·보상 체계를 통해 직원들은 몰입과
+							성취를 동시에 경험하며, 이는 곧 조직의 생산성과 지속가능한 성과로 직결됩니다.
+							이와 같은 직원경험 혁신은 구성원의 적극적 참여를 보장함으로써, 기업이 급변하는 시장에서
+							신속히 성과를 달성하고 장기적 경쟁 우위를 확보하도록 하는 핵심 동력이 됩니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· Workplace Innovation</dd>
+							<dd>· Connected Growth (TECH/Humanity)</dd>
+							<dd>· Aligning HR-Biz</dd>
+							
+						</dl>
+					</div>
+					<div class="theme_box content">
+						<h2>DX <span>Digital Transformation</span></h2>
+						<p>
+							생성형 AI의 고도화, 데이터 처리 기술의 진전, 그리고 양자 컴퓨팅의 초기 적용이 맞물리면서
+							기업은 방대한 데이터를 유연한 인프라에서 실시간으로 활용하여 전략 실행 속도를
+							획기적으로 높이고 있습니다. 신뢰성 높은 데이터 거버넌스와 클라우드 기반 전환을 축으로 한 디지털
+							혁신은 운영 효율과 리스크 관리를 동시에 강화하며, 기민한 의사결정을 가능하게 합니다.
+							이를 통해 기업은 급변하는 시장 환경에 선제적으로 대응할 수 있는 견고한 기반을 마련합니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· DX Strategy</dd>
+							<dd>· Workflow Optimization</dd>
+							<dd>· Cloud Transformation</dd>
+						</dl>
+					</div>
+					<div class="theme_box content">
+						<h2>AX <span>AI Transformation</span></h2>
+						<p>
+							초지능 시대를 맞아 AI 전환은 ‘Xs-Chain’을 위한 핵심 촉매로 자리매김하고 있습니다.
+							조직은 개방형 생태계에서 지능형 솔루션을 공동 개발하고, 자율적으로 학습·협업하는
+							AI가 업무 전 과정을 실시간으로 최적화함으로써 복잡한 의사결정과 운영 프로세스를
+							대폭 간소화할 수 있습니다. 이러한 AI 기반 혁신은 업무 속도와 정확도를 동시에 개선해
+							즉각적인 비용 절감과 가치 창출을 이끌어낼 뿐 아니라 미래 성장 동력까지 확보하게 합니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· Agentic AI</dd>
+							<dd>· Data Quality Innovation</dd>
+							<dd>· LLM-Powered CX</dd>
+						</dl>
+					</div>
+					<div class="theme_box content">
+						<div>
+							<h2>BX/SX</h2>
+							<span>Business Transformation<br/>Sustainability Transformation</span>
+						</div>
+						<p>
+							민첩한 포트폴리오 재편 역량은 기업의 즉각적인 성과를 창출하는 핵심 요건으로 부상했습니다.
+							선도 기업은 핵심·비핵심 자산을 유연하게 조정하고, 외부 생태계와 함께 미래 기술 및
+							고객 접점을 공동 설계해 성장 속도를 가속화하고 있습니다.
+							또한 시대 트렌드를 선도하는 비즈니스모델 전환 및 체계 구축, 
+							기업의 모든 이해 관계자들의 가치를 고려한 ESG 및 지속가능 체계 수립 등은 
+							변화하는 시장에서 '연결된 경험'의 가치를 지속적으로 확장하는 원동력이 됩니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· ESG Transition</dd>
+							<dd>· Climate Resilience & Sustainable Energy</dd>
+							<dd>· Local Value Creation</dd>
+						</dl>
+					</div>
+					<div class="theme_box content">
+						<h2>PX <span>Public eXperience</span></h2>
+						<p>
+							국가 차원의 디지털 전환이 가속화되며, 공공 부문은 다양한 이해관계자를 하나로 묶는 경험 중심의
+							혁신 모델을 모색하고 있습니다. 국가 차원의 데이터 허브와 디지털 인프라는 정책 설계와
+							서비스 제공을 통합해 정부·기업·시민 사회 간 협력 역량을 크게 제고합니다.
+							지역 맞춤형 성장 전략과 지능형 도시 인프라를 결합한 공공 혁신 모델은 국토 전반의
+							지속가능 발전을 지원하며, 이해관계자 모두가 체감할 수 있는 고품질의 공공 서비스를 구현합니다.
+						</p>
+						<dl>
+							<dt>Specific Theme</dt>
+							<dd>· Safety Management</dd>
+							<dd>· Organizational Risk Management</dd>
+							<dd>· Global Expansion Strategy</dd>
+						</dl>
+					</div>
+					</div>
+				</section>
+				
+			</div>
+		</div>
+		<!-- 푸터 -->
+		<div class="footer">
+			<div class="footerCont">
+				<img src="../static/img/kmacLogo.png" alt="img">
+				<div class="footerTop">
+					<div class="footerText">
+						<h3>Asia CSCON 운영사무국</h3>
+						<p>
+							T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+							(07241) 서울특별시 영등포구 여의공원로 101, 8층
+						</p>
+						<p>
+							사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+							한국능률협회컨설팅 대표자 한수희
+						</p>
+						<b>ⓒ 2025 KMAC. All rights reserved.</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

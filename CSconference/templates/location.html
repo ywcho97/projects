@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+</head>
+<body layout:fragment="content">
+    <div class="subWrap">
+        <div class="gnb">
+            <div class="top_logo logo">
+                <a href="index.html">
+                    <img src="../static/img/logo.png" alt="img">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                    <a style="cursor:pointer;" >Asia CSCON</a>
+                    <ul class="twoD">
+                        <li>
+                            <a href="./csCon.html">About</a>
+                            <a href="./theme.html">Asia CSCON25</a>
+                            <a href="./sponsorship.html">Sponsorship</a>
+                            <a href="./location.html">Location</a>
+                        </li>
+                    </ul>
+                    </li>
+                    <li>
+                        <a style="cursor:pointer;">Program</a>
+                        <ul class="twoD">
+                            <li>
+                            <a href="./programAll.html?section=plenary">Plenary Session</a>
+                            <a href="./programAll.html?section=special">Special Session</a>
+                            <a href="./programAll.html?section=session">Concurrent Session</a>
+                            <a href="./programAll.html?section=luckydraw">Lucky Draw</a>
+                            <a href="./programAll.html?section=guide">Guide Map</a>
+                        </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a style="cursor:pointer;">Archive</a>
+                        <ul class="twoD">
+                            <li>
+                                <a href="./mediaBoard.html">Media</a>
+                                <a href="./vodBoardList.html">Contents</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./faq.html" style="cursor:pointer;">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="./applyInfo.html"style="cursor:pointer;" class="join">참가신청</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="top_right pc_only">
+                <div class="dday" id="dday">D-60</div>
+            </div>
+            <div class="mob_menu">
+                <div class="dday mobile_only" id="dday_m">D-60</div>
+                <button type="button" class="hamber">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </button>
+            </div>
+        </div> <!-- //gnb -->
+        <div class="subCont">
+            <div class="container">
+                <section class="content">
+                    <h2 class="subTop_title blue">Location</h2>
+                    <div class="locationCont">
+                        <div class="map"><img src="../static/img/location.png" alt="img" class="content"></div>
+                        <div class="content locationInfo">
+                            <h3><i class="mdi mdi-circle"></i>장소</h3>
+                            <p>
+                                <b>킨텍스 제2전시장 6홀</b><br/>
+                                경기 고양시 일산서구 킨텍스로 217-59
+                            </p>
+                        </div>
+                        <div class="content locationInfo">
+                            <h3><i class="mdi mdi-circle"></i>11월 04일(화) 무료 셔틀버스</h3>
+                            <p>
+                                대화역 3번출구앞 ↔ 일산 KINTEX 제2전시장 Hall 6
+                            </p>
+                        </div>
+                        <div class="timetable content">
+                            <div class="grid">
+                                <!-- KINTEX → 대화역 -->
+                                <article class="card">
+                                    <div class="card-head">
+                                        <div class="place"><span class="from">출발지</span>KINTEX 제2전시장 Hall 6</div>
+                                    </div>
+                                    <ul class="timecols">
+                                        <li class="time">07:50</li>
+                                        <li class="time">08:00</li>
+                                        <li class="time">08:10</li>
+                                        <li class="time">08:20</li>
+                                        <li class="time">08:30</li>
+                                        <li class="time">08:40</li>
+                                        <li class="time">08:50</li>
+                                        <li class="time">09:00</li>
+                                        <li class="time">09:10</li>
+                                        <li class="time">09:20</li>
+                                        <li class="time">09:30</li>
+                                        <li class="time">09:40</li>
+                                        <li class="time">09:50</li>
+                                        <li class="time">10:00</li>
+                                        <li class="time">10:10</li>
+                                        <li class="time">10:20</li>
+                                        <li class="time">10:50</li>
+                                        <li class="time">11:20</li>
+                                        <li class="time">11:50</li>
+                                        <li class="time">12:20</li>
+                                        <li class="time">12:50</li>
+                                        <li class="time">13:20</li>
+                                        <li class="time">13:50</li>
+                                        <li class="time">14:20</li>
+                                        <li class="time">14:50</li>
+                                        <li class="time">15:20</li>
+                                        <li class="time">15:50</li>
+                                        <li class="time">16:00</li>
+                                        <li class="time">16:10</li>
+                                        <li class="time">16:20</li>
+                                        <li class="time">16:30</li>
+                                        <li class="time">16:40</li>
+                                        <li class="time">16:50</li>
+                                        <li class="time">17:00</li>
+                                        <li class="time">17:10</li>
+                                        <li class="time">17:20</li>
+                                        <li class="time">17:30</li>
+                                        <li class="time">17:40</li>
+                                        <li class="time">17:50</li>
+                                        <li class="time">18:00</li>
+                                        <li class="time">18:10</li>
+                                        <li class="time">18:15</li>
+                                        <li class="time">18:20</li>
+                                        <li class="time">18:30</li>
+                                    </ul>
+                                </article>
+                                <!-- 대화역 → KINTEX -->
+                                <article class="card">
+                                    <div class="card-head">
+                                        <div class="place"><span class="from">출발지</span>대화역 3번출구앞</div>
+                                    </div>
+                                    <ul class="timecols">
+                                        <li class="time">08:00</li>
+                                        <li class="time">08:10</li>
+                                        <li class="time">08:20</li>
+                                        <li class="time">08:30</li>
+                                        <li class="time">08:40</li>
+                                        <li class="time">08:50</li>
+                                        <li class="time">09:00</li>
+                                        <li class="time">09:10</li>
+                                        <li class="time">09:20</li>
+                                        <li class="time">09:30</li>
+                                        <li class="time">09:40</li>
+                                        <li class="time">09:50</li>
+                                        <li class="time">10:00</li>
+                                        <li class="time">10:10</li>
+                                        <li class="time">10:20</li>
+                                        <li class="time">10:30</li>
+                                        <li class="time">11:00</li>
+                                        <li class="time">11:30</li>
+                                        <li class="time">12:00</li>
+                                        <li class="time">12:30</li>
+                                        <li class="time">13:00</li>
+                                        <li class="time">13:30</li>
+    
+                                        <!-- 여기서 오른쪽 컬럼으로 넘김 -->
+                                        <li class="time colbreak">14:00</li>
+                                        <li class="time">14:30</li>
+                                    </ul>
+                                </article>
+    
+                            </div>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- 푸터 -->
+        <div class="footer">
+            <div class="footerCont">
+                <img src="../static/img/kmacLogo.png" alt="img">
+                <div class="footerTop">
+                    <div class="footerText">
+                        <h3>Asia CSCON 운영사무국</h3>
+                        <p>
+                            T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+                            (07241) 서울특별시 영등포구 여의공원로 101, 8층
+                        </p>
+                        <p>
+                            사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+                            한국능률협회컨설팅 대표자 한수희
+                        </p>
+                        <b>ⓒ 2025 KMAC. All rights reserved.</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

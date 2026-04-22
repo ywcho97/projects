@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+<style>
+@media only screen and (min-width: 1px)and (max-width: 1024px){
+    .programTit h2.tit {
+        padding-top: 5px;
+        height: auto;
+        width: 100%;
+        font-size: 2.5rem;
+        border-radius: 10px;
+    }
+    .programCont .speakerList {
+	    display: grid;
+	    gap: 10px;
+	    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+	}
+	.programCont .speakerInfo .speakerTxt p {
+	    color: var(--black);
+	    font-size: 1.5rem;
+	    margin-bottom: 5px;
+	    font-weight: 800;
+	}
+	.programCont .speakerInfo .speakerTxt span {
+	    color: #4f4f4f;
+	    font-size: 1.3rem;
+	    word-break: keep-all;
+	}
+	.programList .program p {
+	    font-size: 18px;
+	    font-weight: 500;
+	    line-height: 22px;
+	    margin-bottom: 20px
+	}
+	.programList .program h3 {
+	    font-size: 30px;
+	    font-weight: 600;
+	    margin-top: 5px;
+	    margin-bottom: 5px;
+	}
+	.subCont section {
+	    padding: 6rem 0 0rem 0;
+	    
+	}
+	.programCont>h3 {
+    font-size: 2.5rem;
+    color: var(--g1);
+    font-weight: 600;
+    margin: 60px 0 25px;
+	}
+	.programCont .speakerInfo img {
+	    width: 85%;
+	    max-width: 220px;
+	}
+}
+
+</style>
+</head>
+<body>
+	<div class="subWrap">
+		<div class="gnb">
+	        <div class="top_logo logo">
+	            <a href="index.html">
+	                <img src="../static/img/logo.png" alt="img">
+	            </a>
+	        </div>
+	        <nav>
+	            <ul>
+	                <li>
+	                <a style="cursor:pointer;" >Asia CSCON</a>
+	                <ul class="twoD">
+	                    <li>
+	                        <a href="./csCon.html">About</a>
+	                        <a href="./theme.html">Asia CSCON25</a>
+	                        <a href="./sponsorship.html">Sponsorship</a>
+	                        <a href="./location.html">Location</a>
+	                    </li>
+	                </ul>
+	                </li>
+	                <li>
+	                    <a style="cursor:pointer;">Program</a>
+	                    <ul class="twoD">
+	                        <li>
+	                        <a href="./programAll.html?section=plenary">Plenary Session</a>
+	                        <a href="./programAll.html?section=special">Special Session</a>
+	                        <a href="./programAll.html?section=session">Concurrent Session</a>
+	                        <a href="./programAll.html?section=luckydraw">Lucky Draw</a>
+	                        <a href="./programAll.html?section=guide">Guide Map</a>
+	                    </li>
+	                    </ul>
+	                </li>
+	                <li>
+	                    <a style="cursor:pointer;">Archive</a>
+	                    <ul class="twoD">
+	                        <li>
+	                            <a href="./mediaBoard.html">Media</a>
+	                            <a href="./vodBoardList.html">Contents</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li>
+	                    <a href="./faq.html" style="cursor:pointer;">FAQ</a>
+	                </li>
+	                <li>
+	                    <a href="./applyInfo.html"style="cursor:pointer;" class="join">참가신청</a>
+	                </li>
+	            </ul>
+	        </nav>
+	        <div class="top_right pc_only">
+	            <div class="dday" id="dday">D-60</div>
+	        </div>
+	        <div class="mob_menu">
+	            <div class="dday mobile_only" id="dday_m">D-60</div>
+	            <button type="button" class="hamber">
+	                <i></i>
+	                <i></i>
+	                <i></i>
+	            </button>
+	        </div>
+	    </div> <!-- //gnb -->
+		<div class="subBg">
+			<img src="../static/img/subBg.png" alt="img">
+		</div>
+		<div class="subCont">
+			<div class="container content">
+				<section>
+					<h2 class="aboutTit">
+						<span>대한민국 <b>No.1</b><br/></span>
+						<p>경영혁신 컨퍼런스</p>
+					</h2>
+					<p class="txt">
+						1993년 시작된 Asia CSCON은 30년 이상의 역사를 자랑하는 국내 최대 규모의 고객중심 경영혁신 컨퍼런스입니다.<br/>
+						고객경험, 직원경험, 디지털전환, 오픈이노베이션 등 60여 개의 전문 세션을 통해 매년 2,500여 명의 참가자가 혁신 사례와 트렌드를 공유합니다.<br/>
+						2024년부터는 아시아 컨퍼런스로 영역을 확장하여 국내를 넘어 글로벌 시장에서의 경쟁력 강화와 협력 네트워크의 장으로 거듭나고 있습니다.
+					</p>
+				</section>
+			</div>
+			<div class="container content">
+				<section class="content">
+					<div class="programCont historyTit">
+						<h3>
+							<span class="history"></span>
+							History of CSCON
+						</h3>
+					</div>
+					<img src="../static/img/historyCScon.png" alt="img" class="pcImg">
+					<img src="../static/img/historyCSconMob.png" alt="img" class="mobImg">
+				</section>
+			</div>
+			<div class="container content">
+				<section class="content">
+					<div class="programTit">
+						<h2 class="tit">
+							Conference<br/>
+							Program
+						</h2>
+						<p><b>Insightful & Impactful eXperience</b><br/>
+							산업계·학계 Guru 초청 특강 및 국내외 우수 기업 사례를 통한 Strategy, Methodology, Case Study 소개</p>
+					</div>
+					<div class="programCont">
+						<h3><span class="history"></span>Plenary Session : 산업계,학계 Guru 초청 특강</h3>
+						<p>역대 주요 Keynote Speaker</p>
+						<div class="speakerList">
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker01.png" alt="img">
+								<div class="speakerTxt">
+									<p>Joseph Pine II</p>
+									<span>(경험경제 창시자)</span>
+								</div>
+							</div>
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker02.png" alt="img">
+								<div class="speakerTxt">
+									<p>T.H. Davenport</p>
+									<span>(프로세스 혁신 정립)</span>
+								</div>
+							</div>
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker03.png" alt="img">
+								<div class="speakerTxt">
+									<p>Tom Peters</p>
+									<span>(초우량 기업의 조건 저자)</span>
+								</div>
+							</div>
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker04.png" alt="img">
+								<div class="speakerTxt">
+									<p>이명한</p>
+									<span>(에그이즈커밍 대표)</span>
+								</div>
+							</div>
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker05.png" alt="img">
+								<div class="speakerTxt">
+									<p>김성근</p>
+									<span>(POSTECH 총장)</span>
+								</div>
+							</div>
+							<div class="speakerInfo">
+								<img src="../static/img/prgramSpeaker06.png" alt="img">
+								<div class="speakerTxt">
+									<p>유현준</p>
+									<span>(홍익대 건축학 교수)</span>
+								</div>
+							</div>
+						</div>
+						<h3><span class="history"></span>Concurrent Session : 20여개 Track의 60여개 세부 강연</h3>
+						<p>최근년도 주요 강연 기업</p>
+						<!-- <dl class="classList">
+							<dd>CX, EX, DX, OI(Open Innovation), PS(Public Sector)</dd>
+							<dd>GS리테일, IBM, igaworks, KT, LS, Mercedes-Benz, MSCI, NC, NICE평가정보, SK AX, SOCAR, 교보생명, 네이버, 농심, 법무법인 태평양, 사람인, 삼성SDS, 신한은행, 와디즈, 우아한청년들, 우정사업본부, 원티드, 채널톡, 카카오뱅크, 포스코, 하나투어, 한국관광공사, 한국도로공사, 현대자동차</dd>
+						</dl> -->
+						<div class="classList">
+							<ul>
+								<li><img src="../static/img/about/colorLogo1.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo2.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo3.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo4.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo5.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo6.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo7.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo8.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo9.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo10.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo11.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo12.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo13.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo14.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo15.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo16.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo17.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo18.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo19.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo20.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo21.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo22.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo23.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo24.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo25.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo26.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo27.png" alt="img"></li>
+								<li><img src="../static/img/about/colorLogo28.png" alt="img"></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<div class="programTit">
+						<h2 class="tit">
+							Festival
+						</h2>
+						<p>
+							<b>Fun & Dynamic eXperience</b><br/>
+							컨퍼런스 공식 후원기업 및 파트너십과 연계한 현장 프로그램으로 참가자 대상 다양한 컨퍼런스 참가 경험 제공
+						</p>
+					</div>
+					<div class="programCont">
+						<div class="programList">
+							<div class="program">
+								<img src="../static/img/Openinnovation.jpg" alt="img">
+								<h3>Open Innovation</h3>
+								<p>
+									컨퍼런스 플랫폼 내 New-Tech
+									스타트업이 보유한 핵심 기술을 연계하여
+									스마트한 참가 경험을 제공합니다.
+								</p>
+							</div>
+							<div class="program">
+								<img src="../static/img/Booth.jpg
+								" alt="img">
+								<h3>Booth Tour</h3>
+								<p>
+									국내외 Partnership 전용부스에서는
+									혁신적인 상품과 서비스를 소개하고 비즈니스
+									네트워킹을 통해 정보를 교류합니다.
+								</p>
+							</div>
+							<div class="program">
+								<img src="../static/img/Luckydraw.jpg" alt="img">
+								<h3>Lucky Draw</h3>
+								<p>
+									공식 후원사가 준비한 신제품 및 서비스 이용권 등
+									약 20여 종 400개로 구성된 국내 최대 규모의
+									경품 추첨 이벤트를 진행합니다.
+								</p>
+							</div>
+							<div class="program">
+								<img src="../static/img/ExperienceZone.jpg" alt="img">
+								<h3>Experience Zone</h3>
+								<p>
+									K-Food, K-Culture, K-Tech 등 다양한 분야의
+									체험공간 구성을 통해 색다른 컨퍼런스
+									참가경험을 지원합니다.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<div class="programTit">
+						<h2 class="tit">
+							Global
+						</h2>
+						<p>
+							<b>Connect with The Globe</b><br/>
+							글로벌 기업 · 전문가와 교류, 최신 글로벌 트렌드 및 국제적 시각 기반 인사이트 제공
+						</p>
+					</div>
+					<div class="programCont content">
+						<div class="global-roller" aria-label="스폰서 로고">
+							<div class="global-row" data-dir="rtl">
+								<div class="marquee">
+									<ul class="global_img">
+										<li><img src="../static/img/global01.png" alt="img"></li>
+										<li><img src="../static/img/global02.png" alt="img"></li>
+										<li><img src="../static/img/global03.png" alt="img"></li>
+										<li><img src="../static/img/global04.png" alt="img"></li>
+										
+										
+									</ul>
+								</div>
+							</div>
+							<div class="global-row" data-dir="ltr">
+								<div class="marquee">
+									<ul class="global_img">
+										<li><img src="../static/img/global05.png" alt="img"></li>
+										<li><img src="../static/img/global06.png" alt="img"></li>
+										<li><img src="../static/img/global07.png" alt="img"></li>
+										<li><img src="../static/img/global08.png" alt="img"></li>
+									</ul>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- <div class="programCont content">
+				<div class="global-roller" aria-label="스폰서 로고">
+					<div class="global-row" data-dir="rtl">
+						<div class="marquee">
+							<ul class="global_img">
+								<li><img src="../static/img/global01.png" alt="img"></li>
+								<li><img src="../static/img/global02.png" alt="img"></li>
+								<li><img src="../static/img/global03.png" alt="img"></li>
+								<li><img src="../static/img/global04.png" alt="img"></li>
+								
+								
+							</ul>
+						</div>
+					</div>
+					<div class="global-row" data-dir="ltr">
+						<div class="marquee">
+							<ul class="global_img">
+								<li><img src="../static/img/global05.png" alt="img"></li>
+								<li><img src="../static/img/global06.png" alt="img"></li>
+								<li><img src="../static/img/global07.png" alt="img"></li>
+								<li><img src="../static/img/global08.png" alt="img"></li>
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+			</div> -->
+		</div>
+		<!-- 푸터 -->
+		<div class="footer">
+			<div class="footerCont">
+				<img src="../static/img/kmacLogo.png" alt="img">
+				<div class="footerTop">
+					<div class="footerText">
+						<h3>Asia CSCON 운영사무국</h3>
+						<p>
+							T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+							(07241) 서울특별시 영등포구 여의공원로 101, 8층
+						</p>
+						<p>
+							사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+							한국능률협회컨설팅 대표자 한수희
+						</p>
+						<b>ⓒ 2025 KMAC. All rights reserved.</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

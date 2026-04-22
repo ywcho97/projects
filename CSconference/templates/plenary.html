@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+<script type="text/javascript">
+function openPlenaryTab(event, tabName) {
+    // plenary 페이지의 탭 콘텐츠만 숨깁니다.
+    const tabContents = document.querySelectorAll('.plenary-section .tab_detail');
+    tabContents.forEach(tabContent => tabContent.classList.remove('active'));
+
+    // plenary 페이지의 탭 링크에서 active 클래스를 제거합니다.
+    const tabLinks = document.querySelectorAll('.plenary-section .tab-btn');
+    tabLinks.forEach(tabLink => tabLink.classList.remove('active'));
+
+    // 선택한 탭 콘텐츠를 표시합니다.
+    const tabEl = document.getElementById(tabName);
+    if (tabEl) {
+        tabEl.classList.add('active');
+    }
+
+    // 클릭한 탭 버튼 활성화
+    if (event) {
+        event.currentTarget.classList.add('active');
+    }
+}
+</script>
+</head>
+<body layout:fragment="content">
+	<div th:fragment="plenary-content" class="plenary-section">
+		<div class="subBg" style="top: 250px; z-index: 2;">
+			<img src="../static/img/subBgMap.png" alt="img">
+		</div>
+		<div class="subCont">
+			<div class="container content">
+				<section>
+					<h2 class="subTop_title blue">Plenary Session</h2>
+				<div class="keynoteWrap">
+					<div class="keynote content">
+						<div class="keynoteText">
+							<h2 class="topic">Keynote Speech 1</h2>
+							<h3 class="subTop_title blue" style="font-size: 2.2rem;text-align: left;">(Time : 10:00 ~ 11:00)</h3>
+							<div class="keynoteInfo">
+								<p class="role">
+									버티컬 AI가 여는 파괴적 혁신,<br/>
+									그리고 연결된 경험이 만드는 미래
+								</p>
+								<div class="name">
+									<h3>김종윤<span> | 야놀자클라우드 대표</span></h3>
+								</div>
+								<dl>
+									<dd>· 現 야놀자 최고전략책임자(CSO)</dd>
+									<dd>· 前 맥킨지앤드컴퍼니, 인게이지먼트 매니저</dd>
+									<dd>· 前 구글, 온라인 세일즈/오퍼레이션 리더</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="keynoteImg">
+							<img src="../static/img/keynote02.png" alt="img">
+						</div>
+					</div>
+					<div class="keynote content">
+						<div class="keynoteImg">
+							<img src="../static/img/keynote01.png?v=1" alt="img" style="max-width: 485px">
+						</div>
+						<div class="keynoteText">
+							<h2 class="topic">Keynote Speech 2</h2>
+							<h3 class="subTop_title blue" style="font-size: 2.2rem;text-align: left;">(Time : 11:20 ~ 12:20)</h3>
+							<div class="keynoteInfo">
+								<p class="role">
+									경량문명, 연결의 가속도<br/>
+									: 가볍게 연결하라, 깊게 성장하라
+								</p>
+								<div class="name">
+									<h3>송길영<span> | 마인드마이너, 작가</span></h3>
+								</div>
+								<dl>
+									<dd>· &lt;시대예보 시리즈&gt; 등 빅데이터 기반 트렌드 서적 저술</dd>
+									<dd>· 現 스마일게이트 퓨처랩 재단 이사</dd>
+									<dd>· 前 바이브컴퍼니 부사장</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

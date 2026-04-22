@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<!-- header -->
+<th:block th:fragment = "Header">
+	<nav>
+			<ul>
+				<li>
+				<a style="cursor:pointer;" >Asia CSCON</a>
+				<ul class="twoD">
+					<li>
+						<a href="/_conference/about/csCon">About</a>
+						<a href="/_conference/about/theme">Asia CSCON25</a>
+						<a href="/_conference/about/sponsorship">Sponsorship</a>
+						<a href="/_conference/about/location">Location</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a style="cursor:pointer;">Program</a>
+				<ul class="twoD">
+					<li>
+						<a href="/_conference/program/programAll.html?section=plenary">Plenary Session</a>
+						<a href="/_conference/program/programAll.html?section=special">Special Session</a>
+						<a href="/_conference/program/programAll.html?section=session">Concurrent Session</a>
+						<a href="/_conference/program/programAll.html?section=luckydraw">Lucky Draw</a>
+						<a href="/_conference/program/programAll.html?section=guide">Guide Map</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a style="cursor:pointer;">Archive</a>
+				<ul class="twoD">
+					<li>
+						<a href="/_conference/media/mediaBoard">Media</a>
+						<a href="/_conference/vod/vodBoardList">Contents</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/_conference/about/faq" style="cursor:pointer;">FAQ</a>
+			</li>
+			<li>
+				<a href="/_conference/applyInfo" style="cursor:pointer;" class="join">참가신청</a>
+			</li>
+			</ul>
+		</nav>
+	<div class="top_right pc_only">
+		<div class="dday" id="dday">D-60</div>
+	</div>
+	<div class="mob_menu">
+		<div class="dday mobile_only menu_on hide" id="dday_m">D-14</div>
+		<div class="mobile_only menu_off"><a href="/_conference/applyInfo" style="cursor:pointer;font-size: 1.5rem;color: var(--g1);" class="join">참가신청</a></div>
+		<button type="button" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</button>
+	</div>
+</th:block>
+<!-- //header -->
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+
+</head>
+<body>
+	<div class="subWrap">
+		<div class="gnb">
+			<div class="top_logo logo">
+				<a href="index.html">
+					<img src="../static/img/logo.png" alt="img">
+				</a>
+			</div>
+			<nav>
+				<ul>
+					<li>
+					<a style="cursor:pointer;" >Asia CSCON</a>
+					<ul class="twoD">
+						<li>
+							<a href="./csCon.html">About</a>
+							<a href="./theme.html">Asia CSCON25</a>
+							<a href="./sponsorship.html">Sponsorship</a>
+							<a href="./location.html">Location</a>
+						</li>
+					</ul>
+					</li>
+					<li>
+						<a style="cursor:pointer;">Program</a>
+						<ul class="twoD">
+							<li>
+							<a href="./programAll.html?section=plenary">Plenary Session</a>
+							<a href="./programAll.html?section=special">Special Session</a>
+							<a href="./programAll.html?section=session">Concurrent Session</a>
+							<a href="./programAll.html?section=luckydraw">Lucky Draw</a>
+							<a href="./programAll.html?section=guide">Guide Map</a>
+						</li>
+						</ul>
+					</li>
+					<li>
+						<a style="cursor:pointer;">Archive</a>
+						<ul class="twoD">
+							<li>
+								<a href="./mediaBoard.html">Media</a>
+								<a href="./vodBoardList.html">Contents</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="./faq.html" style="cursor:pointer;">FAQ</a>
+					</li>
+					<li>
+						<a href="./applyInfo.html"style="cursor:pointer;" class="join">참가신청</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="top_right pc_only">
+				<div class="dday" id="dday">D-60</div>
+			</div>
+			<div class="mob_menu">
+				<div class="dday mobile_only" id="dday_m">D-60</div>
+				<button type="button" class="hamber">
+					<i></i>
+					<i></i>
+					<i></i>
+				</button>
+			</div>
+		</div> <!-- //gnb -->
+		<div class="subBg">
+			<img src="../static/img/subBg.png" alt="img">
+		</div>
+		<div class="subCont">
+			<div class="ticketMainWrap content">
+				<section>
+					<h2 class="subTop_title blue">Register</h2>
+					<div class="applyTicket">
+						<!-- <table>
+							<colgroup>
+								<col>
+								<col width="40%">
+								<col width="40%">
+							</colgroup>
+							<caption>tit</caption>
+							<thead>
+								<tr>
+									<th>구분</th>
+									<th>개인(1-6인)</th>
+									<th>단체(7인 이상)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>
+										얼리버드<br/>
+										<span>~10/17(금)</span>
+									</th>
+									<td>350,000원</td>
+									<td>250,000원</td>
+								</tr>
+								<tr>
+									<th>
+										일반신청<br/>
+										<span>~10/31(금)</span>
+									</th>
+									<td>500,000원</td>
+									<td>300,000원</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="caption">
+							<dl>
+								<dd>* 전년도 참가이력이 없는 기업에 한해 <span>웰컴할인 혜택</span>이 적용됩니다.(운영사무국 문의)</dd>
+								<dd>* 접수기간 이후에는 컨퍼런스 당일 현장 접수로 참여 가능합니다.</dd>
+								<dd>* 참가비에는 교재비/식사/음료 등 모든 비용이 포함되어 있습니다. </dd>
+							</dl>
+						</div> -->
+						<div class="ticket_wrap">
+							<!-- 티켓 -->
+							<div class="ticket">
+								<div class="ticketTop">
+									<div class="ticketState"><p>판매중</p><p>~10/17(금)</p></div>
+									<h2 class="ticketName">얼리버드</h2>
+								</div>
+								<div class="ticketMain">
+									<div class="ticketCont">
+									<div class="ticketPrice">
+										<h3>개인</h3>
+										<div class="tickeyMoney">
+											<p class="origin">
+												<svg>
+													<defs>
+														<!-- 화살촉 정의 -->
+														<marker id="arrowHead" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+														<polygon points="0,0 4,2 0,4" fill="red"></polygon>
+														</marker>
+													</defs>
+													
+													<!-- 반대방향 꺾인 화살표 -->
+													<polyline points="265,50 50,50 80,76" fill="none" stroke="red" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+												</svg>
+												정가 500,000원
+											</p>
+											<h1>350,000</h1>
+										</div>
+									</div>
+									<div class="ticketPrice">
+										<h3>단체 (7인 이상)</h3>
+										<div class="tickeyMoney">
+											<p class="origin">
+												<svg>
+													<defs>
+														<!-- 화살촉 정의 -->
+														<marker id="arrowHead" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+														<polygon points="0,0 4,2 0,4" fill="red"></polygon>
+														</marker>
+													</defs>
+													
+													<!-- 반대방향 꺾인 화살표 -->
+													<polyline points="265,50 50,50 80,76" fill="none" stroke="red" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+												</svg>
+												정가 350,000원
+											</p>
+											<h1>250,000</h1>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="ticket">
+								<div class="close"></div>
+								<div class="ticketTop">
+									<div class="ticketState"><p>10/18(토)</p><p>~10/31(금)</p></div>
+									<h2 class="ticketName">온라인 신청</h2>
+								</div>
+								<div class="ticketMain">
+									<div class="ticketCont">
+									<div class="ticketPrice">
+										<h3>개인</h3>
+										<div class="tickeyMoney">
+											<p class="origin">
+												<svg>
+													<defs>
+														<!-- 화살촉 정의 -->
+														<marker id="arrowHead" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+														<polygon points="0,0 4,2 0,4" fill="red"></polygon>
+														</marker>
+													</defs>
+													
+													<!-- 반대방향 꺾인 화살표 -->
+													<polyline points="265,50 50,50 80,76" fill="none" stroke="red" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+												</svg>
+												정가 500,000원
+											</p>
+											<h1>450,000</h1>
+										</div>
+									</div>
+									<div class="ticketPrice">
+										<h3>단체 (7인 이상)</h3>
+										<div class="tickeyMoney">
+											<p class="origin">
+												<svg>
+													<defs>
+														<!-- 화살촉 정의 -->
+														<marker id="arrowHead" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+														<polygon points="0,0 4,2 0,4" fill="red"></polygon>
+														</marker>
+													</defs>
+													
+													<!-- 반대방향 꺾인 화살표 -->
+													<polyline points="265,50 50,50 80,76" fill="none" stroke="red" stroke-width="3" marker-end="url(#arrowHead)"></polyline>
+												</svg>
+												정가 350,000원
+											</p>
+											<h1>300,000</h1>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="ticket">
+								<div class="close"></div>
+								<div class="ticketTop">
+									<div class="ticketState"><p></p><p>11/4(화)</p></div>
+									<h2 class="ticketName">현장 등록</h2>
+								</div>
+								<div class="ticketMain">
+									<div class="ticketCont">
+									<div class="ticketPrice">
+										<h3>개인</h3>
+										<div class="tickeyMoney"><h1>500,000</h1></div>
+									</div>
+									<div class="ticketPrice">
+										<h3>단체 (7인 이상)</h3>
+										<div class="tickeyMoney">
+											<h1>350,000</h1>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="btn_wrap">
+							<button type="button" class="applyBtn" onclick="window.open('https://edu.kmac.co.kr/openedu/public_edu_view.asp?ocid=39550')">컨퍼런스 신청하기</button>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- 푸터 -->
+		<div class="footer">
+			<div class="footerCont">
+				<img src="../static/img/kmacLogo.png" alt="img">
+				<div class="footerTop">
+					<div class="footerText">
+						<h3>Asia CSCON 운영사무국</h3>
+						<p>
+							T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+							(07241) 서울특별시 영등포구 여의공원로 101, 8층
+						</p>
+						<p>
+							사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+							한국능률협회컨설팅 대표자 한수희
+						</p>
+						<b>ⓒ 2025 KMAC. All rights reserved.</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

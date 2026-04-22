@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}" >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+<!-- <link th:replace="/fragments/Elements.html :: fragment-header"></link> -->
+<script type="text/javascript">
+$(document).ready(function() {
+	setYear();
+});
+
+function goDetail(id){
+	location.href='/_conference/vod/vodBoardDetail?id=' + id;
+}
+function setYear(){
+	const selectElement = document.querySelector('.newsYear');
+	const curYear = new Date().getFullYear();
+	const searchYear = '[[${searchParam.year}]]';
+
+    for (var i = 0; i <= 10; i++) {
+        var year = curYear - i;
+        var option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+
+        if (year == searchYear) {
+            option.selected = true;
+        }
+
+        selectElement.appendChild(option);
+    }
+
+}
+function doSearch(){
+	//$("#pagingPage").val(1);
+	var query = $("input").serialize() + "&" + $("select").serialize();
+	document.location.href = "/_conference/vod/vodBoardList?"+query;
+}
+</script>
+<style type="text/css">
+.vod_wrap img:hover{
+	cursor: pointer;
+}
+</style>
+</head>
+<body layout:fragment="content">
+	<div class="subBg">
+		<img src="../static/img/subBg.png" alt="img">
+	</div>
+	<!-- 헤더: 로고 | 메뉴 | D-DAY -->
+	<!-- //gnb -->
+	<div class="subCont">
+		<div class="container content">
+			<h3 class="subTop_title blue">CONTENTS</h3>
+			<div class="vodSearchWrap">
+				<select class="newsYear" name="year">
+					<option value="" selected>전체</option>
+				</select>
+				<div class="schWrap" >
+					<input type="text" class="form-control" name="keyWord" placeholder="검색" th:value="${searchParam.keyWord}">
+					<button type="button" onclick="doSearch()"><i class="mdi mdi-magnify"></i></button>
+				</div>
+                </div>
+			<section th:fragment="vodListFragments" style="margin-top: 0px;">
+				<input type="hidden" name="pagingPage" id="pagingPage" value="">
+				<div class="vodClass" th:each="item : ${trackVodList}">
+					<h3 th:text="${item.seminarYear}"></h3>
+					<div class="vod_wrap">
+						<!-- ✅ 컨테이너 클래스: swiper -->
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide vodBox" th:each="vod : ${item.boardList}" th:onclick="goDetail([[${vod.id}]])">
+									<img th:if="${vod.thumbnailImage != '' and vod.thumbnailImage != null}" th:src="@{/file/fileView(fileId=${vod.thumbnailImage})}" alt="vod Image">
+								</div>
+							</div>
+							<div class="slide_control">
+								<!-- buttons -->
+								<div class="swiper-button-prev slider_button"><!-- <img src="./img/icon_le.png" width="30" alt="img"> --></div>
+								<div class="swiper-button-next slider_button"><!-- <img src="./img/icon_ri.png" width="30" alt="img"> --></div>
+							</div>
+							<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+<script type="text/javascript" src="/_conference/js/script.js"></script>
+<!-- swiper 슬라이드 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+(function () {
+	let instances = [];
+	let lastIsMobile = window.innerWidth <= 1024;
+
+	function destroyAll() {
+		instances.forEach(i => {
+			if (i && i.destroy) i.destroy(true, true);
+		});
+		instances = [];
+		document.querySelectorAll('.vod_wrap .swiper-wrapper').forEach(w => {
+			w.style.removeProperty('display');
+			w.style.removeProperty('gap');
+		});
+		document.querySelectorAll('.vod_wrap .slide_control .swiper-button-prev, .vod_wrap .slide_control .swiper-button-next').forEach(btn => {
+			btn.style.removeProperty('display');
+		});
+	}
+
+function init() {
+    const isMobile = window.innerWidth <= 1024;
+    const perView = isMobile ? 1 : 3;
+    const needLoop = isMobile ? true : false;
+
+	document.querySelectorAll('.vod_wrap .swiper').forEach(swiperEl => {
+		const wrapper = swiperEl.querySelector('.swiper-wrapper');
+		if (!wrapper) return;
+
+		// display:none 슬라이드는 제외
+		const slides = [...wrapper.querySelectorAll('.swiper-slide')].filter(s => getComputedStyle(s).display !== 'none');
+		const slideCount = slides.length;
+
+		// 각 섹션 내부 버튼만 스코프
+		const container = swiperEl.closest('.vod_wrap');
+		const nextBtn = container ? container.querySelector('.swiper-button-next') : null;
+		const prevBtn = container ? container.querySelector('.swiper-button-prev') : null;
+
+		const needSwiper = slideCount > Math.ceil(perView);
+
+		if (!needSwiper) {
+			// 스와이퍼 미초기화: 정적 배치 + 버튼 숨김
+			wrapper.style.display = 'flex';
+			wrapper.style.gap = '30px';
+			if (nextBtn) nextBtn.style.display = 'none';
+			if (prevBtn) prevBtn.style.display = 'none';
+			return;
+		}
+
+		// 필요할 때만 초기화
+		const inst = new Swiper(swiperEl, {
+			spaceBetween: 30,
+			slidesPerView: perView,
+			centeredSlides: false,
+			effect: 'slide',
+			loop: needLoop,
+			loopAdditionalSlides: 1,
+			speed: 1000,
+			watchOverflow: true,
+			navigation: {
+			nextEl: nextBtn,
+			prevEl: prevBtn,
+			},
+		});
+		instances.push(inst);
+		});
+
+		lastIsMobile = isMobile;
+	}
+
+	// 초기 1회 실행
+	init();
+
+	// 리사이즈 시 브레이크포인트 변경되면 재초기화
+	let t = null;
+	window.addEventListener('resize', () => {
+		clearTimeout(t);
+		t = setTimeout(() => {
+			const nowIsMobile = window.innerWidth <= 1024;
+			if (nowIsMobile !== lastIsMobile) {
+				destroyAll();
+				init();
+			}
+		}, 150);
+	});
+})();
+</script>
+
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>

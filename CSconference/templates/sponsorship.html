@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/subLayout}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Asia CSCON25scirpt | Xs-Chain</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style.css">
+	
+    <script>
+function wating(){
+	//alert("준비중입니다.");
+	//window.history.back();
+}
+	
+</script>
+</head>
+<body>
+	<div class="quick_menu">
+		<a href="/_conference/file/Asia CSCON25 Sponsorship 브로슈어_F.pdf">
+			<!-- <span>XS-chain</span> -->
+			<p>스폰서 </p>
+			<p>브로슈어</p>
+			<span><i class="mdi mdi-tray-arrow-down"></i></span>
+		</a>
+	</div>
+	<div class="subWrap">
+		<div class="gnb">
+	        <div class="top_logo logo">
+	            <a href="index.html">
+	                <img src="../static/img/logo.png" alt="img">
+	            </a>
+	        </div>
+	        <nav>
+	            <ul>
+	                <li>
+	                <a style="cursor:pointer;" >Asia CSCON</a>
+	                <ul class="twoD">
+	                    <li>
+	                        <a href="./csCon.html">About</a>
+	                        <a href="./theme.html">Asia CSCON25</a>
+	                        <a href="./sponsorship.html">Sponsorship</a>
+	                        <a href="./location.html">Location</a>
+	                    </li>
+	                </ul>
+	                </li>
+	                <li>
+	                    <a style="cursor:pointer;">Program</a>
+	                    <ul class="twoD">
+	                        <li>
+	                        <a href="./programAll.html?section=plenary">Plenary Session</a>
+	                        <a href="./programAll.html?section=special">Special Session</a>
+	                        <a href="./programAll.html?section=session">Concurrent Session</a>
+	                        <a href="./programAll.html?section=luckydraw">Lucky Draw</a>
+	                        <a href="./programAll.html?section=guide">Guide Map</a>
+	                    </li>
+	                    </ul>
+	                </li>
+	                <li>
+	                    <a style="cursor:pointer;">Archive</a>
+	                    <ul class="twoD">
+	                        <li>
+	                            <a href="./mediaBoard.html">Media</a>
+	                            <a href="./vodBoardList.html">Contents</a>
+	                        </li>
+	                    </ul>
+	                </li>
+	                <li>
+	                    <a href="./faq.html" style="cursor:pointer;">FAQ</a>
+	                </li>
+	                <li>
+	                    <a href="./applyInfo.html"style="cursor:pointer;" class="join">참가신청</a>
+	                </li>
+	            </ul>
+	        </nav>
+	        <div class="top_right pc_only">
+	            <div class="dday" id="dday">D-60</div>
+	        </div>
+	        <div class="mob_menu">
+	            <div class="dday mobile_only" id="dday_m">D-60</div>
+	            <button type="button" class="hamber">
+	                <i></i>
+	                <i></i>
+	                <i></i>
+	            </button>
+	        </div>
+	    </div> <!-- //gnb -->
+		<div class="subBg">
+			<img src="../static/img/subBg.png" alt="img">
+		</div>
+		<div class="subCont sponsorWrap">
+			<div class="container">
+				<section class="content">
+					<h2 class="subTop_title blue">Platinum Sponsor</h2>
+					<div class="platinum">
+						<div class="boxWrap">
+							<div class="sponsor_img h80" style="height: 95px">
+								<img src="../static/img/sponsor/sponsor01.png" alt="img"><!-- 신한은행 -->
+							</div>
+							<p style="margin-top: 47px;font-size: 1.7rem">
+							차별적 고객몰입을 통해 더 쉽고 편안하며, 더 새로운 금융을 선도하는 대한민국 대표 은행
+							</p>
+						</div>
+						
+						
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img h80">
+								<img src="../static/img/sponsor/sponsor06.png" alt="img">
+							</div>
+							<p>
+							최고의 안전과 서비스를 통한 고객 만족을 지향하며, 항공 서비스 발전과 ESG 경영 실천으로 지속가능한 미래를 만들어가는 글로벌 항공사
+							</p>
+						</div> -->
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor07.png" alt="img">
+							</div>
+							<p>
+							세계적 수준의 어트랙션과 사파리, 다채로운 축제와 공연을 통해 고객 행복과 즐거운 경험을 창조하는 대한민국 대표 리조트
+							</p>
+						</div> -->
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor08.png" alt="img">
+							</div>
+							<p>
+							신뢰와 혁신을 바탕으로 고객과 사회가 함께 성장하는 미래를 지향하며, 지속적인 변화와 도전을 통해 대한민국 ICT 산업을 선도하는 기업
+							</p>
+						</div> -->
+						
+						
+						
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img h80">
+								<img src="../static/img/sponsor/sponsor10.png" alt="img">
+							</div>
+							<p>
+							상호 신뢰와 협력을 바탕으로 외교·경제·문화 교류를 강화하며 한국과 아랍에미리트의 지속적인 동반 성장을 이끄는 외교기관
+							</p>
+						</div> -->
+						
+						
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor13.png" alt="img">
+							</div>
+							<p>
+							새로움, 탁월함, 시너지를 통해 고객에게 최고의 가치를 제공하는
+							대한민국 대표 경영 컨설팅 회사
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor14.png" alt="img">
+							</div>
+							<p>
+							새로움, 탁월함, 시너지를 통해 고객에게 최고의 가치를 제공하는
+							대한민국 대표 경영 컨설팅 회사
+							</p>
+						</div> -->
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Gold Sponsor</h2>
+					<div class="SponsorBox gold">
+						<div class="boxWrap">
+							<div class="sponsor_img h80">
+								<img src="../static/img/sponsor/sponsor02.png" alt="img"><!-- SK텔레콤 -->
+							</div>
+							<p>
+							AI를 통한 고객경험 혁신으로 더 쉽고 편안하며 선도적인 내일을 만드는 대한민국 대표 통신기업
+							</p>
+						</div>
+						<!-- <div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor03.png" alt="img">
+							</div>
+							<p>
+							고객 최우선을 바탕으로, 시대를 앞서는 기술과 품질로 더 쉽고 편안한 경험을 선사하는 혁신적 모빌리티 기업
+							</p>
+						</div> -->
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor04.png" alt="img"><!-- 삼성화재 -->
+							</div>
+							<p>
+							고객의 더 나은 내일을 만드는 파트너로서 초격차 혁신을 지속하는 대표 손해보험사
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img h80">
+								<img src="../static/img/sponsor/sponsor05.png?v=2" alt="img"><!-- 신한카드 -->
+							</div>
+							<p>
+							디지털 전환을 선도하며 앱카드와 생활금융플랫폼 혁신으로 고객경험을 높이고 금융 트렌드를 이끄는 대표 카드사
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/리멤버.png?v=2" alt="img"><!-- Remember -->
+							</div>
+							<p>
+							데이터 기반의 인맥 관리와 커리어 매칭 서비스를 통해 비즈니스 네트워크를 확장하고, 전문가 중심 지식 공유 플랫폼으로 성장하는 프리미엄 커리어 네트워크 서비스 기업
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img h80">
+								<img src="../static/img/sponsor/경기도일자리재단.png?v=2" alt="img"><!-- 경기도일자리재단 -->
+							</div>
+							<p>
+							경기도민을 위해 맞춤형 취업·훈련·창업 지원과 일자리 생태계 구축을 통해 일할 기회와 고용 기회를 확대하는 경기도의 대표 일자리 전문기관
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Silver Sponsor</h2>
+					<div class="SponsorBox three two">
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/samsungColor.png?v=2" alt="img"><!-- 삼성전자 -->
+							</div>
+							<p style="font-size: 1.2rem;">
+							반도체, 모바일 기기, 소비자 가전, 디스플레이 등 다양한 분야에서 혁신적인 기술을 선도하며, 글로벌 시장에서 경쟁력을 확대하는 세계적인 전자·IT 기업
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/와이앤아처.png?v=2" alt="img"><!-- 와이앤아처 -->
+							</div>
+							<p style="font-size: 1.2rem;">
+							혁신 스타트업을 연간 수천 팀 발굴하고 투자하며 글로벌 생태계 조성과 기업 액셀러레이션을 선도하는 전문 액셀러레이터 기업
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Crystal Sponsor</h2>
+					<div class="SponsorBox four">
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal01.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal02.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal03.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal04.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal05.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal06.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal07.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal08.png" alt="KMAC">
+						</div>
+						<div></div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal09.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/crystal10.png" alt="KMAC">
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Prize Sponsor</h2>
+					<div class="SponsorBox six">
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/event02.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/event03.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/event04.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/event08.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/event09.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/sponsor06.png" alt="KMAC" style="max-width: 130%;height: 80px">
+						</div>	
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Hub Partner</h2>
+					<div class="SponsorBox">
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor11.png" alt="img"><!-- Funai Soken -->
+							</div>
+							<p>
+							현장 중심 컨설팅과 산업별 솔루션을 통해 고객의 지속가능한 성장을 지원하는 일본 대표 종합 컨설팅 그룹
+							</p>
+						</div>
+						<div class="boxWrap">
+							<div class="sponsor_img">
+								<img src="../static/img/sponsor/sponsor13.png" alt="img"><!-- 경기관광공사 -->
+							</div>
+							<p>
+							관광을 통해 경기도 지역경제를 발전시키고 주민의 삶의 질을 높이며, 신뢰받는 공기업으로서 여행의 행복 가치를 창출하는 공공기관
+							</p>
+						</div>
+					</div>
+				</section>
+				<section class="content">
+					<h2 class="subTop_title blue">Tech Partner</h2>
+					<div class="SponsorBox six">
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/tech01.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/tech02.png" alt="KMAC">
+						</div>
+						<div class="boxWrap">
+							<img src="../static/img/sponsor/tech03.png" alt="KMAC">
+						</div>	
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- 푸터 -->
+		<div class="footer">
+			<div class="footerCont">
+				<img src="../static/img/kmacLogo.png" alt="img">
+				<div class="footerTop">
+					<div class="footerText">
+						<h3>Asia CSCON 운영사무국</h3>
+						<p>
+							T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+							(07241) 서울특별시 영등포구 여의공원로 101, 8층
+						</p>
+						<p>
+							사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+							한국능률협회컨설팅 대표자 한수희
+						</p>
+						<b>ⓒ 2025 KMAC. All rights reserved.</b>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../static/js/script.js?v=250828"></script>
+</body>
+</html>
