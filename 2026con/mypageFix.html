@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<section class="subWrap form com">
+		<div class="subTit">
+			<h3>참가자 정보 수정</h3>
+			<p id="fixPageSubtitle">신청 정보를 불러오는 중입니다.</p>
+		</div>
+		<div class="subCont">
+			<div class="payWrap">
+				<div class="payInfo">
+					<h2>신청 정보</h2>
+					<div class="infoCheckWrap">
+						<div class="innerForm">
+							<h4>참가권</h4>
+							<div class="inputFix">
+								<p id="fixTicketDisplay" class="profileReadonlyValue">—</p>
+								<p class="profileReadonlyCaption">참가권·참가일정은 수정할 수 없습니다.</p>
+							</div>
+						</div>
+						<div class="innerForm">
+							<h4>성명</h4>
+							<div class="inputFix">
+								<input type="text" id="fix_name" placeholder="이름을 입력하세요." autocomplete="name">
+							</div>
+						</div>
+						<div class="innerForm">
+							<h4>소속</h4>
+							<div class="inputFix">
+								<input type="text" id="fix_affiliation" placeholder="소속(기업, 기관)을 입력하세요." autocomplete="organization">
+								<input type="text" id="fix_department" placeholder="부서명을 입력하세요." autocomplete="organization-title">
+							</div>
+						</div>
+						<div class="innerForm">
+							<h4>직책</h4>
+							<div class="inputFix">
+								<input type="text" id="fix_position" placeholder="직책을 입력하세요." autocomplete="organization-title">
+							</div>
+						</div>
+						<div class="innerForm">
+							<h4>이메일</h4>
+							<div class="inputFix">
+								<input type="email" id="fix_email" placeholder="이메일 주소를 입력하세요." autocomplete="email">
+							</div>
+						</div>
+						<div class="innerForm">
+							<h4>연락처</h4>
+							<div class="inputFix">
+								<input type="text" id="fix_mobile" name="phoneNum" placeholder="휴대폰 번호를 입력하세요.(010-0000-0000)" oninput="formatPhoneNum(this);" maxlength="13" autocomplete="tel">
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="warning">※ 참가권 변경 등 금액 변동이 발생하는 항목은 직접 수정이 불가하며, 운영사무국으로 문의해 주시기 바랍니다.</p>
+				<p>운영사무국 : conference@kmac.co.kr | 02-3786-0382</p>
+				<div class="btn_wrap center">
+					<button type="button" class="fix" id="btnSaveProfile" disabled="disabled">참가자 정보 저장하기 <i class="mdi mdi-arrow-right"></i></button>
+					<button type="button" class="fix secondary" id="btnBackMypage">마이페이지로 <i class="mdi mdi-arrow-left"></i></button>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/_conference/js/2026/axis-auth.js"></script>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+<script src="/_conference/js/2026/axis-profile.js"></script>
+<script th:inline="javascript">
+var AXIS_PUBLIC_API_BASE = /*[[${axisApiBaseUrl}]]*/ "https://api.axis2026.eventconference.in";
+const USER_ME_API_URL = AXIS_PUBLIC_API_BASE + "/api/user/me";
+
+function formatMobileDisplay(m) {
+	const d = String(m || "").replace(/\D/g, "");
+	if (d.length === 11) {
+		return d.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+	}
+	return m || "";
+}
+
+function ticketTierLabel(ticketType) {
+	const map = { DAY1: "1일권", DAY2: "2일권", DAY3: "3일권" };
+	return map[ticketType] || ticketType || "—";
+}
+
+function dayNumToLabel(n) {
+	const map = { 1: "7월 14일", 2: "7월 15일", 3: "7월 16일" };
+	return map[Number(n)] || `DAY${n}`;
+}
+
+function formatAttendanceDays(days) {
+	if (!Array.isArray(days) || !days.length) {
+		return "";
+	}
+	return [...days].sort((a, b) => a - b).map(dayNumToLabel).join(", ");
+}
+
+function effectiveTicketType(d) {
+	if (d == null) {
+		return null;
+	}
+	if (d.display_ticket_type != null && String(d.display_ticket_type).trim() !== "") {
+		return d.display_ticket_type;
+	}
+	return d.ticket_type;
+}
+
+function effectiveAttendanceDays(d) {
+	if (d == null) {
+		return null;
+	}
+	if (Array.isArray(d.display_attendance_days)) {
+		return d.display_attendance_days;
+	}
+	return d.attendance_days;
+}
+
+function formatTicketLineForDisplay(d) {
+	const tier = ticketTierLabel(effectiveTicketType(d));
+	const days = formatAttendanceDays(effectiveAttendanceDays(d));
+	return days ? `${tier} · ${days}` : tier;
+}
+
+function redirectToLogin() {
+	AxisAuth.clearAccessToken();
+	if (typeof AxisProfile !== "undefined") {
+		AxisProfile.clearStoredProfileVerificationCode();
+	}
+	AxisAuth.redirectToLogin("로그인이 필요합니다.");
+}
+
+function populateProfileForm(d) {
+	document.getElementById("fixTicketDisplay").textContent = formatTicketLineForDisplay(d);
+	document.getElementById("fix_name").value = d.name || "";
+	document.getElementById("fix_affiliation").value = d.affiliation || "";
+	document.getElementById("fix_department").value = d.department != null ? String(d.department) : "";
+	const pos =
+		d.display_position != null && String(d.display_position).trim() !== ""
+			? String(d.display_position).trim()
+			: d.position != null && String(d.position).trim() !== ""
+				? String(d.position).trim()
+				: "";
+	document.getElementById("fix_position").value = pos;
+	document.getElementById("fix_email").value = d.email || "";
+	document.getElementById("fix_mobile").value = formatMobileDisplay(d.mobile);
+	document.getElementById("fixPageSubtitle").textContent = `${d.name || "회원"} 님의 정보를 수정할 수 있습니다.`;
+	document.getElementById("btnSaveProfile").disabled = false;
+}
+
+function collectProfileUpdateBody() {
+	return {
+		name: document.getElementById("fix_name").value.trim(),
+		affiliation: document.getElementById("fix_affiliation").value.trim(),
+		department: document.getElementById("fix_department").value.trim(),
+		position: document.getElementById("fix_position").value.trim(),
+		email: document.getElementById("fix_email").value.trim(),
+		phone: AxisProfile.normalizePhone(document.getElementById("fix_mobile").value)
+	};
+}
+
+document.getElementById("btnBackMypage").addEventListener("click", function () {
+	location.href = "/_conference/program/mypage";
+});
+
+document.getElementById("btnSaveProfile").addEventListener("click", async function () {
+	const btn = this;
+	const token = await AxisAuth.ensureAccessToken(AXIS_PUBLIC_API_BASE);
+	if (!token) {
+		redirectToLogin();
+		return;
+	}
+	if (!AxisProfile.getStoredProfileVerificationCode()) {
+		alert("이메일 인증이 만료되었거나 필요합니다. 마이페이지에서 다시 인증해 주세요.");
+		location.href = "/_conference/program/mypage";
+		return;
+	}
+	const fields = collectProfileUpdateBody();
+	const validationError = AxisProfile.validateProfileFields(fields);
+	if (validationError) {
+		alert(validationError);
+		return;
+	}
+	btn.disabled = true;
+	try {
+		const result = await AxisProfile.updateMyProfile(AXIS_PUBLIC_API_BASE, token, fields);
+		if (result.unauthorized) {
+			alert(result.message);
+			redirectToLogin();
+			return;
+		}
+		if (result.needVerify) {
+			alert(result.message);
+			location.href = "/_conference/program/mypage";
+			return;
+		}
+		if (!result.ok) {
+			alert(result.message || "정보 수정에 실패했습니다.");
+			return;
+		}
+		alert("참가자 정보가 수정되었습니다.");
+		location.href = "/_conference/program/mypage";
+	} catch (e) {
+		alert("네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.");
+	} finally {
+		btn.disabled = false;
+	}
+});
+
+(async function initMypageFix() {
+	let token = await AxisAuth.ensureAccessToken(AXIS_PUBLIC_API_BASE);
+	if (!token) {
+		redirectToLogin();
+		return;
+	}
+	if (!AxisProfile.getStoredProfileVerificationCode()) {
+		alert("참가자 정보 수정을 위해 이메일 인증이 필요합니다.");
+		location.href = "/_conference/program/mypage";
+		return;
+	}
+	try {
+		let response = await fetch(USER_ME_API_URL, {
+			headers: { Authorization: "Bearer " + token }
+		});
+		let data = null;
+		try {
+			data = await response.json();
+		} catch (e) {
+			data = null;
+		}
+		if (response.status === 401 || response.status === 403) {
+			token = await AxisAuth.silentRelogin(AXIS_PUBLIC_API_BASE);
+			if (token) {
+				response = await fetch(USER_ME_API_URL, {
+					headers: { Authorization: "Bearer " + token }
+				});
+				data = null;
+				try {
+					data = await response.json();
+				} catch (e2) {
+					data = null;
+				}
+			}
+		}
+		if (response.status === 401 || response.status === 403) {
+			await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, "로그인이 만료되었습니다. 다시 로그인해 주세요.");
+			return;
+		}
+		if (!response.ok) {
+			alert(AxisProfile.parseApiDetail(data));
+			document.getElementById("fixPageSubtitle").textContent = "정보를 불러올 수 없습니다.";
+			return;
+		}
+		populateProfileForm(data);
+	} catch (e) {
+		alert("네트워크 오류가 발생했습니다.");
+		document.getElementById("fixPageSubtitle").textContent = "정보를 불러올 수 없습니다.";
+	}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,584 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="modal" id="apply">
+	<div class="bg" onclick="closePopup('apply')"></div>
+	<div class="modal_cont">
+		<div class="modalTop">
+			<p></p>
+			<a href="#none" onclick="closePopup('apply')"><i class="mdi mdi-close"></i></a>
+		</div>
+		<div class="modalCont">
+			<p>얼리버드 신청은 <b>5월 1일 오픈 예정입니다.</b></p>
+		</div>
+	</div>
+</div>
+
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<div class="gradientBg">
+		<section class="subWrap" id="keynote">
+			<div class="section">
+				<div class="subTit">
+					<h3>KEYNOTE SPEAKERS</h3>
+				</div>
+				<div class="keyDayWrap">
+					<div class="keyDay">
+						<h3>DAY 1</h3>
+						<div class="keydayBox">
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>윤구</h3>
+									<p>구글코리아</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 구글코리아 사장</dd>
+										<dd>前 애플코리아 대표이사</dd>
+										<dd>前 삼성전자 상무</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											AGI 시대의 혁신을 준비하는 기업의 전략
+										</h3>
+										<p>DAY 1 | 09:50 ~ 10:20</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker01.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>Tang Jian</h3>
+									<p>베이징 휴머노이드 로봇센터</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 베이징 휴머노이드 로봇센터 CTO</dd>
+										<dd>前 베이징 휴머노이드 로봇혁신센터 Tiangong 프로젝트 총괄</dd>
+										<dd>前 베이징 휴머노이드 로봇혁신센터 AI 플랫폼 개발 리더</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											천공이 여는 새로운 세상: 오픈소스·개방형 구현지능(Embodied AI) 신생태계 구축
+										</h3>
+										<p>DAY 1 | 11:00 ~ 11:50</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker02.png" alt="img">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="keyDay">
+						<h3>DAY 2</h3>
+						<div class="keydayBox">
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>서남희</h3>
+									<p>LG유플러스</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 엔터프라이즈 AI사업그룹 AICC프로덕트트라이브<br>CX센터 CV담당 겸직</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											AICC: Designed for Humans
+										</h3>
+										<p>DAY 2 | 10:20 ~ 11:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker04.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>김재현</h3>
+									<p>TP</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 TP Japan & Korea CEO</dd>
+										<dd>前 TP 일본사업 총괄</dd>
+										<dd>前 인포시스 일본 부사장 겸 고객서비스 총괄</dd>
+									</dl>
+									<div class="hover">
+										<h3>Opportunity AI: 새로운 AI 시대의 고객경험 경쟁력</h3>
+										<p>DAY 2 | 11:10 ~ 11:50</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker03.png" alt="img">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="keyDay">
+						<h3>DAY 3</h3>
+						<div class="keydayBox">
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>재정경제부</h3>
+									<!-- <p>기획재정부</p> -->
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<!-- <dd>現 경제부총리 겸 기획재정부 장관</dd>
+										<dd>前 국무조정실장</dd>
+										<dd>前 기획재정부 제2차관</dd> -->
+									</dl>
+									<div class="hover">
+										<h3>
+											포용적 성장을 위한 공공기관 역할의 재정립
+										</h3>
+										<p>DAY 3 | 09:45 ~ 10:10</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speakerEco.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>박순애</h3>
+									<p>한국공공경영학회</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 한국공공경영학회장(서울대행정대학원 교수)</dd>
+										<dd>前 부총리 겸 교육부 장관</dd>
+										<dd>前 기획재정부 공공기관경영평가단장</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker06.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>명승환</h3>
+									<p>국가인공지능전략위원회</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 공공 AX 분과 위원</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker07.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>재정경제부</h3>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>공공정책국</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speakerEco.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>김봉환</h3>
+									<p>서울대학교</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 공기업 경영평가 단장</dd>
+										<dd>現 서울대 행정대학원 교수</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker09.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>이종욱</h3>
+									<p>서울과학기술대학교</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 서울과학기술대학교 교수</dd>
+										<dd>前 공공기관 운영위원회 위원</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker10.png" alt="img">
+									</div>
+								</div>
+							</div>
+							<div class="keyDayCont">
+								<div class="name">
+									<h3>박상형</h3>
+									<p>한전KDN</p>
+								</div>
+								<div class="keyDayInfo">
+									<dl>
+										<dd>現 한전KDN 사장</dd>
+										<dd>前 한국수력원자력 경영부사장</dd>
+									</dl>
+									<div class="hover">
+										<h3>
+											[릴레이토크] 실행을 위한 공공기관 경영체계 전환
+										</h3>
+										<p>DAY 3 | 10:40 ~ 12:00</p>
+									</div>
+									<div class="keyPer">
+										<img src="../static/img/2026/speaker11.png" alt="img">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<section class="subWrap" id="tracks">
+		<div class="section">
+			<div class="subTit">
+				<h3>TRACKS OVERVIEW</h3>
+			</div>
+			<div class="tracksWrap">
+				<div class="tracksDay">
+					<h3>DAY 1</h3>
+					<div class="tracksList">
+						<div class="tracksBox">
+							<h3>CX Strategy</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>고객경험을 경쟁력으로 전환하는 전략 설계</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>CX Operation</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>고객 경험의 정교한 설계와 실행을 위한 운영 프로세스 최적화</p>
+							</div>
+						</div>
+						
+						<div class="tracksBox">
+							<h3>AX Strategy</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>AX 전환을 이끄는 전략과 거버넌스 체계 구축</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>People & Organization</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>AI 시대에 맞는 조직·인력 구조 재설계</p>
+							</div>
+						</div>
+						
+						<div class="tracksBox">
+							<h3>CX ROI & Profitability</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>성과 창출 기반의 CX 전략 및 개선활동 수립</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tracksDay">
+					<h3>DAY 2</h3>
+					<div class="tracksList">
+						<div class="tracksBox">
+							<h3>AICC Innovation</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>AI 기반 고객접점 혁신과 자동화 적용 전략</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>Experience Innovation</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>AI 시대 고객경험의 차별화와 설계 방식 진화</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>Risk Operation</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>잠재적 위기 요소를 선제적으로 관리하는 비즈니스 리스크 대응 체계</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>AX Execution</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>AX를 실제 성과로 연결하는 실행 전략</p>
+							</div>
+						</div>
+						<div class="tracksBox">
+							<h3>AI-Driven CX & Quality Innovation</h3>
+							<!-- <div class="trakcsImg">
+								<img src="../static/img/2026/niceLogo.png" alt="img">
+							</div> -->
+							<div class="tracksText">
+								<p>인공지능 기술을 활용한 초개인화 경험 제공 및 품질 관리 혁신</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tracksDay">
+					<h3>DAY 3</h3>
+					<div class="tracksList" style="margin-bottom: 30px">
+						<div class="tracksBox">
+							<h2>넷제로와 에너지 대전환</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>지속가능 인프라</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>대전환시대의 산업혁신</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>고용위기와 사회안전망</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>금융안전과 재무관리체계</h2>
+						</div>
+						
+					</div>
+					<div class="tracksList">
+						<div class="tracksBox">
+							<h2>기능변화에 따른 혁신체계</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>공공정책 대응전략</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>AX기반 업무혁신</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>노동정책 변화 대응</h2>
+						</div>
+						<div class="tracksBox">
+							<h2>사업추진에 따른 리스크관리</h2>
+						</div>
+						
+					</div>
+					<!-- <p class="tbdBox">TBD</p> -->
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+const keyDayConts = document.querySelectorAll('.keyDayCont');
+
+keyDayConts.forEach(cont => {
+    cont.addEventListener('mouseover', () => {
+        cont.classList.add('active');
+    });
+
+    cont.addEventListener('mouseout', () => {
+        cont.classList.remove('active');
+    });
+});
+
+const trackBox = document.querySelectorAll('.tracksBox');
+
+trackBox.forEach(cont => {
+    cont.addEventListener('mouseover', () => {
+        cont.classList.add('active');
+    });
+
+    cont.addEventListener('mouseout', () => {
+        cont.classList.remove('active');
+    });
+});
+
+document.querySelector('.gnb nav > ul > li.Mspeaker').classList.add('active');
+</script>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+</body>
+</html>

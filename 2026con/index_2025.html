@@ -1,0 +1,318 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="ko" 
+	>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="format-detection" content="telephone=no">
+<title>Asia CSCON25 | Xs-Chain</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="icon" href="/_conference/img/CSCONfavicon.png?v=2">
+<link rel="stylesheet" href="./css/style.css?v=25101722">
+</head>
+<body class="main"><!--	layout:fragment="content" -->
+
+<div class="wrap">
+	<!-- Modal -->
+	<div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+		<div id="modalBackdrop" class="modal__backdrop"></div>
+		<div id="modalPanel" class="modal__panel">
+			<button id="closeModalBtn" class="modal__close" aria-label="닫기">✕</button>
+			<div class="video-wrap">
+				<video id="videoPlayer" controls controlsList="nodownload">
+					<source src="./file/Asia CSCON25 Teaser.mp4" type="video/mp4">
+					브라우저가 비디오를 지원하지 않습니다.
+				</video>
+			</div>
+		</div>
+	</div>
+	<!-- 헤더: 로고 | 메뉴 | D-DAY -->	
+	<div class="gnb">
+		<div class="top_logo logo">
+			<a href="/">
+				<img src="./img/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<nav>
+			<ul>
+				<li>
+				<a style="cursor:pointer;" >Asia CSCON</a>
+				<ul class="twoD">
+					<li>
+						<a href="/_conference/about/csCon">About</a>
+						<a href="/_conference/about/theme">Asia CSCON25</a>
+						<a href="/_conference/about/sponsorship">Sponsorship</a>
+						<a href="/_conference/about/location">Location</a>
+					</li>
+				</ul>
+				</li>
+				<li>
+					<a style="cursor:pointer;">Program</a>
+					<ul class="twoD">
+						<li>
+							<a href="/_conference/program/programAll?section=plenary">Plenary Session</a>
+							<a href="/_conference/program/programAll?section=special">Special Session</a>
+							<a href="/_conference/program/programAll?section=session">Concurrent Session</a>
+							<a href="/_conference/program/programAll?section=luckydraw">Lucky Draw</a>
+							<a href="/_conference/program/programAll?section=guide">Guide Map</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a style="cursor:pointer;">Archive</a>
+					<ul class="twoD">
+						<li>
+							<a href="/_conference/media/mediaBoard">Media</a>
+							<a href="/_conference/vod/vodBoardList">Contents</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="/_conference/about/faq" style="cursor:pointer;">FAQ</a>
+				</li>
+				<li>
+					<a href="/_conference/applyInfo" style="cursor:pointer;" class="join">참가신청</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right pc_only">
+			<div class="dday" id="dday">D-60</div>
+		</div>
+		<div class="mob_menu">
+			<div class="dday mobile_only menu_on hide" id="dday_m">D-14</div>
+			<div class="mobile_only menu_off"><a href="/_conference/applyInfo" style="cursor:pointer;font-size: 1.5rem;color: var(--g2);" class="join">참가신청</a></div>
+			<button type="button" class="hamber">
+				<i></i>
+				<i></i>
+				<i></i>
+			</button>
+		</div>
+	</div> <!-- //gnb -->
+	<div class="mainWrap">
+		<div class="year">
+			<h2>2025</h2>
+		</div>
+		<div class="kicker">Accelerating Growth<br>Through Connected Experience</div>
+		<section class="mainCont">
+			<div class="left">
+				<h1 class="title">
+					Xs-Chain
+				</h1>
+				<p class="whenwhere">TUESDAY, NOV 04 2025<br/>KINTEX2 HALL 6, GOYANG, KOREA</p>
+				<a class="cta" href="./file/Asia CSCON25 리플릿.pdf" target="_blank" aria-label="컨퍼런스 리플릿">컨퍼런스 리플릿</a>
+			</div>
+			<div class="play" aria-label="소개 영상 재생 버튼" id="openModalBtn" style="cursor: pointer;">
+				<div class="tri" aria-hidden="true" style="margin-left: 10px;">
+					<img src="./img/playBtn.png" alt="img">
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- 통계 리본 -->
+	<section class="count" aria-label="행사 주요 수치">
+		<h3>Since 1993 ~</h3>
+		<div class="stats">
+			<div class="stat"><div class="label">참가기업</div><div class="num" data-target="11200">0</div></div>
+			<div class="stat"><div class="label">참가자</div><div class="num" data-target="52800">0</div></div>
+			<div class="stat"><div class="label">트랙구성</div><div class="num" data-target="465">0</div></div>
+			<div class="stat"><div class="label">세션구성</div><div class="num" data-target="1395">0</div></div>
+			<div class="stat"><div class="label">후원기업</div><div class="num" data-target="725">0</div></div>
+		</div>
+	</section>
+	<div class="mainWrap" style="padding-top: 0;">
+		<section class="accentWrap">
+			<div class="accentCont">
+				<h2 class="accentTit">
+					대한민국 No.1 경영혁신 컨퍼런스
+				</h2>
+				<p class="accentTxt">
+					1993년 시작된 Asia CSCON은 30년 이상의 역사를 자랑하는 국내 최대 규모의 고객중심 경영혁신 컨퍼런스입니다.<br>
+					고객경험, 직원경험, 디지털전환, 오픈이노베이션 등 60여 개의 전문 세션을 통해 매년 2,500여 명의 참가자가 혁신 사례와 트렌드를 공유합니다.<br>
+					2024년부터는 아시아 컨퍼런스로 영역을 확장하여 국내를 넘어 글로벌 시장에서의 경쟁력 강화와 협력 네트워크의 장으로 거듭나고 있습니다.
+				</p>
+			</div>
+			<div class="accentBtn">
+				<button type="button" onclick="location.href='/_conference/about/csCon'">더 알아보기</button>
+			</div>
+		</section>
+	</div>
+</div>
+<!-- 스폰서 롤링 -->
+<section class="sponsor-roller" aria-label="스폰서 로고">
+	<div class="sponsor-row" data-dir="rtl">
+		<div class="marquee">
+			<ul class="logos">
+				<li><img src="/_conference/img/logo_shinhan.png" alt="shinhan" style="height: 50px;"></li>
+				<li><img src="/_conference/img/Logosk.png" alt="SK Telecom" style="height: 60px;"></li>
+				<li><img src="/_conference/img/logo_samsungfire.png" alt="samsungfire"></li>
+				<li><img src="/_conference/img/logo_shinhancard.png" alt="card" style="height: 50px;"></li>
+				<li><img src="/_conference/img/sponsor/리멤버.png?v=2" alt="remember"></li>
+				<li><img src="/_conference/img/sponsor/경기도일자리재단.png?v=2" alt="img" style="height: 80px;"></li>
+				<li><img src="/_conference/img/samsungColor.png?v=2" alt="samsung"></li>
+				<li><img src="/_conference/img/sponsor/와이앤아처.png?v=2" alt="yarcher" style="height: 60px;"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="sponsor-row" data-dir="ltr">
+		<div class="marquee">
+			<ul class="logos">
+				<li><img src="/_conference/img/logo_shinhan.png" alt="shinhan" style="height: 50px;"></li>
+				<li><img src="/_conference/img/Logosk.png" alt="SK Telecom" style="height: 60px;"></li>
+				<li><img src="/_conference/img/logo_samsungfire.png" alt="samsungfire"></li>
+				<li><img src="/_conference/img/logo_shinhancard.png" alt="card" style="height: 50px;"></li>
+				<li><img src="/_conference/img/sponsor/리멤버.png?v=2" alt="remember"></li>
+				<li><img src="/_conference/img/sponsor/경기도일자리재단.png?v=2" alt="img" style="height: 80px;"></li>
+				<li><img src="/_conference/img/samsungColor.png?v=2" alt="samsung"></li>
+				<li><img src="/_conference/img/sponsor/와이앤아처.png?v=2" alt="yarcher" style="height: 60px;"></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- 푸터 -->
+<div class="footer main">
+	<div class="footerCont">
+		<img src="img/kmacLogo.png" alt="img">
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>Asia CSCON 운영사무국</h3>
+				<p>
+					T. 02-3786-0538/0544  E. conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2025 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="./js/script.js?v=25101722"></script>
+<script>
+(function(){
+	const openBtn  = document.getElementById('openModalBtn');
+	const closeBtn = document.getElementById('closeModalBtn');
+	const modal    = document.getElementById('videoModal');
+	const backdrop = document.getElementById('modalBackdrop');
+	const video    = document.getElementById('videoPlayer');
+
+	function lockScroll(lock){
+		if(lock){
+		document.documentElement.style.overflow = 'hidden';
+		document.body.style.overscrollBehavior = 'contain';
+		}else{
+		document.documentElement.style.overflow = '';
+		document.body.style.overscrollBehavior = '';
+		}
+	}
+
+	function openModal(){
+		modal.classList.add('is-open');
+		modal.setAttribute('aria-hidden','false');
+		closeBtn && closeBtn.focus();
+		lockScroll(true);
+		
+		// 비디오 자동 재생
+		if(video){
+			video.currentTime = 0; // 처음부터 재생
+			video.play().catch(e => console.log('자동 재생 실패:', e));
+		}
+	}
+
+	function closeModal(){
+		modal.classList.remove('is-open');
+		modal.setAttribute('aria-hidden','true');
+
+		// 비디오 정지
+		if(video){
+			video.pause();
+			video.currentTime = 0;
+		}
+
+		openBtn && openBtn.focus();
+		lockScroll(false);
+	}
+
+	openBtn && openBtn.addEventListener('click', openModal);
+	closeBtn && closeBtn.addEventListener('click', closeModal);
+	backdrop && backdrop.addEventListener('click', closeModal);
+
+	document.addEventListener('keydown', (e)=>{
+		if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+	});
+})();
+</script>
+<style>
+  :root{
+    --ease: cubic-bezier(.2,.8,.2,1);
+    --dur: 960ms;
+  }
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f172a;color:#fff}
+  .page{
+    min-height:100svh;display:grid;place-items:center
+  }
+  .btn{padding:14px 20px;border:none;border-radius:12px;background:#22c55e;color:#0a0a0a;font-weight:600;cursor:pointer}
+  .btn:active{transform:scale(.98)}
+
+  /* 모달 루트 */
+  .modal{
+    position:fixed;inset:0;z-index:9999;
+    width:100%;height:100%;
+    pointer-events:none; /* 닫힌 상태 클릭 방지 */
+  }
+  .modal__backdrop{
+    position:absolute;inset:0;background:rgba(0,0,0,.6);
+    opacity:0;transition:opacity var(--dur) var(--ease);
+  }
+
+  /* 패널: 중앙에서 팝업처럼 커지기 */
+  .modal__panel{
+    position:absolute;inset:0;margin:auto;
+    width:min(1400px,92vw);height:min(62vw,85svh);
+    background:#000;border-radius:16px;overflow:hidden;
+    transform:scale(.82);opacity:0;
+    transform-origin:center center;
+    transition:
+      transform var(--dur) var(--ease),
+      opacity var(--dur) var(--ease);
+    box-shadow:0 30px 120px rgba(0,0,0,.45);
+  }
+
+  /* 살짝 더 탄성감 있는 최초 등장 키프레임(선택) */
+  @keyframes popIn {
+    0%   { transform: scale(.82); opacity: 0 }
+    60%  { transform: scale(1.04); opacity: 1 }
+    100% { transform: scale(1); opacity: 1 }
+  }
+
+  .modal__close{
+    position:absolute;top:10px;right:10px;z-index:2;
+    width:42px;height:42px;border:none;border-radius:10px;
+    background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;
+    backdrop-filter:blur(8px);display:grid;place-items:center
+  }
+  .modal__close:hover{background:rgba(255,255,255,.18)}
+
+  .video-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .video-wrap video{width:100%;height:100%;object-fit:contain;background:#000}
+
+  /* 열린 상태 */
+  .modal.is-open{pointer-events:auto; display: block;}
+  .modal.is-open .modal__backdrop{opacity:1}
+  .modal.is-open .modal__panel{
+    opacity:1;transform:scale(1);
+    animation: popIn var(--dur) var(--ease) 1;
+  }
+
+  /* 모션 최소화 환경 배려 */
+  @media (prefers-reduced-motion: reduce){
+    .modal__panel,.modal__backdrop{transition:none !important;animation:none !important}
+  }
+</style>
+</body>
+</html>

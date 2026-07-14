@@ -1,0 +1,108 @@
+<!doctype html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+
+
+<section class="sub">
+	<div class="title">
+		<img src="../static/img/2026/whiteLogo.png" alt="img" class="logo">
+		<img src="../static/img/2026/mainCont.png" alt="img">
+	</div>
+	<div class="subCont login">
+		<div class="loginInput">
+			<input type="text" id="loginName" placeholder="이름을 입력하세요" autocomplete="name">
+			<input type="text" id="loginMobile" name="phoneNum" placeholder="연락처를 입력하세요." oninput="formatPhoneNum(this);" maxlength="13" autocomplete="tel">
+		</div>
+		<p class="warning"></p>
+		<button type="button" id="loginSubmitBtn">LOGIN</button>
+	</div>
+</section>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/_conference/js/2026/axis-auth.js"></script>
+<script th:inline="javascript">
+/** User 로그인 API (Redoc: /api/user/login) — 베이스는 conference.axis.api-base-url */
+var AXIS_PUBLIC_API_BASE = /*[[${axisApiBaseUrl}]]*/ "https://api.axis2026.eventconference.in";
+
+function normalizePhone(value) {
+	return (value || "").replace(/[^0-9]/g, "");
+}
+
+function parseApiError(data) {
+	if (typeof AxisAuth !== "undefined" && AxisAuth.parseApiDetail) {
+		return AxisAuth.parseApiDetail(data);
+	}
+	if (!data) {
+		return "로그인에 실패했습니다.";
+	}
+	if (typeof data.detail === "string") {
+		return data.detail;
+	}
+	if (Array.isArray(data.detail) && data.detail.length > 0) {
+		return data.detail.map((item) => item.msg).join("\n");
+	}
+	return "로그인에 실패했습니다.";
+}
+
+document.getElementById("loginSubmitBtn").addEventListener("click", async function () {
+	const name = document.getElementById("loginName").value.trim();
+	const mobile = normalizePhone(document.getElementById("loginMobile").value);
+	const warningEl = document.querySelector(".subCont.login .warning");
+	
+	warningEl.textContent = "";
+	warningEl.classList.remove("show");
+
+	if (!name || !mobile) {
+		warningEl.textContent = "이름과 연락처를 입력해 주세요.";
+		warningEl.classList.add("show");
+		return;
+	}
+	
+	this.disabled = true;
+	try {
+		const result = await AxisAuth.login(AXIS_PUBLIC_API_BASE, { name, mobile });
+		if (!result.ok) {
+			warningEl.textContent = result.message || "로그인에 실패했습니다.";
+			warningEl.classList.add("show");
+			return;
+		}
+		location.href = "./mypage";
+	} catch (e) {
+		warningEl.textContent = "네트워크 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";
+		warningEl.classList.add("show");
+	} finally {
+		this.disabled = false;
+	}
+});
+</script>
+</body>
+</html>
