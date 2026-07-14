@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="modal" id="apply">
+	<div class="bg" onclick="closePopup('apply')"></div>
+	<div class="modal_cont">
+		<div class="modalTop">
+			<p></p>
+			<a href="#none" onclick="closePopup('apply')"><i class="mdi mdi-close"></i></a>
+		</div>
+		<div class="modalCont">
+			<p>얼리버드 신청은 <b>5월 1일 오픈 예정입니다.</b></p>
+		</div>
+	</div>
+</div>
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<section class="subWrap dark">
+		<div class="section">
+			<div class="subTit">
+				<h3>AXIS 2026 참가신청</h3>
+				<div class="subInfoTit">
+					<h4><img src="../static/img/2026/calendarIcon.png" alt="img"> 2026. 07. 14 - 16</h4>
+					<h4><img src="../static/img/2026/gpsIcon.png" alt="img"> COEX(서울 삼성동) 북문 측 그랜드볼룸 1-3F</h4>
+				</div>
+			</div>
+			<span class="line width"></span>
+			<div class="explain">
+				<dl>
+					<dt style="width: auto;">참가비용 (VAT 별도) </dt>
+					<dd style="margin-left: 15px">*1일 / 2일권 신청시 희망하는 일자 선택</dd>
+				</dl>
+				<div class="priceBox">
+					<div class="left">
+						<p>개인</p>
+						<p>
+							단체
+							<span>(10인 이상)</span>
+						</p>
+					</div>
+					<div class="priceBoxWrap">
+						<div class="box">
+							<div class="boxTop">
+								<h3>1일권 <span>One Day Pass</span></h3>
+							</div>
+							<div class="boxBot">
+								<div class="earlyApply applyPrice">
+									<h4>얼리버드 신청</h4>
+									<div class="applySquare">390,000</div>
+									<div class="applySquare">320,000</div>
+								</div>
+								<div class="normalApply applyPrice">
+									<h4>일반 신청</h4>
+									<div class="applySquare">490,000</div>
+									<div class="applySquare">390,000</div>
+								</div>
+							</div>
+						</div>
+						<div class="box">
+							<div class="boxTop">
+								<h3>2일권 <span>Two Day Pass</span></h3>
+								<div class="circle">
+									<p>최대</p> 25%<br/>할인
+								</div>
+							</div>
+							<div class="boxBot">
+								<div class="earlyApply applyPrice">
+									<h4>얼리버드 신청</h4>
+									<div class="applySquare">
+										590,000
+										<span>(780,000)</span>
+									</div>
+									<div class="applySquare">
+										480,000
+										<span>(640,000)</span>
+									</div>
+								</div>
+								<div class="normalApply applyPrice">
+									<h4>일반 신청</h4>
+									<div class="applySquare">
+										740,000
+										<span>(980,000)</span>
+									</div>
+									<div class="applySquare">
+										590,000
+										<span>(780,000)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="box">
+							<div class="boxTop">
+								<h3>3일권 <span>Three Day Pass</span></h3>
+								<div class="circle">
+									<p>최대</p> 43%<br/>할인
+								</div>
+							</div>
+							<div class="boxBot">
+								<div class="earlyApply applyPrice">
+									<h4>얼리버드 신청</h4>
+									<div class="applySquare">
+										690,000
+										<span>(1,170,000)</span>
+									</div>
+									<div class="applySquare">
+										550,000
+										<span>(960,000)</span>
+									</div>
+								</div>
+								<div class="normalApply applyPrice">
+									<h4>일반 신청</h4>
+									<div class="applySquare">
+										890,000
+										<span>(1,470,000)</span>
+									</div>
+									<div class="applySquare">
+										690,000
+										<span>(1,170,000)</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="priceBox excel">
+					<p>단체 참가(10인 이상)는 엑셀 양식을 다운로드 후 신청 시 업로드해 주세요.</p>
+					<a href="/_conference/file/AXIS 2026_단체신청_양식_업로드용.xlsx"><img src="../static/img/2026/fileDown.png" alt="img"> 단체 참가 엑셀 양식 다운로드</a>
+				</div>
+				<dl>
+					<dt>신청기간</dt>
+					<dd>얼리버드 신청 : ~ 2026.06.26(금) <br>일반 신청 : ~ 2026.07.10(금) </dd>
+				</dl>
+				<dl>
+					<dt>문의</dt>
+					<dd>
+						conference@kmac.co.kr<br/>
+						02-3786-0382
+					</dd>
+				</dl>
+				<div class="btn_wrap">
+					<button type="button" class="infoBtn" onclick="location.href='./applyInfoForm.html'">AXIS 2026<br/>참가신청하기 <img src="../static/img/2026/btnRight.png" alt="img"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

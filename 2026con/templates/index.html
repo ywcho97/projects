@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+	<div id="videoModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+		<div id="modalBackdrop" class="modal__backdrop"></div>
+		<div id="modalPanel" class="modal__panel">
+			<button id="closeModalBtn" class="modal__close" aria-label="닫기">✕</button>
+			<div class="video-wrap">
+				<video id="videoPlayer" controls controlsList="nodownload">
+					<source src="../static/img/2026/AXIS 2026 홍보영상(최종).mp4" type="video/mp4">
+					브라우저가 비디오를 지원하지 않습니다.
+				</video>
+			</div>
+		</div>
+	</div>
+<div class="modal" id="apply">
+	<div class="bg" onclick="closePopup('apply')"></div>
+	<div class="modal_cont">
+		<div class="modalTop">
+			<p></p>
+			<a href="#none" onclick="closePopup('apply')"><i class="mdi mdi-close"></i></a>
+		</div>
+		<div class="modalCont">
+			<p>얼리버드 신청은 <b>5월 11일 오픈 예정입니다.</b></p>
+		</div>
+	</div>
+</div>
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<div class="topSection">	
+		<div class="mainWrap">
+			<div class="section">
+				<!-- <div class="logo">
+					<img src="../static/img/kmacLogo.png" alt="img">
+				</div> -->
+				<!-- <div class="kicker">Beyond Trends, Toward Action <img src="../static/img/2026/kickerIcon.png" alt="img"></div> -->
+				<section class="mainCont">
+					<div class="left">
+						<div class="mainText">
+							<div>
+								<div class="title">
+									<!-- <img src="../static/img/2026/axis2026.png" alt="img"> -->
+									 <img src="../static/img/2026/whiteLogo.png" alt="img">
+									<img src="../static/img/2026/mainCont.png" alt="img">
+								</div>
+								<div>
+									<p>Beyond Trends, Toward Action: 트렌드를 넘어 실행으로</p>
+									<span>2026. 07. 14 - 16 (3일간), COEX 컨벤션센터 북문 측 1-3F (서울 삼성동)</span>
+									<div class="btn_wrap">
+										<button type="button" onclick="window.open('/_conference/file/AXIS 2026.pdf?v=260708', '_blank')">컨퍼런스 안내문</button>
+										<!-- <button type="button" class="active">컨퍼런스 참가 신청</button> -->
+									</div>
+								</div>
+							</div>
+							<button type="button" class="play"  aria-label="소개 영상 재생 버튼" id="openModalBtn" >
+								<div class="tri" aria-hidden="true" style="margin-left: 10px;">
+									<img src="../static/img/playBtn.png" alt="img">
+								</div>
+							</button>
+						</div>
+						<!-- <div class="dayCont">
+							<dl>
+								<dt>Day1</dt>
+								<dd>고객경험을 어떻게 설계할 것인가</dd>
+							</dl>
+							<dl>
+								<dt>Day2</dt>
+								<dd>고객경험을 어떻게 실행/운영할 것인가</dd>
+							</dl>
+							<dl>
+								<dt>Day3</dt>
+								<dd><span class="topic">대한민국 공공컨퍼런스</span> 국민이 체감하는 경험을 어떻게 혁신하고 실현할 것인가</dd>
+							</dl>
+						</div> -->
+						<div class="hostList">
+							<dl>
+								<dt>주관</dt>
+								<dd>한국능률협회컨설팅(KMAC)</dd>
+							</dl>
+							<dl>
+								<dt>주최</dt>
+								<dd>한국고객만족경영학회, 한국경영공학회, 한국공공경영학회</dd>
+							</dl>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- <section class="sponsor-roller" aria-label="스폰서 로고">
+		<div class="mainVideo">
+			<video src="../static/img/2026/AXIS2026.mp4" autoplay muted loop></video>
+		</div>
+	</section> -->
+	<section>
+		<div class="mainSlide">
+			<h3>AXIS 2026<br/>FEATURED SPEAKERS</h3>
+			<div class="class_slideWrap">
+				<div class="swiper-container">
+					<!-- Slider Wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slider Slides -->
+						<div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide01.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>윤구</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										구글코리아 사장
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide02.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>구윤철</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										대한민국 경제부총리 겸<br/>
+										기획재정부 장관
+									</p>
+								</div>
+							</div>
+						</div> -->
+						
+						
+						<div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide03.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>Tang Jian</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										베이징 휴머노이드<br/>
+										로봇혁신센터 CTO
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide04.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>서남희</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										LG U+ 상무
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide06.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>김재현</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										TP Japan & Korea CEO
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="sildeImg"><img src="../static/img/2026/slide05.png" alt="img"></div>
+							<div class="slide_ment">
+								<div class="sub_tit">
+									<h3>박순애</h3>
+								</div>
+								<div class="class_slideCont">
+									<p>
+										한국공공경영학회장<br/>
+										서울대학교 행정대학원 교수
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<!-- <div class="swiper-scrollbar"></div> -->
+				</div>
+			</div>
+			<div class="slide_control">
+					<!-- pagination -->
+				<!-- buttons -->
+				<div class="swiper-button-prev slider_button">
+					<!-- <i class="mdi mdi-arrow-left"></i> -->
+				</div>
+				<div class="swiper-button-next slider_button">
+					<!-- <i class="mdi mdi-arrow-right"></i> -->
+				</div>
+				<!-- <div class="swiper-pagination"></div> -->
+			</div>
+			<div class="mobMain">
+				<div class="mobSpeak">
+					<div class="mobImg">
+						<img src="../static/img/2026/slide01.png" alt="img">
+					</div>
+					<div class="speakerInfo">
+						<div class="speakerName">
+							<h3>윤구</h3>
+						</div>
+						<div class="speakerIng">
+							<p>
+								구글코리아 CEO<br/>
+								前 애플코리아 사장
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="mobSpeak">
+					<div class="mobImg">
+						<img src="../static/img/2026/slide03.png" alt="img">
+					</div>
+					<div class="speakerInfo">
+						<div class="speakerName">
+							<h3>Tang Jian</h3>
+						</div>
+						<div class="speakerIng">
+							<p>
+								베이징 휴머노이드<br/>
+								로봇혁신센터 CTO
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="mobSpeak">
+					<div class="mobImg">
+						<img src="../static/img/2026/slide04.png" alt="img">
+					</div>
+					<div class="speakerInfo">
+						<div class="speakerName">
+							<h3>서남희</h3>
+						</div>
+						<div class="speakerIng">
+							<p>
+								LG U+ 상무
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="mobSpeak">
+					<div class="mobImg">
+						<img src="../static/img/2026/slide06.png" alt="img">
+					</div>
+					<div class="speakerInfo">
+						<div class="speakerName">
+							<h3>김재현</h3>
+						</div>
+						<div class="speakerIng">
+							<p>
+								TP Japan & Korea CEO
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="mobSpeak">
+					<div class="mobImg">
+						<img src="../static/img/2026/slide05.png" alt="img">
+					</div>
+					<div class="speakerInfo">
+						<div class="speakerName">
+							<h3>박순애</h3>
+						</div>
+						<div class="speakerIng">
+							<p>
+								한국공공경영학회장<br/>
+								서울대학교 행정대학원 교수
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="invite">
+		<div class="content">
+			<p>트렌드를 실제 비즈니스 성과로 연결하고자 하는 여러분들을</p>
+			<h3>
+				Asia eXperience &<br/>
+				Innovation Summit 2026으로 초대합니다
+			</h3>
+			<span class="line"></span>
+			<p class="date">2026. 07. 14 - 16 (3일간), COEX 컨벤션센터 북문 측 1-3F (서울 삼성동)</p>
+			<button type="button" onclick="location.href='/_conference/program/sponsor'">BOOTH & SPONSORS <i class="mdi mdi-arrow-right"></i></button>
+		</div>
+		<div class="stats">
+			<div class="stat">
+				<div class="icon"><img src="../static/img/2026/countIcon01.png" alt="img"></div>
+				<div class="num" data-target="5000">0</div>
+				<div class="label">참가자</div>
+			</div>
+			<div class="stat">
+				<div class="icon"><img src="../static/img/2026/countIcon02.png" alt="img"></div>
+				<div class="num" data-target="500">0</div>
+				<div class="label">기업</div>
+			</div>
+			<div class="stat">
+				<div class="icon"><img src="../static/img/2026/countIcon03.png" alt="img"></div>
+				<div class="num" data-target="60">0</div>
+				<div class="label">세션</div>
+			</div>
+			<div class="stat">
+				<div class="icon"><img src="../static/img/2026/countIcon04.png" alt="img"></div>
+				<div class="num" data-target="70">0</div>
+				<div class="label">연사</div>
+			</div>
+			<div class="stat">
+				<div class="icon"><img src="../static/img/2026/countIcon05.png" alt="img"></div>
+				<div class="num" data-target="100">0</div>
+				<div class="label">EXPO 참여기업</div>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../static/js/2026/axis-auth.js"></script>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+<!-- swiper 슬라이드 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.class_slideWrap .swiper-container', {
+    // Optional parameters
+    // direction: 'horizontal',
+    spaceBetween: 30, // 슬라이드 사이 여백
+    slidesPerView : '5', // 한 슬라이드에 보여줄 갯수
+    centeredSlides: true,
+    effect: 'slide',
+    fadeEffect: {
+        crossFade: true
+    },
+    centeredSlides: false, //센터모드
+    loop: true,
+    loopAdditionalSlides : 1,
+    speed: 1000,
+    // pagination: {
+    //     el: '.swiper-pagination',
+    //     type: 'bullets',
+    //     clickable: true,
+    // },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay:{
+        delay: 5000,
+        disableOnInteraction: false, // false-스와이프 후 자동 재생
+    },
+    breakpoints: {
+        0: {
+            slidesPerView: 1
+        },
+        500: {
+            slidesPerView: 2
+        },
+        768: {
+            slidesPerView: 3
+        },
+        1024: {
+            slidesPerView: 4
+        },
+        1440: {
+            slidesPerView: 5
+        }
+    }
+   
+});
+</script>
+<script>
+(function(){
+	const openBtn  = document.getElementById('openModalBtn');
+	const closeBtn = document.getElementById('closeModalBtn');
+	const modal    = document.getElementById('videoModal');
+	const backdrop = document.getElementById('modalBackdrop');
+	const video    = document.getElementById('videoPlayer');
+
+	function lockScroll(lock){
+		if(lock){
+		document.documentElement.style.overflow = 'hidden';
+		document.body.style.overscrollBehavior = 'contain';
+		}else{
+		document.documentElement.style.overflow = '';
+		document.body.style.overscrollBehavior = '';
+		}
+	}
+
+	function openModal(){
+		modal.classList.add('is-open');
+		modal.setAttribute('aria-hidden','false');
+		closeBtn && closeBtn.focus();
+		lockScroll(true);
+		
+		// 비디오 자동 재생
+		if(video){
+			video.currentTime = 0; // 처음부터 재생
+			video.play().catch(e => console.log('자동 재생 실패:', e));
+		}
+	}
+
+	function closeModal(){
+		modal.classList.remove('is-open');
+		modal.setAttribute('aria-hidden','true');
+
+		// 비디오 정지
+		if(video){
+			video.pause();
+			video.currentTime = 0;
+		}
+
+		openBtn && openBtn.focus();
+		lockScroll(false);
+	}
+
+	openBtn && openBtn.addEventListener('click', openModal);
+	closeBtn && closeBtn.addEventListener('click', closeModal);
+	backdrop && backdrop.addEventListener('click', closeModal);
+
+	document.addEventListener('keydown', (e)=>{
+		if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+	});
+})();
+</script>
+<style>
+  :root{
+    --ease: cubic-bezier(.2,.8,.2,1);
+    --dur: 960ms;
+  }
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f172a;color:#fff}
+  .page{
+    min-height:100svh;display:grid;place-items:center
+  }
+  .btn{padding:14px 20px;border:none;border-radius:12px;background:#22c55e;color:#0a0a0a;font-weight:600;cursor:pointer}
+  .btn:active{transform:scale(.98)}
+
+  /* 모달 루트 */
+  .modal{
+    position:fixed;inset:0;z-index:9999;
+    width:100%;height:100%;
+    pointer-events:none; /* 닫힌 상태 클릭 방지 */
+  }
+  .modal__backdrop{
+    position:absolute;inset:0;background:rgba(0,0,0,.6);
+    opacity:0;transition:opacity var(--dur) var(--ease);
+  }
+
+  /* 패널: 중앙에서 팝업처럼 커지기 */
+  .modal__panel{
+    position:absolute;inset:0;margin:auto;
+    width:min(1400px,92vw);height:min(62vw,85svh);
+    background:#000;border-radius:16px;overflow:hidden;
+    transform:scale(.82);opacity:0;
+    transform-origin:center center;
+    transition:
+      transform var(--dur) var(--ease),
+      opacity var(--dur) var(--ease);
+    box-shadow:0 30px 120px rgba(0,0,0,.45);
+  }
+
+  /* 살짝 더 탄성감 있는 최초 등장 키프레임(선택) */
+  @keyframes popIn {
+    0%   { transform: scale(.82); opacity: 0 }
+    60%  { transform: scale(1.04); opacity: 1 }
+    100% { transform: scale(1); opacity: 1 }
+  }
+
+  .modal__close{
+    position:absolute;top:10px;right:10px;z-index:2;
+    width:42px;height:42px;border:none;border-radius:10px;
+    background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;
+    backdrop-filter:blur(8px);display:grid;place-items:center; padding: 0;
+  }
+  .modal__close:hover{background:rgba(255,255,255,.18); color: #fff; box-shadow: none; border: 0;}
+  .modal__close::before{display: none;}
+
+  .video-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+  .video-wrap video{width:100%;height:100%;object-fit:contain;background:#000}
+
+  /* 열린 상태 */
+  .modal.is-open{pointer-events:auto; display: block;}
+  .modal.is-open .modal__backdrop{opacity:1}
+  .modal.is-open .modal__panel{
+    opacity:1;transform:scale(1);
+    animation: popIn var(--dur) var(--ease) 1;
+  }
+
+  /* 모션 최소화 환경 배려 */
+  @media (prefers-reduced-motion: reduce){
+    .modal__panel,.modal__backdrop{transition:none !important;animation:none !important}
+  }
+</style>
+</body>
+</html>

@@ -1,0 +1,973 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+	<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<div id="imageModal" class="modal" onclick="closeModal()">
+	    <span class="close-btn">
+			<i class="mdi mdi-close"></i>
+		</span>
+	    <img class="modal-content" id="modalImg">
+	</div>
+	<section class="sub" style="padding-bottom: 0;">
+		<div class="section">
+			<div class="subTit">
+				<h3>AXIS 2026의 3가지 약속</h3>
+			</div>
+			<div class="promise">
+				<div class="blueBox">
+					<div class="boxTop">
+						<h3>3일간의 몰입</h3>
+						<p>전 기간 상시 운영을 통해 각기 다른 고민을 가진 산업별 의사결정자와 만날 수 있습니다</p>
+					</div>
+					<div class="boxCont">
+						<dl>
+							<dt>Day 1</dt>
+							<dd>CX 경영 전략 및 글로벌 트렌드 중심의 기업 임원 및 전략가 응대</dd>
+						</dl>
+						<dl>
+							<dt>Day 2</dt>
+							<dd>
+								AICC, 챗봇, 디지털 채널 고도화 등 콜/컨택센터 실무
+								부서장 및 IT 도입 담당자 집중 상담
+							</dd>
+						</dl>
+						<dl>
+							<dt>Day 3</dt>
+							<dd>
+								공공기관 서비스 혁신 및 민원 CX 개선을
+								고민하는 정부/지자체/공공기관 관계자 접점 확보
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="blueBox">
+					<div class="boxTop">
+						<h3>검증된 리드</h3>
+						<p>단순 참관객이 아닌, 실제 구매 영향력을 가진 핵심 인력이 집결합니다</p>
+					</div>
+					<div class="boxCont">
+						<dl>
+							<dt>의사결정자 비중</dt>
+							<dd>참가자의 상당수가 KSQI/KCSI 등 인증제도, 공공기관/기업의 임원 및 부서장으로 구성</dd>
+						</dl>
+						<dl>
+							<dt>참여 규모</dt>
+							<dd>
+								5,000명 이상의 참관객 및 500개 이상의 주요 기업
+								참여로 산업 내 파급력 극대화
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="blueBox">
+					<div class="boxTop">
+						<h3>빈틈없는 트래픽</h3>
+						<p>참관객이 스폰서 부스에 머물 수밖에 없는 '장치'를 KMAC가 직접 운영합니다</p>
+					</div>
+					<div class="boxCont">
+						<dl>
+							<dt>부스 스탬프 투어</dt>
+							<dd>경품 당첨 기회(럭키드로우)와 연계하여 참관객의 자발적이고 능동적인 부스 순회를 유도</dd>
+						</dl>
+						<dl>
+							<dt>Networking & Coffee Break</dt>
+							<dd>
+								전시장 내에 네트워킹 라운지를 배치, 참관객의 체류 시간을 확대
+							</dd>
+						</dl>
+						<dl>
+							<dt>Global Docent Tour</dt>
+							<dd>
+								글로벌 참관단 및 VIP 투어 시 주요 스폰서 부스를 필수 방문 코스로 지정
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="gradientBg">
+		<div class="lineWrap">
+			<span class="lengthLine"></span>
+		</div>
+		<section class="subWrap">
+			<div class="section">
+				<div class="subTit">
+					<h3>2026 SPONSORS</h3>
+				</div>
+				<div class="sponsor">
+					<h4>DIAMOND</h4>
+					<div class="sponsorImg">
+						<img src="../static/img/2026/sponsorDia.png" alt="img">
+						<img src="../static/img/2026/sponsorDia02.png" alt="img">
+					</div>
+					<h4>PLATINUM</h4>
+					<div class="sponsorImg">
+						<img src="../static/img/2026/sponsorPla.png" alt="img">
+						<img src="../static/img/2026/sponsorGyeongGi.png" alt="img">
+					</div>
+					<h4>GOLD</h4>
+					<div class="sponsorImg center">
+						<img src="../static/img/2026/sponsorSKT.png" alt="img">
+						<img src="../static/img/2026/sponsorGold02.png" alt="img">
+					</div>
+					<h4>SILVER</h4>
+					<div class="sponsorImg">
+						<img src="../static/img/2026/sponsorSilver.png" alt="img">
+						<img src="../static/img/2026/sponsorSilver02.png" alt="img">
+						<img src="../static/img/2026/sponsorSilver03.png" alt="img">
+						<img src="../static/img/2026/sponsorSilver04.png" alt="img">
+						<img src="../static/img/2026/sponsorSilver05.png" alt="img">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<section class="subWrap" id="joinInfo">
+		<div class="section">
+			<div class="subTit">
+				<h3>Sponsorship 참가 안내</h3>
+			</div>
+			<div class="info">
+				<dl>
+					<dt>참가 부문</dt>
+					<dd> Asia eXperience & Innovation Summit 2026</dd>
+				</dl>
+				<dl>
+					<dt>신청 방법</dt>
+					<dd> 운영사무국 이메일 접수 (conference@kmac.co.kr)</dd>
+				</dl>
+			</div>
+			<div class="step boxWrap">
+				<div class="stepWrap">
+					<div class="stepBox box">
+						<div class="boxTop">
+							<img src="../static/img/2026/step01.png" alt="img">
+							<h3>STEP 1</h3>
+							<h4>신청서 제출</h4>
+						</div>
+						<div class="boxCont">
+							<p>
+								조기 신청 ㅣ 26.04.30(목)까지<br/>
+								일반 신청 ㅣ 26.06.17(수)까지
+							</p>
+						</div>
+					</div>
+					<span class="caption">※ 얼리버드 혜택 적용 (10% 비용 할인)</span>
+				</div>
+				<div class="stepWrap">
+					<div class="stepBox box">
+						<div class="boxTop">
+							<img src="../static/img/2026/step02.png" alt="img">
+							<h3>STEP 2</h3>
+							<h4>계약 체결 및 비용 납부</h4>
+						</div>
+						<div class="boxCont">
+							<p>
+								등급 선택 및 위치 / 규모 협의 후<br/>
+								계약 및 참가 확정
+							</p>
+						</div>
+					</div>
+					<span class="caption">※ 부스 소진 시 조기 마감될 수 있음</span>
+				</div>
+				<div class="stepWrap">
+					<div class="stepBox box">
+						<div class="boxTop">
+							<img src="../static/img/2026/step03.png" alt="img">
+							<h3>STEP 3</h3>
+							<h4>부스 설치 준비</h4>
+						</div>
+						<div class="boxCont">
+							<p>
+								부스 디자인 제출 ㅣ 26.06.19(금)
+							</p>
+						</div>
+					</div>
+					<span class="caption">※ 로고, 백월, 디자인 등</span>
+				</div>
+				<div class="stepWrap">
+					<div class="stepBox box">
+						<div class="boxTop">
+							<img src="../static/img/2026/step04.png" alt="img">
+							<h3>STEP 4</h3>
+							<h4>부스 설치</h4>
+						</div>
+						<div class="boxCont">
+							<p>
+								부스 메뉴얼 수령, 홍보 자료<br/>
+								제출 및 현장 전시 운영
+							</p>
+						</div>
+					</div>
+					<span class="caption">※ COEX 1F 그랜드 볼룸 전관/ 상세시간 추후 안내</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="subWrap">
+		<div class="section">
+			<div class="subTit">
+				<h3>부스 타입 및 세부 사항</h3>
+			</div>
+			<div class="tbl_wrap">
+				<table>
+					<caption>tit</caption>
+					<thead>
+						<tr>
+							<th>구분</th>
+							<th>Diamond</th>
+							<th>Platinum</th>
+							<th>Gold/Silver</th>
+							<th>Prime Partner</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>부스 타입</th>
+							<td>프리미엄 대형</td>
+							<td>대형</td>
+							<td>기본형</td>
+							<td>공공기관 전용</td>
+						</tr>
+						<tr>
+							<th>부스 이미지</th>
+							<td>
+								<img src="../static/img/2026/boothDia.png" alt="img" onclick="openModal('../static/img/2026/boothDia.png')">
+								<a href="javascript:void(0);" onclick="openModal('../static/img/2026/boothDia.png')"><i class="mdi mdi-magnify"></i></a>
+							</td>
+							<td>
+								<img src="../static/img/2026/boothPla.png" alt="img" onclick="openModal('../static/img/2026/boothPla.png')">
+								<a href="javascript:void(1);" onclick="openModal('../static/img/2026/boothPla.png')"><i class="mdi mdi-magnify"></i></a>
+							</td>
+							<td>
+								<img src="../static/img/2026/boothGold.png" alt="img" onclick="openModal('../static/img/2026/boothGold.png')">
+								<a href="javascript:void(2);" onclick="openModal('../static/img/2026/boothGold.png')"><i class="mdi mdi-magnify"></i></a>
+							</td>
+							<td>
+								<img src="../static/img/2026/boothBasic.png" alt="img" onclick="openModal('../static/img/2026/boothBasic.png')">
+								<a href="javascript:void(3);" onclick="openModal('../static/img/2026/boothBasic.png')"><i class="mdi mdi-magnify"></i></a>
+							</td>
+						</tr>
+						<tr>
+							<th>부스 형태</th>
+							<td>맞춤형 LED백월 부스</td>
+							<td>디자인 목공 부스</td>
+							<td>옥타 부스</td>
+							<td>옥타 부스</td>
+						</tr>
+						<tr>
+							<th>사이즈</th>
+							<td>6*6m (h)3m</td>
+							<td>6*6m (h)3m</td>
+							<td>3*3m (h)3m</td>
+							<td>3*3m (h)3m</td>
+						</tr>
+						<tr>
+							<th>부스 비용</th>
+							<td colspan="4">※ 운영사무국으로 문의</td>
+						</tr>
+						<tr>
+							<th>기본 제공</th>
+							<td colspan="4">콘센트(2구), 안내 테이블 1EA, 브로슈어 거치대 1EA, 바닥 파인텍스 마감</td>
+						</tr>
+						<tr>
+							<th>부스 위치</th>
+							<td colspan="4">부스 위치는 등급 순 및 입금 선착순으로 배정</td>
+						</tr>
+						<tr>
+							<th>부스 운영 시간</th>
+							<td colspan="4">공식 운영 시간 : 2026.07.14~16(3일간) 09:00~17:30</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tbl_bottom">
+				<div class="btn_wrap">
+					<button type="button" onclick="window.location = '../static/file/AXIS 2026_스폰서십 및 부스 신청서_기업명.xlsx'">스폰서십 부스 참가 신청서 다운받기 <i class="mdi mdi-arrow-right"></i></button> <!-- onclick="location.href='../static/program/sponsorApply'" -->
+				</div>
+				<div class="tbl_text">
+					<p>AXIS 2026 광고 및 후원 기회에 대한 보다 자세한 안내는 KMAC로 문의해주시기 바랍니다.</p>
+					<dl>
+						<dt>문의 메일</dt>
+						<dd>conference@kmac.co.kr</dd>
+					</dl>
+					<dl>
+						<dt>문의 전화</dt>
+						<dd>02-3786-0382</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="subWrap" id="infoDown">
+		<div class="section">
+			<div class="subTit">
+				<h3>부스 전용참가 안내</h3>
+				<h4>본 부스 참가는 스폰서십 참여 없이 전시 부스만 참가하고자 하는 기업을 위한 옵션입니다.</h4>
+			</div>
+			<div class="boxWrap">
+				<div class="box infoDownBox">
+					<dl>
+						<dd>본 옵션은 현장 전시부스 운영만 가능한 참가 유형입니다.</dd>
+						<dd>
+							부스 타입 및 세부 사항은 상단 안내를 참고해주시기 바라며,참가 문의는 사무국으로 별도 연락 부탁드립니다.<br>
+						</dd>
+						<dd class="addCont">
+							문의 메일 ㅣ conference@kmac.co.kr<br>
+							문의 전화 ㅣ 02-3786-0382
+						</dd>
+						<dd>로고 노출, 현수막 등 별도 홍보 혜택 및 기타 스폰서십 혜택은 제공되지 않습니다.</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="btn_wrap">
+				<button type="button" onclick="window.location = '../static/file/AXIS 2026_스폰서십 및 부스 신청서_기업명.xlsx'">부스 전용 참가 신청서 다운받기 <i class="mdi mdi-arrow-right"></i></button> <!-- onclick="location.href='../static/program/sponsorApply'" -->
+			</div>
+		</div>
+	</section>
+	<section class="subWrap exhibition" id="exhibition">
+		<div class="section">
+			<div class="subTit">
+				<h3>Exhibition</h3>
+				<p>
+					1F 그랜드볼룸에서 다양한 혁신 기술 체험 부스가 운영됩니다.
+					<!-- 지도의 부스나 우측의 목록을 클릭하여 상세 위치와 정보를 확인해보세요. -->
+				</p>
+			</div>
+			<div class="opacityBox">
+				<h3>COEX GRAND Ballroom</h3>
+				<div class="map">
+	<svg xmlns="http://www.w3.org/2000/svg" width="1117" height="408" viewBox="0 0 1117 408" fill="none">
+	<g>
+	<rect id="Rectangle 3972" x="448.416" y="50" width="222" height="310" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3973" x="166.416" y="131" width="253" height="229" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3977" x="7.41602" y="131" width="125" height="229" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3978" x="986.416" y="93.5" width="126" height="267" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3974" x="703.416" y="131" width="250" height="229" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3975" x="703.416" y="45" width="334" height="47" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	<rect id="Rectangle 3976" x="83.416" y="45" width="336" height="47" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+	    <g>
+	        <rect x="193.416" y="234.5" width="193" height="27" rx="13.5" fill="#D1DFF9"/>
+	        <rect x="193.416" y="234.5" width="193" height="27" rx="13.5" stroke="white"/>
+	        <text id="Experience Zone" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="210.041" y="253.355">Experience Zone</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="761.416" y="234.5" width="138" height="27" rx="13.5" fill="#D1DFF9"/>
+	        <rect x="761.416" y="234.5" width="138" height="27" rx="13.5" stroke="white"/>
+	        <text id="EXPO Zone" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="777.954" y="253.355">EXPO Zone</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="156.416" y="5" width="184" height="27" rx="13.5" fill="#D1DFF9"/>
+	        <rect x="156.416" y="5" width="184" height="27" rx="13.5" stroke="white"/>
+	        <text id="Showcase Zone" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="173.217" y="23.855">Showcase Zone</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="470.416" y="234.5" width="175" height="27" rx="13.5" fill="#D1DFF9"/>
+	        <rect x="470.416" y="234.5" width="175" height="27" rx="13.5" stroke="white"/>
+	        <text id="AXIS Hub ì¡´" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="488.053" y="253.355">AXIS Hub Zone</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="791.416" y="5" width="158" height="27" rx="13.5" fill="#D1DFF9"/>
+	        <rect x="791.416" y="5" width="158" height="27" rx="13.5" stroke="white"/>
+	        <text id="Partner Zone" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="808.321" y="23.855">Partner Zone</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="477.416" y="48" width="82" height="82" fill="#4D6288" fill-opacity="0.4"/>
+	        <rect x="477.416" y="48" width="82" height="82" stroke="#4D6288"/>
+	        <text id="A1" fill="#4D6288" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="12" letter-spacing="0em"><tspan x="510.547" y="92.57">A1</tspan></text>
+	    </g>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="707.416" y="135" width="82" height="82" fill="#FFC107" fill-opacity="0.03"/>
+		        <rect x="707.416" y="135" width="82" height="82" stroke="#FFC107"/>
+		        <text id="A4" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="740.848" y="178.975">A4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="789.416" y="135" width="82" height="82" fill="#FFC107" fill-opacity="0.03"/>
+		        <rect x="789.416" y="135" width="82" height="82" stroke="#FFC107"/>
+		        <text id="A4_2" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="822.848" y="178.975">A4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="332.416" y="135" width="82" height="82" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="332.416" y="135" width="82" height="82" stroke="#00E5FF"/>
+		        <text id="A4_3" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="365.848" y="178.975">A4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="250.416" y="135" width="82" height="82" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="250.416" y="135" width="82" height="82" stroke="#00E5FF"/>
+		        <text id="A4_4" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="283.848" y="178.975">A4</tspan></text>
+		    </g>
+	    </a>
+	    <g>
+	        <rect x="558.416" y="48" width="82" height="82" fill="#4D6288" fill-opacity="0.4"/>
+	        <rect x="558.416" y="48" width="82" height="82" stroke="#4D6288"/>
+	        <text id="A2" fill="#4D6288" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="12" letter-spacing="0em"><tspan x="590.434" y="92.57">A2</tspan></text>
+	    </g>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="249.416" y="279" width="82.1683" height="82.1683" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="249.416" y="279" width="82.1683" height="82.1683" stroke="#2962FF"/>
+		        <text id="B1" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="284.128" y="323.059">B1</tspan></text>
+		    </g>
+	    </a>
+	    <g>
+	    <path d="M128.416 279V361H9.91602C6.32617 361 3.41602 358.09 3.41602 354.5V279H128.416Z" fill="#4D6288" fill-opacity="0.03"/>
+	    <path d="M128.416 279V361H9.91602C6.32617 361 3.41602 358.09 3.41602 354.5V279H128.416Z" stroke="#4D6288"/>
+	        <text id="ì¹´ííë¦¬ì" fill="#4D6288" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="42.21" y="322.975">카페테리아</tspan></text>
+	    </g>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="374.847" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="374.847" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C8" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="386.918" y="70.6732">C8</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="993.847" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="993.847" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C16" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1003.45" y="70.6732">C16</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="211.847" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="211.847" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C4" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="224.04" y="70.6732">C4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="830.847" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="830.847" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C12" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="840.554" y="70.6732">C12</tspan></text>
+		    </g>
+	    </a>
+	    <g>
+	        <rect x="7.41602" y="136" width="39" height="130" fill="#4D6288" fill-opacity="0.03"/>
+	        <rect x="7.41602" y="136" width="39" height="130" stroke="#4D6288"/>
+	        <text id="ì&nbsp;ì í¬íë°ì¤í¬ KMAC ë¶ì¤" transform="translate(15.916 235.5) rotate(-90)" fill="#4D6288" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="0.0615234" y="8.475">전시 헬프데스크
+	        </tspan><tspan x="7.14648" y="19.475">KMAC 부스</tspan></text>
+	    </g>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="94" width="39.396" height="39.396" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="94" width="39.396" height="39.396" stroke="#9DFF00"/>
+		        <text id="D1" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1083.59" y="116.673">D1</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="219" width="39.396" height="39.396" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="219" width="39.396" height="39.396" stroke="#9DFF00"/>
+		        <text id="D4" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1082.58" y="241.673">D4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="251.416" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="251.416" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C5" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="263.692" y="70.6732">C5</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="870.416" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="870.416" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C13" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="880.011" y="70.6732">C13</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="88.416" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="88.416" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C1" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="101.62" y="70.6732">C1</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="707.416" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="707.416" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C9" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="719.585" y="70.6732">C9</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="332.074" y="48" width="41.7722" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="332.074" y="48" width="41.7722" height="39.396" stroke="#2962FF"/>
+		        <text id="C7" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="345.88" y="70.6732">C7</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="951.074" y="48" width="41.7722" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="951.074" y="48" width="41.7722" height="39.396" stroke="#7000FF"/>
+		        <text id="C15" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="961.97" y="70.6732">C15</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="169.074" y="48" width="41.7722" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="169.074" y="48" width="41.7722" height="39.396" stroke="#2962FF"/>
+		        <text id="C3" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="182.426" y="70.6732">C3</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="788.074" y="48" width="41.7722" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="788.074" y="48" width="41.7722" height="39.396" stroke="#7000FF"/>
+		        <text id="C11" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="799.898" y="70.6732">C11</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="291.678" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="291.678" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C6" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="303.846" y="70.6732">C6</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="910.678" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="910.678" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C14" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="920.302" y="70.6732">C14</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain3">
+	    	<g>
+		        <rect x="128.678" y="48" width="39.396" height="39.396" fill="#2962FF" fill-opacity="0.08"/>
+		        <rect x="128.678" y="48" width="39.396" height="39.396" stroke="#2962FF"/>
+		        <text id="C2" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="140.954" y="70.6732">C2</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="747.678" y="48" width="39.396" height="39.396" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="747.678" y="48" width="39.396" height="39.396" stroke="#7000FF"/>
+		        <text id="C10" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="757.151" y="70.6732">C10</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="134.396" width="39.396" height="41.7722" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="134.396" width="39.396" height="41.7722" stroke="#9DFF00"/>
+		        <text id="D2" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1082.66" y="158.257">D2</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="259.396" width="39.396" height="41.7722" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="259.396" width="39.396" height="41.7722" stroke="#9DFF00"/>
+		        <text id="D5" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1082.66" y="283.257">D5</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="177" width="39.396" height="41.7722" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="177" width="39.396" height="41.7722" stroke="#9DFF00"/>
+		        <text id="D3" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1082.55" y="200.861">D3</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain5">
+	    	<g>
+		        <rect x="1070.42" y="302" width="39.396" height="41.7722" fill="#9DFF00" fill-opacity="0.08"/>
+		        <rect x="1070.42" y="302" width="39.396" height="41.7722" stroke="#9DFF00"/>
+		        <text id="D6" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="1082.56" y="325.861">D6</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="172.416" y="176" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="172.416" y="176" width="39" height="41" stroke="#00E5FF"/>
+		        <text id="C29" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="180.891" y="199.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="211.218" y="176" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="211.218" y="176" width="39" height="41" stroke="#00E5FF"/>
+		        <text id="C29_2" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="219.693" y="199.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="871.218" y="176" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+		        <rect x="871.218" y="176" width="39" height="41" stroke="#FFC107"/>
+		        <text id="C29_3" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="879.693" y="199.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="910.02" y="176" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+		        <rect x="910.02" y="176" width="39" height="41" stroke="#FFC107"/>
+		        <text id="C29_4" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="918.495" y="199.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="172.416" y="135" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="172.416" y="135" width="39" height="41" stroke="#00E5FF"/>
+		        <text id="C29_5" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="180.891" y="158.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="211.218" y="135" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+		        <rect x="211.218" y="135" width="39" height="41" stroke="#00E5FF"/>
+		        <text id="C29_6" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="219.693" y="158.475">C29</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="871.218" y="135" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+		        <rect x="871.218" y="135" width="39" height="41" stroke="#FFC107"/>
+		        <text id="C29_7" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="879.693" y="158.475">C29</tspan></text>
+		    </g>
+	    </a>
+	   	<a href="#explain2">
+	   	 	<g>
+		        <rect x="910.02" y="135" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+		        <rect x="910.02" y="135" width="39" height="41" stroke="#FFC107"/>
+		        <text id="C29_8" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="918.495" y="158.475">C29</tspan></text>
+		    </g>
+	   	</a>
+	    <a href="#explain1">
+	    	<g>
+		        <rect x="332.242" y="279" width="82.1683" height="82.1683" fill="#00E5FF" fill-opacity="0.08"/>
+		        <rect x="332.242" y="279" width="82.1683" height="82.1683" stroke="#00E5FF"/>
+		        <text id="B2" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="366.027" y="323.059">B2</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain4">
+	    	<g>
+		        <rect x="789.416" y="278" width="82.1683" height="82.1683" fill="#7000FF" fill-opacity="0.08"/>
+		        <rect x="789.416" y="278" width="82.1683" height="82.1683" stroke="#7000FF"/>
+		        <text id="B4" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="823.117" y="322.059">B4</tspan></text>
+		    </g>
+	    </a>
+	    <a href="#explain2">
+	    	<g>
+		        <rect x="707.416" y="278" width="82.1683" height="82.1683" fill="#FFC107" fill-opacity="0.08"/>
+		        <rect x="707.416" y="278" width="82.1683" height="82.1683" stroke="#FFC107"/>
+		        <text id="B3" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="10" letter-spacing="0em"><tspan x="741.088" y="322.059">B3</tspan></text>
+		    </g>
+	    </a>
+	    <path id="Vector 572" d="M243.564 363.987H503.762" stroke="white" stroke-width="7.12871"/>
+	    <path id="Vector 573" d="M616.634 363.987H876.832" stroke="white" stroke-width="7.12871"/>
+	    <path id="Vector 576" d="M129.505 363.987H19.5645C10.7279 363.987 3.56445 356.824 3.56445 347.987V60.3833C3.56445 51.5467 10.7279 44.3833 19.5645 44.3833H1097.27C1106.1 44.3833 1113.27 51.5467 1113.27 60.3833V347.987C1113.27 356.824 1106.1 363.987 1097.27 363.987H989.702" stroke="white" stroke-width="7.12871"/>
+	    <path id="Polygon 4" d="M559.416 361.5L584.098 377.25H534.734L559.416 361.5Z" fill="#4D6288"/>
+	    <path id="Polygon 5" d="M186.535 378.245L163.899 362.205L209.172 362.205L186.535 378.245Z" fill="#4D6288"/>
+	    <path id="Polygon 6" d="M935.05 378.245L912.413 362.205L957.687 362.205L935.05 378.245Z" fill="#4D6288"/>
+	        <text id="ENTRANCE" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="511.205" y="403.76">ENTRANCE</tspan></text>
+	        <text id="EXIT" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="168.127" y="403.76">EXIT</tspan></text>
+	        <text id="EXIT_2" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="915.127" y="403.76">EXIT</tspan></text>
+	    <g>
+	        <rect x="32.416" y="225" width="96" height="47" rx="23.5" fill="#D1DFF9"/>
+	        <rect x="32.416" y="225" width="96" height="47" rx="23.5" stroke="white"/>
+	        <text id="F&amp;B Lounge" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="60.9219" y="243.855">F&amp;B
+	        </tspan><tspan x="44.9609" y="263.855">Lounge</tspan></text>
+	    </g>
+	    <g>
+	        <rect x="980.416" y="225" width="123" height="47" rx="23.5" fill="#D1DFF9"/>
+	        <rect x="980.416" y="225" width="123" height="47" rx="23.5" stroke="white"/>
+	    <g id="Interactive Zone">
+	        <text fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="0em"><tspan x="1018.19" y="263.855">Zone</tspan></text>
+	        <text fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="18" letter-spacing="-0.03em"><tspan x="993.007" y="243.855">Interactive
+	        </tspan></text>
+	    </g>
+	</g>
+	</g>
+	</svg>
+				</div>
+				<div class="temaList">
+					<h3>BOOTH THEME</h3>
+					<p style="--scColor: #00E5FF">CX AICC</p>
+					<p style="--scColor: #FFC107">TECH & AI SOLUTION</p>
+					<p style="--scColor: #2962FF">BRAND EXPERIENCE</p>
+					<p style="--scColor: #7000FF">HR & SMART OFFICE</p>
+					<p style="--scColor: #9DFF00">PUBLIC & INSIGH</p>
+				</div>
+				<ul>
+					<li>※ 테마별 부스 배치를 통해 동선의 편의성을 높일 예정입니다.</li>
+					<li>※ 추후 전시되는 부스 크기 및 타입에 따라 배치는 변경될 수 있습니다.</li>
+				</ul>
+			</div>
+			<div class="opacityBox">
+				<div class="grid">
+					<dl style="--scColor: #00E5FF" id="explain1">
+						<dt><p>부스 테마1 </p>CX & AICC</dt>
+						<dd>
+							<b>생성형 AI 및 자동화 기반 고객여정 혁신 Zone</b><br/>
+							AICC, 챗봇, 콜봇, STT/TTS 및 QA 자동화, 고객 데이터
+							플랫폼(CDP) 구축 및 UX/UI 고도화 솔루션 등
+						</dd>
+					</dl>
+					<dl style="--scColor: #FFC107" id="explain2">
+						<dt><p>부스 테마2 </p>TECH & AI SOLUTION</dt>
+						<dd>
+							<b>AI 활용 Tech Solution Zone</b><br/>
+							맞춤형 AI 에이전트 인프라, 미래형 업무 자동화 기술,
+							AI 분석 엔진 및 자동화 대시보드 기술 등
+						</dd>
+					</dl>
+					<dl style="--scColor: #2962FF" id="explain3">
+						<dt><p>부스 테마3 </p>BRAND EXPERIENCE</dt>
+						<dd>
+							<b>브랜드 아이덴티티 체험 Zone</b><br/>
+							실생활 밀착형 서비스의 특장점
+							홍보, 이벤트 및 체험을 통해 고객과의 소통
+						</dd>
+					</dl>
+					<dl style="--scColor: #7000FF" id="explain4">
+						<dt><p>부스 테마4 </p>HR & SMART OFFICE</dt>
+						<dd>
+							<b>구성원의 몰입을 돕는 업무 환경과 조직 문화 Zone</b><br/>
+							AI 채용 플랫폼, 차세대 협업 툴, HR Tech 및 스마트 워크 시스템
+						</dd>
+					</dl>
+					<dl style="--scColor: #9DFF00" id="explain5">
+						<dt><p>부스 테마5 </p>PUBLIC & INSIGH</dt>
+						<dd>
+							<b>지속가능한 성장을 위한 공공/정책 Zone</b><br/>
+							주요 공공기관/정부부처의 정책 연구 결과, 공적서비스 성과 홍보 등
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="subWrap sponsor" id="sponsor">
+		<div class="section">
+			<div class="subTit">
+				<h3>Previous Sponsors</h3>
+				<p>AXIS와 함께 성장해온 주요 기업 및 파트너를 소개합니다.</p>
+			</div>
+			<ul>
+				<li><img src="../static/img/2026/sponsorsLogo01.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo02.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo03.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo04.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo05.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo06.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo07.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo08.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo09.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo10.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo11.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo12.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo13.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo14.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo15.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo16.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo17.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo18.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo19.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo20.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo21.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo22.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo23.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo24.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo25.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo26.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo27.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo28.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo29.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo30.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo31.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo32.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo33.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo34.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo35.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo36.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo37.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo38.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo39.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo40.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo41.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo42.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo43.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo44.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo45.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo46.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo47.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo48.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo49.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo50.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo51.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo52.png" alt="img"></li>
+				<li><img src="../static/img/2026/sponsorsLogo53.png" alt="img"></li>
+			</ul>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	// 1. 선택자를 'a' 전체 또는 SVG 내부 a를 확실히 지정합니다.
+document.querySelectorAll('svg a, .map a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // 2. SVG 앵커의 href 값을 가져오는 가장 안전한 방법
+        const href = this.getAttribute('href') || this.getAttribute('xlink:href');
+        
+        // 만약 href가 없거나 #으로 시작하지 않으면 무시
+        if (!href || !href.startsWith('#')) return;
+
+        const targetElement = document.querySelector(href);
+
+        if (targetElement) {
+            // 3. 기존 active 제거
+            document.querySelectorAll('dl').forEach(dl => dl.classList.remove('active'));
+            
+            // 4. 새로운 active 추가
+            targetElement.classList.add('active');
+
+            // 5. 스크롤 이동 (전체 스크롤 튀는 현상 방지)
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+    });
+});
+
+document.querySelector('.gnb nav > ul > li.Mspon').classList.add('active');
+</script>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+</body>
+</html>

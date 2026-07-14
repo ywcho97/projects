@@ -1,0 +1,1771 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<div class="modal" id="infoFIx">
+		<div class="bg" onclick="closePopup('infoFIx')"></div>
+		<div class="modal_cont profileVerify_cont">
+			<div class="modalCont profileVerifyModal">
+				<h3>참가자 정보 수정 인증</h3>
+				<span id="profileVerifyGuide">참가자 정보 수정을 위해 등록된 이메일로 발송된 인증번호를 입력해 주세요.</span>
+				<p id="profileVerifyStatus" class="profileVerifyStatus" aria-live="polite"></p>
+				<div class="profileVerifyInput">
+					<input type="text" id="profileVerifyCodeInput" placeholder="인증번호 6자리 입력" inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+				</div>
+				<div class="boothQrActions profileVerifyActions">
+					<button type="button" class="boothQrBtn boothQrBtnPrimary" id="btnProfileVerify">인증하기</button>
+					<button type="button" class="boothQrBtn boothQrBtnSecondary" id="btnProfileResendCode">재발송</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="stamp">
+		<div class="bg" onclick="closePopup('stamp')"></div>
+		<div class="modal_cont">
+			<div class="modalCont"><h3>스탬프가 적립되었습니다.</h3></div>
+		</div>
+	</div>
+	<div class="modal" id="already">
+		<div class="bg" onclick="closePopup('already')"></div>
+		<div class="modal_cont">
+			<div class="modalCont"><h3>이미 인증이 완료된 부스입니다.</h3></div>
+		</div>
+	</div>
+	<div class="modal" id="cong">
+		<div class="bg" onclick="closePopup('cong')"></div>
+		<div class="modal_cont">
+			<div class="modalCont"><h3>축하합니다!<br><br>경품 추첨 응모 조건을 모두 충족하셨습니다.</h3></div>
+		</div>
+	</div>
+	<div class="modal" id="boothQrScan">
+		<div class="bg" id="boothQrScanBg"></div>
+		<div class="modal_cont boothQrScan_cont">
+			<div class="modalCont boothQrScanModal">
+				<h3>부스 QR 스캔</h3>
+				<div id="boothQrIntroPanel" class="boothQrIntroPanel">
+					<div class="boothQrIntroIcon" aria-hidden="true"><i class="mdi mdi-camera-outline"></i></div>
+					<p class="boothQrScanGuide">부스 QR을 스캔하려면 카메라 접근 권한이 필요합니다.</p>
+					<p class="boothQrIntroSub">아래 버튼을 누르면 브라우저에서 카메라 허용 창이 표시됩니다.</p>
+					<div class="btn_wrap center boothQrActions">
+						<button type="button" class="boothQrBtn boothQrBtnPrimary" id="btnAllowBoothCamera"><i class="mdi mdi-camera-outline"></i> 카메라 허용하고 스캔하기</button>
+					</div>
+				</div>
+				<div id="boothQrScannerPanel" class="boothQrScannerPanel" hidden>
+					<p class="boothQrScanGuide">카메라를 부스 QR 코드에 맞춰 주세요.</p>
+					<div id="boothQrReader" class="boothQrReader"></div>
+				</div>
+				<div id="boothQrHelpPanel" class="boothQrHelpPanel" hidden>
+					<p class="boothQrHelpTitle">카메라 권한을 허용해 주세요</p>
+					<p class="boothQrHelpLead">QR 스캔을 위해 카메라 접근이 필요합니다. 아래 방법으로 권한을 허용한 뒤 다시 시도해 주세요.</p>
+					<ol id="boothQrHelpSteps" class="boothQrHelpSteps"></ol>
+					<div class="btn_wrap center boothQrActions">
+						<button type="button" class="boothQrBtn boothQrBtnPrimary" id="btnRetryBoothCamera">다시 시도</button>
+					</div>
+				</div>
+				<p id="boothQrScanStatus" class="boothQrScanStatus" aria-live="polite"></p>
+				<div class="btn_wrap center boothQrActions" id="boothQrCloseWrap">
+					<button type="button" class="boothQrBtn boothQrBtnSecondary" id="btnCloseBoothQrScan">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="subWrap form com">
+		<div class="subTit">
+			<h3 id="userWelcome">로딩 중…</h3>
+		</div>
+		<div class="subCont">
+			<span class="line width"></span>
+			<div class="subInfoTit">
+				<p class="calendar">2026. 07. 14 - 16</p>
+				<p class="place">COEX(서울 삼성동) 북문 측 그랜드볼룸 1-3F</p>
+			</div>
+			<span class="line width"></span>
+			<div class="payWrap">
+				<div class="payInfo">
+					<h2>신청 정보</h2>
+					<div class="infoCheckWrap">
+						<div class="inputCheckText com">
+							<div class="qrWrap">
+								<dl>
+									<dt>신청 번호</dt>
+									<dd id="fieldApplicantCode">—</dd>
+								</dl>
+								<div class="qrArea">
+									<p>QR 코드</p>
+									<div class="qr" id="qrCodeImage">
+										<img  src="" alt="QR 코드" style="width: 100%; height: auto;">
+									</div>
+									<div class="qrText" style="display: none" id="qrCodeText">
+										<p>QR 코드는 결제 완료 후 생성되며,<br/>마이페이지에서 확인 가능합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="qrRight">
+								<dl>
+									<dt>참가권</dt>
+									<dd id="fieldTicket">—</dd>
+								</dl>
+								<dl>
+									<dt>성명</dt>
+									<dd id="fieldName">—</dd>
+								</dl>
+								<dl>
+									<dt>소속</dt>
+									<dd id="fieldAffiliation">—</dd>
+								</dl>
+								<dl>
+									<dt>직책</dt>
+									<dd id="fieldPosition">—</dd>
+								</dl>
+								<dl>
+									<dt>연락처</dt>
+									<dd id="fieldMobile">—</dd>
+								</dl>
+								<dl>
+									<dt>이메일</dt>
+									<dd id="fieldEmail">—</dd>
+								</dl>
+								<dl id="fieldInterestedRow" style="display: none;">
+									<dt>관심 트랙</dt>
+									<dd id="fieldInterested">—</dd>
+								</dl>
+								<dl id="fieldLotteryRow" style="display: none;">
+									<dt>행운번호</dt>
+									<dd id="fieldLottery">—</dd>
+								</dl>
+								<dl>
+									<dt>신청 상태</dt>
+									<dd id="fieldStatus">—</dd>
+								</dl>
+								<dl>
+									<dt>결제 현황</dt>
+									<dd id="fieldPayment">—</dd>
+								</dl>
+								<dl id="fieldReferralRow" style="display: none;">
+									<dt>추천코드 기업</dt>
+									<dd id="fieldReferralCompany">—</dd>
+								</dl>
+								<dl id="fieldReferralDiscountRow" style="display: none;">
+									<dt>할인 정보</dt>
+									<dd id="fieldReferralDiscount">—</dd>
+								</dl>
+								<dl id="fieldReferralAmountRow" style="display: none;">
+									<dt>결제 금액</dt>
+									<dd id="fieldReferralAmount">—</dd>
+								</dl>
+								<p id="footerOnsiteNotice" style="display: none;"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="payInfo mob">
+					<h2>현장 입장 QR</h2>
+					<div class="infoCheckWrap">
+						<div class="inputCheckText com">
+							<div class="qrWrap">
+								<dl>
+									<dt>신청 번호</dt>
+									<dd id="fieldApplicantCode">—</dd>
+								</dl>
+								<div class="qrArea">
+									<p>QR 코드</p>
+									<div class="qr" id="qrCodeImage">
+										<img  src="" alt="QR 코드" style="width: 100%; height: auto;">
+									</div>
+									<div class="qrText" style="display: none" id="qrCodeText">
+										<p>QR 코드는 결제 완료 후 생성되며,<br/>마이페이지에서 확인 가능합니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="payInfo mob">
+					<h2>신청 정보</h2>
+					<div class="infoCheckWrap">
+						<div class="inputCheckText com">
+							<div class="qrRight">
+								<dl>
+									<dt>참가권</dt>
+									<dd id="fieldTicket">—</dd>
+								</dl>
+								<dl>
+									<dt>성명</dt>
+									<dd id="fieldName">—</dd>
+								</dl>
+								<dl>
+									<dt>소속</dt>
+									<dd id="fieldAffiliation">—</dd>
+								</dl>
+								<dl>
+									<dt>직책</dt>
+									<dd id="fieldPosition">—</dd>
+								</dl>
+								<dl>
+									<dt>연락처</dt>
+									<dd id="fieldMobile">—</dd>
+								</dl>
+								<dl>
+									<dt>이메일</dt>
+									<dd id="fieldEmail">—</dd>
+								</dl>
+								<dl id="fieldInterestedRow" style="display: none;">
+									<dt>관심 트랙</dt>
+									<dd id="fieldInterested">—</dd>
+								</dl>
+								<dl id="fieldLotteryRow" style="display: none;">
+									<dt>행운번호</dt>
+									<dd id="fieldLottery">—</dd>
+								</dl>
+								<dl>
+									<dt>신청 상태</dt>
+									<dd id="fieldStatus">—</dd>
+								</dl>
+								<dl>
+									<dt>결제 현황</dt>
+									<dd id="fieldPayment">—</dd>
+								</dl>
+								<dl id="fieldReferralRow" style="display: none;">
+									<dt>추천코드 기업</dt>
+									<dd id="fieldReferralCompany">—</dd>
+								</dl>
+								<dl id="fieldReferralDiscountRow" style="display: none;">
+									<dt>할인 정보</dt>
+									<dd id="fieldReferralDiscount">—</dd>
+								</dl>
+								<dl id="fieldReferralAmountRow" style="display: none;">
+									<dt>결제 금액</dt>
+									<dd id="fieldReferralAmount">—</dd>
+								</dl>
+								<p id="footerOnsiteNotice" style="display: none;"></p>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="btn_wrap center">
+					<button type="button" class="fix" id="btnOpenProfileEdit">참가자 정보 수정하기 <i class="mdi mdi-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="subWrap deepDark" id="stampSec">
+		<div class="subTit">
+			<h3>STAMP TOUR</h3>
+			<span>부스를 방문하고 스탬프를 모아 경품 추첨에 응모해 보세요.</span>
+		</div>
+		<div class="subCont">
+			<div class="btn_wrap center">
+				<button type="button" class="camBtn js-booth-qr-scan" id="btnBoothQrScan"><i class="mdi mdi-camera-outline"></i> 부스 QR 스캔하기</button>
+			</div>
+			<div class="camText">
+				<p>카메라를 실행해 부스에 비치된 QR을 인식해 주세요</p>
+			</div>
+			<div class="payInfo">
+				<h2>스탬프 투어 현황</h2>
+				<div class="infoCheckWrap">
+	<div class="map">
+		<svg id="stampTourMap" xmlns="http://www.w3.org/2000/svg" width="1117" height="408" viewBox="0 0 1117 408" fill="none">
+		<g>
+		<rect id="Rectangle 3972" x="448.416" y="50" width="222" height="310" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+		<rect id="Rectangle 3973" x="166.416" y="101" width="253" height="259" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+		<rect id="Rectangle 3977" x="7.41602" y="101" width="125" height="259" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+		<rect id="Rectangle 3978" x="986.416" y="101" width="125" height="259" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/>
+		<rect id="Rectangle 3974" x="703.416" y="101" width="250" height="259" rx="1.5" fill="white" fill-opacity="0.04" stroke="#FFC107"/>
+		<!-- <rect id="Rectangle 3975" x="703.416" y="45" width="334" height="47" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/> -->
+		<!-- <rect id="Rectangle 3976" x="83.416" y="45" width="336" height="47" rx="1.5" fill="white" fill-opacity="0.04" stroke="#D1DFF9"/> -->
+		    <g>
+		        <rect x="470.416" y="234.5" width="175" height="27" rx="13.5" fill="#D1DFF9"/>
+		        <rect x="470.416" y="234.5" width="175" height="27" rx="13.5" stroke="white"/>
+		        <text fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em">
+					<tspan x="505" y="253.355">AXIS Hub 존</tspan>
+				</text>
+		    </g>
+		    <g>
+		        <rect x="477.416" y="48" width="82" height="82" fill="#2962FF" fill-opacity="0.4"/>
+		        <rect x="477.416" y="48" width="82" height="82" stroke="#2962FF"/>
+		        <text id="A1" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="12" letter-spacing="0em">
+					<tspan x="496" y="92.57">신한은행</tspan>
+				</text>
+		    </g>
+			<g>
+		        <rect x="558.416" y="48" width="82" height="82" fill="#2962FF" fill-opacity="0.4"/>
+		        <rect x="558.416" y="48" width="82" height="82" stroke="#2962FF"/>
+		        <text id="A2" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="12" letter-spacing="0em">
+					<tspan x="581.434" y="92.57">KMAC</tspan>
+				</text>
+		    </g>
+			 <g>
+		        <rect x="477.416" y="135" width="164" height="41" fill="#2962FF" fill-opacity="0.4" rx="20" ry="20" />
+		        <rect x="477.416" y="135" width="164" height="41" stroke="#2962FF" rx="20" ry="20" />
+		        <text id="A1" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="12" letter-spacing="0em">
+					<tspan x="496" y="158">BRAND EXPERIENCE</tspan>
+				</text>
+		    </g>
+			<a href="#explain2">
+		    	<g>
+			        <rect x="707.416" y="190" width="203" height="41" fill="#00E5FF" fill-opacity="0.03"  rx="20" ry="20"/>
+			        <rect x="707.416" y="190" width="203" height="41" stroke="#00E5FF"  rx="20" ry="20"/>
+			        <text id="A4" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="780" y="214">CX & AICC</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="707.416" y="105" width="82" height="82" fill="#00E5FF" fill-opacity="0.03"/>
+			        <rect x="707.416" y="105" width="82" height="82" stroke="#00E5FF"/>
+			        <text id="A4" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="736" y="148.975">LG U+</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="789.416" y="105" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+			        <rect x="789.416" y="105" width="39" height="41" stroke="#00E5FF"/>
+			        <text id="A4_2" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="796" y="127">메타엠</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="828.416" y="105" width="39" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+			        <rect x="828.416" y="105" width="39" height="41" stroke="#00E5FF"/>
+			        <text id="A4_2" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="839" y="127">웅진</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="789.416" y="146" width="78" height="41" fill="#00E5FF" fill-opacity="0.03"/>
+			        <rect x="789.416" y="146" width="78" height="41" stroke="#00E5FF"/>
+			        <text id="A4_2" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="812" y="168">제네시스</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="332.416" y="105" width="82" height="82" fill="#00E5FF" fill-opacity="0.03"/>
+			        <rect x="332.416" y="105" width="82" height="82" stroke="#00E5FF"/>
+			        <text id="A4_3" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em"><tspan x="365.848" y="148.975">TP</tspan></text>
+			    </g>
+		    </a>
+		    <g>
+		    <path d="M128.416 279V361H9.91602C6.32617 361 3.41602 358.09 3.41602 354.5V279H128.416Z" fill="#4D6288" fill-opacity="0.03"/>
+		    <path d="M128.416 279V361H9.91602C6.32617 361 3.41602 358.09 3.41602 354.5V279H128.416Z" stroke="#4D6288"/>
+		        <text id="ì¹´ííë¦¬ì" fill="#4D6288" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em"><tspan x="42.21" y="322.975">카페테리아</tspan></text>
+		    </g>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="371.5" y="48" width="39" height="41" fill="#2962FF" fill-opacity="0.08"/>
+			        <rect x="371.5" y="48" width="39" height="41" stroke="#2962FF"/>
+			        <text id="C8" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="383" y="63.6732">삼성</tspan>
+						<tspan x="383" y="75.6732">화재</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="211.847" y="48" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+			        <rect x="211.847" y="48" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C4" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="222.04" y="63.6732">The</tspan>
+						<tspan x="217.04" y="75.6732">CRUX</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <g>
+		        <rect x="7.41602" y="106" width="39" height="130" fill="#2962FF" fill-opacity="0.03"/>
+		        <rect x="7.41602" y="106" width="39" height="130" stroke="#2962FF"/>
+		        <text transform="translate(15.916 205.5) rotate(-90)" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em"><tspan x="0.0615234" y="12.475">전시 헬프데스크
+		        </tspan></text>
+		    </g>
+		    <a href="#explain5">
+		    	<g>
+			        <rect x="1070.42" y="105" width="39" height="41" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="1070.42" y="105" width="39" height="41" stroke="#9DFF00"/>
+			        <text id="D1" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="1077" y="127">상주시</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain5">
+		    	<g>
+			        <rect x="1070.42" y="146" width="39" height="205" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="1070.42" y="146" width="39" height="205" stroke="#9DFF00"/>
+			        <text id="D2" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="1081" y="228">공공</tspan>
+						<tspan x="1081" y="239">기관</tspan>
+						<tspan x="1077" y="250">홍보존</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="251.416" y="48" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+			        <rect x="251.416" y="48" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C5" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em"><tspan x="257.692" y="70.6732">도로시</tspan></text>
+			    </g>
+		    </a>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="332.074" y="48" width="39" height="41" fill="#2962FF" fill-opacity="0.08"/>
+			        <rect x="332.074" y="48" width="39" height="41" stroke="#2962FF"/>
+			        <text id="C7" fill="#2962FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em"><tspan x="342.88" y="70.6732">빗썸</tspan></text>
+			    </g>
+		    </a>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="172" y="48" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+			        <rect x="172" y="48" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C3" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="186.426" y="63.6732">더</tspan>
+						<tspan x="177.426" y="75.6732">지피씨</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain3">
+		    	<g>
+			        <rect x="291.678" y="48" width="39" height="41" fill="#FFC107" fill-opacity="0.08"/>
+			        <rect x="291.678" y="48" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C6" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="302" y="63.6732">오상</tspan>
+						<tspan x="298" y="75.6732">자이엘</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="867" y="146" width="39" height="41" fill="#00E5FF" fill-opacity="0.08"/>
+			        <rect x="867" y="146" width="39" height="41" stroke="#00E5FF"/>
+			        <text id="C29_3" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="876" y="168">F&U</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain2">
+		   	 	<g>
+			        <rect x="906" y="105" width="39" height="41" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="906" y="105" width="39" height="41" stroke="#9DFF00"/>
+			        <text id="C29_8" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="6" letter-spacing="0em">
+						<tspan x="909" y="122">한국문화예술</tspan>
+						<tspan x="917" y="132">위원회</tspan>
+					</text>
+			    </g>
+		   	</a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="906" y="146" width="39" height="41" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="906" y="146" width="39" height="41" stroke="#9DFF00"/>
+			        <text id="C29_4" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="6" letter-spacing="0em">
+						<tspan x="909" y="163">한국출판문화</tspan>
+						<tspan x="912" y="173">산업진흥원</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="215.416" y="105" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="215.416" y="105" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29_5" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="221" y="128">픽플리</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="254.218" y="105" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="254.218" y="105" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29_6" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="260" y="128">유클릭</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="293.416" y="105" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="293.416" y="105" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29_6" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="303" y="118.475">테라</tspan>
+						<tspan x="295.5" y="129.475">데이터X</tspan>
+						<tspan x="300" y="140.475">원시스</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain1">
+		    	<g>
+			        <rect x="215.416" y="146" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="215.416" y="146" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="226" y="164.475">이즈</tspan>
+						<tspan x="226" y="176.475">파크</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="254.218" y="146" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="254.218" y="146" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29_2" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="265" y="164.475">하몬</tspan>
+						<tspan x="261" y="176.475">소프트</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="293.416" y="146" width="39" height="41" fill="#FFC107" fill-opacity="0.03"/>
+			        <rect x="293.416" y="146" width="39" height="41" stroke="#FFC107"/>
+			        <text id="C29_2" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="304" y="157.475">DKI</tspan>
+						<tspan x="304" y="168.475">테크</tspan>
+						<tspan x="300" y="179.475">놀로지</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain1">
+		    	<g>
+			        <rect x="215.416" y="191" width="117" height="41" fill="#FFC107" fill-opacity="0.03" rx="20" ry="20"/>
+			        <rect x="215.416" y="191" width="117" height="41" stroke="#FFC107" rx="20" ry="20"/>
+			        <text id="C29" fill="#FFC107" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="222" y="214">TECH & AI SOLUTION</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="867" y="105" width="39" height="41" fill="#00E5FF" fill-opacity="0.08"/>
+			        <rect x="867" y="105" width="39" height="41" stroke="#00E5FF"/>
+			        <text id="C29_7" fill="#00E5FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="874" y="122">에스알</tspan>
+						<tspan x="874" y="132">포스트</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain1">
+		    	<g>
+			        <rect x="271" y="275" width="117" height="41" fill="#7000FF" fill-opacity="0.08" rx="20" ry="20"/>
+			        <rect x="271" y="275" width="117" height="41" stroke="#7000FF" rx="20" ry="20"/>
+			        <text id="B2" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="280" y="298">HR & SMART OFFICE</tspan>
+					</text>
+			    </g>
+		    </a>
+			<a href="#explain1">
+		    	<g>
+			        <rect x="254" y="320" width="39" height="41" fill="#7000FF" fill-opacity="0.08"/>
+			        <rect x="254" y="320" width="39" height="41" stroke="#7000FF"/>
+			        <text id="B2" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="260" y="342">레페드</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="293" y="320" width="39" height="41" fill="#7000FF" fill-opacity="0.08"/>
+			        <rect x="293" y="320" width="39" height="41" stroke="#7000FF"/>
+			        <text id="B2" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="299" y="342">웍스AI</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="332" y="320" width="39" height="41" fill="#7000FF" fill-opacity="0.08"/>
+			        <rect x="332" y="320" width="39" height="41" stroke="#7000FF"/>
+			        <text id="B2" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="8" letter-spacing="0em">
+						<tspan x="339" y="330">SAPX</tspan>
+						<tspan x="339" y="342">코오롱</tspan>
+						<tspan x="339" y="354">베니트</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain1">
+		    	<g>
+			        <rect x="371" y="320" width="39" height="41" fill="#7000FF" fill-opacity="0.08"/>
+			        <rect x="371" y="320" width="39" height="41" stroke="#7000FF"/>
+			        <text id="B2" fill="#7000FF" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="8" letter-spacing="0em">
+						<tspan x="375" y="336">법무법인</tspan>
+						<tspan x="388" y="348">린</tspan>
+					</text>
+			    </g>
+		    </a>
+	
+		   
+		    <a href="#explain4">
+		    	<g>
+			        <rect x="789.416" y="268" width="82" height="82" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="789.416" y="268" width="82" height="82" stroke="#9DFF00"/>
+			        <text id="B4" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="820" y="302">KISA</tspan>
+						<tspan x="810" y="313">(한국인터넷</tspan>
+						<tspan x="818" y="324">진흥원)</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="707.416" y="268" width="82" height="82" fill="#9DFF00" fill-opacity="0.08"/>
+			        <rect x="707.416" y="268" width="82" height="82" stroke="#9DFF00"/>
+			        <text id="B3" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="737" y="307">경기도</tspan>
+						<tspan x="730" y="317">일자리재단</tspan>
+					</text>
+			    </g>
+		    </a>
+		    <a href="#explain2">
+		    	<g>
+			        <rect x="880.416" y="310" width="164" height="41" fill="#273911" fill-opacity="0.99" rx="20" ry="20"/>
+			        <rect x="880.416" y="310" width="164" height="41" stroke="#9DFF00" rx="20" ry="20"/>
+			        <text id="B3" fill="#9DFF00" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="9" letter-spacing="0em">
+						<tspan x="918" y="333">PUBLIC & INSIGHT</tspan>
+					</text>
+			    </g>
+		    </a>
+			<g>
+		        <rect x="707.416" y="50" width="380" height="27" rx="13.5" fill="#D1DFF9"/>
+		        <rect x="707.416" y="50" width="380" height="27" rx="13.5" stroke="white"/>
+		        <text fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em">
+					<tspan x="880" y="70">Fun 존</tspan>
+				</text>
+		    </g>
+		    <path id="Vector 572" d="M243.564 363.987H503.762" stroke="white" stroke-width="7.12871"/>
+		    <path id="Vector 573" d="M616.634 363.987H876.832" stroke="white" stroke-width="7.12871"/>
+		    <path id="Vector 576" d="M129.505 363.987H19.5645C10.7279 363.987 3.56445 356.824 3.56445 347.987V60.3833C3.56445 51.5467 10.7279 44.3833 19.5645 44.3833H1097.27C1106.1 44.3833 1113.27 51.5467 1113.27 60.3833V347.987C1113.27 356.824 1106.1 363.987 1097.27 363.987H989.702" stroke="white" stroke-width="7.12871"/>
+		    <path id="Polygon 4" d="M559.416 361.5L584.098 377.25H534.734L559.416 361.5Z" fill="#4D6288"/>
+		    <path id="Polygon 5" d="M186.535 378.245L163.899 362.205L209.172 362.205L186.535 378.245Z" fill="#4D6288"/>
+		    <path id="Polygon 6" d="M935.05 378.245L912.413 362.205L957.687 362.205L935.05 378.245Z" fill="#4D6288"/>
+		        <text id="ENTRANCE" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="511.205" y="403.76">ENTRANCE</tspan></text>
+		        <text id="EXIT" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="168.127" y="403.76">EXIT</tspan></text>
+		        <text id="EXIT_2" fill="white" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="915.127" y="403.76">EXIT</tspan></text>
+		    <g>
+		        <rect x="32.416" y="225" width="96" height="47" rx="23.5" fill="#D1DFF9"/>
+		        <rect x="32.416" y="225" width="96" height="47" rx="23.5" stroke="white"/>
+		        <text id="F&amp;B Lounge" fill="black" style="white-space: pre" xml:space="preserve" font-family="NanumSquare Neo" font-size="16" letter-spacing="0em"><tspan x="60.9219" y="243.855">F&amp;B
+		        </tspan><tspan x="44.9609" y="263.855">Lounge</tspan></text>
+		    </g>
+		</g>
+		</svg>
+	</div>
+					<p class="svgP" id="stampTourProgressText">10개 이상의 부스를 방문하고 폐회식 QR 인증까지 완료하시면 경품 추첨 참여의 기회가 주어집니다!</p>
+					<p></p>
+					<div class="stampWrap" id="stampTourWrap">
+						<div class="stampCircle" id="stampBooth1">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth2">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth3">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth4">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth5">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth6">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth7">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth8">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth9">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampBooth10">
+							<img src="/_conference/img/2026/stampLogo.png" alt="">
+							<p></p>
+						</div>
+						<div class="stampCircle" id="stampClosing">
+							<h4>폐회<br>QR</h4>
+						</div>
+					</div>
+					<div class="btn_wrap center stampTourScanActions">
+						<button type="button" class="camBtn js-booth-qr-scan" id="btnBoothQrScanBottom"><i class="mdi mdi-camera-outline"></i> 부스 QR 스캔하기</button>
+					</div>
+				</div>
+				<div class="stampGift" id="stampGift" style="display: none;">
+					<h4>경품 추첨 응모 완료</h4>
+					<p>아래 경품 추첨 번호를 확인해 주세요</p>
+					<div class="giftNum">
+						<div class="num">0</div>
+						<div class="num">0</div>
+						<div class="num">0</div>
+						<div class="num">0</div>
+					</div>
+				</div>
+				<p>모든 부스 방문을 완료하신 분께는 별도 리워드를 제공합니다.</p>
+			</div>
+		</div>
+	</section>
+	<div class="footer">
+		<div class="footerCont">
+			<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+			<div class="footerTop">
+				<div class="footerText">
+					<h3>AXIS 운영사무국</h3>
+					<p>
+						T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+						(07241) 서울특별시 영등포구 여의공원로 101, 8층
+					</p>
+					<p>
+						사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+						한국능률협회컨설팅 대표자 한수희
+					</p>
+					<b>ⓒ 2026 KMAC. All rights reserved.</b>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../static/js/2026/axis-auth.js"></script>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="/_conference/js/2026/axis-auth.js"></script>
+<script src="/_conference/js/2026/axis-referral.js"></script>
+<script src="/_conference/js/2026/axis-profile.js"></script>
+<script src="/_conference/js/2026/axis-interested-tracks.js"></script>
+<script src="/_conference/js/2026/axis-booth-tour.js"></script>
+<script th:inline="javascript">
+/** 마이페이지 조회 (Redoc: /api/user/me) — 베이스는 conference.axis.api-base-url */
+var AXIS_PUBLIC_API_BASE = /*[[${axisApiBaseUrl}]]*/ "https://api.axis2026.eventconference.in";
+const USER_ME_API_URL = AXIS_PUBLIC_API_BASE + "/api/user/me";
+
+/**
+ * [테스트용] 부스투어 스캔/조회에 사용할 날짜(YYYY-MM-DD).
+ * 값이 있으면 URL의 test_date보다 우선 적용됩니다. 운영 배포 전 "" 로 되돌리세요.
+ */
+const BOOTH_TOUR_TEST_DATE = "2026-07-14";
+
+function resolveBoothTourTestDate() {
+	if (BOOTH_TOUR_TEST_DATE) {
+		return BOOTH_TOUR_TEST_DATE;
+	}
+	if (typeof AxisBoothTour !== "undefined" && AxisBoothTour.getTestDateFromUrl) {
+		return AxisBoothTour.getTestDateFromUrl();
+	}
+	return null;
+}
+
+let myPageProfileEmail = "";
+
+async function resolveAuthToken() {
+	if (typeof AxisAuth === "undefined") {
+		return "";
+	}
+	return AxisAuth.ensureAccessToken(AXIS_PUBLIC_API_BASE);
+}
+
+async function fetchUserMeWithAuth(token) {
+	return fetch(USER_ME_API_URL, {
+		headers: { Authorization: "Bearer " + token }
+	});
+}
+
+function setProfileVerifyStatus(text, isError) {
+	const el = document.getElementById("profileVerifyStatus");
+	if (!el) {
+		return;
+	}
+	el.textContent = text || "";
+	el.classList.toggle("is-error", !!isError);
+}
+
+async function sendProfileVerificationCodeFromMypage() {
+	const token = await resolveAuthToken();
+	if (!token) {
+		AxisAuth.redirectToLogin("로그인이 필요합니다.");
+		return false;
+	}
+	const resendBtn = document.getElementById("btnProfileResendCode");
+	if (resendBtn) {
+		resendBtn.disabled = true;
+	}
+	setProfileVerifyStatus("인증번호를 발송하는 중입니다…", false);
+	try {
+		const result = await AxisProfile.sendProfileVerificationCode(AXIS_PUBLIC_API_BASE, token);
+		if (result.unauthorized) {
+			await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, result.message);
+			return false;
+		}
+		if (!result.ok) {
+			setProfileVerifyStatus(result.message || "인증번호 발송에 실패했습니다.", true);
+			return false;
+		}
+		const masked = myPageProfileEmail ? AxisProfile.maskEmail(myPageProfileEmail) : "등록된 이메일";
+		let msg = masked + "로 인증번호를 발송했습니다.";
+		if (result.expiresInSeconds != null) {
+			const min = Math.max(1, Math.round(Number(result.expiresInSeconds) / 60));
+			msg += " (" + min + "분 내 입력)";
+		}
+		setProfileVerifyStatus(msg, false);
+		return true;
+	} catch (e) {
+		setProfileVerifyStatus("네트워크 오류로 인증번호를 발송하지 못했습니다.", true);
+		return false;
+	} finally {
+		if (resendBtn) {
+			resendBtn.disabled = false;
+		}
+	}
+}
+
+async function openProfileEditModal() {
+	const token = await resolveAuthToken();
+	if (!token) {
+		AxisAuth.redirectToLogin("로그인이 필요합니다.");
+		return;
+	}
+	const input = document.getElementById("profileVerifyCodeInput");
+	if (input) {
+		input.value = "";
+	}
+	setProfileVerifyStatus("", false);
+	togglePopup("infoFIx");
+	await sendProfileVerificationCodeFromMypage();
+	if (input) {
+		input.focus();
+	}
+}
+
+async function verifyProfileCodeAndGoFix() {
+	const token = await resolveAuthToken();
+	if (!token) {
+		AxisAuth.redirectToLogin("로그인이 필요합니다.");
+		return;
+	}
+	const code = document.getElementById("profileVerifyCodeInput").value.trim();
+	const verifyBtn = document.getElementById("btnProfileVerify");
+	if (verifyBtn) {
+		verifyBtn.disabled = true;
+	}
+	setProfileVerifyStatus("인증번호를 확인하는 중입니다…", false);
+	try {
+		const result = await AxisProfile.verifyProfileVerificationCode(AXIS_PUBLIC_API_BASE, token, code);
+		if (result.unauthorized) {
+			AxisProfile.clearStoredProfileVerificationCode();
+			await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, result.message);
+			return;
+		}
+		if (!result.ok) {
+			setProfileVerifyStatus(result.message || "인증번호가 올바르지 않습니다.", true);
+			return;
+		}
+		closePopup("infoFIx");
+		location.href = "/_conference/program/mypageFix";
+	} catch (e) {
+		setProfileVerifyStatus("네트워크 오류가 발생했습니다.", true);
+	} finally {
+		if (verifyBtn) {
+			verifyBtn.disabled = false;
+		}
+	}
+}
+
+document.getElementById("btnOpenProfileEdit").addEventListener("click", openProfileEditModal);
+document.getElementById("btnProfileVerify").addEventListener("click", verifyProfileCodeAndGoFix);
+document.getElementById("btnProfileResendCode").addEventListener("click", sendProfileVerificationCodeFromMypage);
+document.getElementById("profileVerifyCodeInput").addEventListener("keydown", function (e) {
+	if (e.key === "Enter") {
+		e.preventDefault();
+		verifyProfileCodeAndGoFix();
+	}
+});
+
+function formatMobileDisplay(m) {
+	const d = String(m || "").replace(/\D/g, "");
+	if (d.length === 11) {
+		return d.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+	}
+	return m || "—";
+}
+
+function ticketTierLabel(ticketType) {
+	const map = { DAY1: "1일권", DAY2: "2일권", DAY3: "3일권" };
+	return map[ticketType] || ticketType || "—";
+}
+
+function dayNumToLabel(n) {
+	const map = { 1: "7월 14일", 2: "7월 15일", 3: "7월 16일" };
+	return map[Number(n)] || `DAY${n}`;
+}
+
+function formatAttendanceDays(days) {
+	if (!Array.isArray(days) || !days.length) {
+		return "";
+	}
+	return [...days].sort((a, b) => a - b).map(dayNumToLabel).join(", ");
+}
+
+function formatTicketLine(d) {
+	const tier = ticketTierLabel(d.ticket_type);
+	const days = formatAttendanceDays(d.attendance_days);
+	return days ? `${tier} · ${days}` : tier;
+}
+
+/** 관리자 수정·표시용 필드가 있으면 우선 (백엔드가 내려주는 키에 맞춤) */
+function effectiveTicketType(d) {
+	if (d == null) {
+		return null;
+	}
+	if (d.display_ticket_type != null && String(d.display_ticket_type).trim() !== "") {
+		return d.display_ticket_type;
+	}
+	if (d.ticket_type_effective != null && String(d.ticket_type_effective).trim() !== "") {
+		return d.ticket_type_effective;
+	}
+	return d.ticket_type;
+}
+
+function effectiveAttendanceDays(d) {
+	if (d == null) {
+		return null;
+	}
+	if (Array.isArray(d.display_attendance_days)) {
+		return d.display_attendance_days;
+	}
+	if (Array.isArray(d.attendance_days_effective)) {
+		return d.attendance_days_effective;
+	}
+	return d.attendance_days;
+}
+
+function formatTicketLineForDisplay(d) {
+	const merged = {
+		ticket_type: effectiveTicketType(d),
+		attendance_days: effectiveAttendanceDays(d)
+	};
+	return formatTicketLine(merged);
+}
+
+/** 신청일(Asia/Seoul) YYYYMMDD */
+function appliedAtToYYYYMMDD(appliedAt) {
+	if (!appliedAt) {
+		return "";
+	}
+	const t = Date.parse(appliedAt);
+	if (Number.isNaN(t)) {
+		return "";
+	}
+	const d = new Date(t);
+	const iso = d.toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+	return iso.replace(/-/g, "");
+}
+
+/** 신청 번호 표기: 신청일자 + id (예: 2026042942). applied_at 또는 id 없으면 applicant_code */
+function formatDisplayApplicationNumber(d) {
+	const ymd = appliedAtToYYYYMMDD(d.applied_at);
+	const nid = d.id != null ? String(d.id) : "";
+	if (ymd && nid) {
+		return ymd + nid;
+	}
+	return d.applicant_code != null && String(d.applicant_code).trim() !== ""
+		? String(d.applicant_code).trim()
+		: "—";
+}
+
+function formatAffiliationDept(d) {
+	const af = (d.affiliation || "").trim();
+	const dep = (d.department != null ? String(d.department).trim() : "");
+	if (af && dep) {
+		return `${af} | ${dep}`;
+	}
+	return af || dep || "—";
+}
+
+function formatInterestedTracksForMyPage(d) {
+	if (typeof AxisInterestedTracks !== "undefined" && AxisInterestedTracks.formatForProfile) {
+		return AxisInterestedTracks.formatForProfile(d);
+	}
+	return "";
+}
+
+function statusLabelKo(status) {
+	const map = {
+		APPLY_PENDING: "신청·결제 대기",
+		APPLY_COMPLETED: "신청 완료",
+		CANCELLED: "취소됨"
+	};
+	return map[status] || status || "—";
+}
+
+function formatPaymentLine(d) {
+	if (typeof AxisReferral !== "undefined" && AxisReferral.formatApplicationPaymentStatusLine) {
+		return AxisReferral.formatApplicationPaymentStatusLine(d, {
+			footerNoticeId: "footerOnsiteNotice",
+			includeAmountInCompleted: true
+		});
+	}
+	return "—";
+}
+
+function renderMyPage(d) {
+	document.getElementById("userWelcome").textContent = `${d.name || "회원"} 님, 환영합니다`;
+	document.getElementById("fieldApplicantCode").textContent = formatDisplayApplicationNumber(d);
+	document.getElementById("fieldTicket").textContent = formatTicketLineForDisplay(d);
+	document.getElementById("fieldName").textContent = d.name || "—";
+	document.getElementById("fieldAffiliation").textContent = formatAffiliationDept(d);
+	const pos =
+		d.display_position != null && String(d.display_position).trim() !== ""
+			? String(d.display_position).trim()
+			: d.position != null && String(d.position).trim() !== ""
+				? String(d.position).trim()
+				: "";
+	document.getElementById("fieldPosition").textContent = pos || "—";
+	document.getElementById("fieldMobile").textContent = formatMobileDisplay(d.mobile);
+	document.getElementById("fieldEmail").textContent = d.email || "—";
+	document.getElementById("fieldStatus").textContent = statusLabelKo(d.status);
+	document.getElementById("fieldPayment").textContent = formatPaymentLine(d);
+
+	const qrImg = document.getElementById("qrCodeImage");
+	const qrText = document.getElementById("qrCodeText");
+	if (qrImg && d.qr_code_number) {
+		const innerImg = qrImg.querySelector("img");
+		console.log(innerImg)
+		// 내부 img 태그가 존재할 때만 src를 적용합니다.
+		if (innerImg) {
+			innerImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(d.qr_code_number)}`;
+		}
+		qrImg.style.display = "";
+		
+		qrText.style.display = "none";
+	} else if (qrImg) {
+		qrImg.removeAttribute("src");
+		qrImg.style.display = "none";
+		
+		qrText.style.display = "";
+		
+	}
+
+	const interestedText = formatInterestedTracksForMyPage(d);
+	const interestedRow = document.getElementById("fieldInterestedRow");
+	const interestedEl = document.getElementById("fieldInterested");
+	if (interestedText) {
+		interestedRow.style.display = "";
+		interestedEl.style.whiteSpace = "pre-line";
+		interestedEl.textContent = interestedText;
+	} else {
+		interestedRow.style.display = "none";
+		interestedEl.style.whiteSpace = "";
+	}
+
+	const lotteryRow = document.getElementById("fieldLotteryRow");
+	if (d.lottery_code != null && d.lottery_code !== "") {
+		lotteryRow.style.display = "";
+		document.getElementById("fieldLottery").textContent = String(d.lottery_code);
+	} else {
+		lotteryRow.style.display = "none";
+	}
+
+	if (typeof AxisReferral !== "undefined") {
+		AxisReferral.renderApplicationReferralFields(d, {
+			companyRow: "fieldReferralRow",
+			companyDd: "fieldReferralCompany",
+			discountRow: "fieldReferralDiscountRow",
+			discountDd: "fieldReferralDiscount",
+			amountRow: "fieldReferralAmountRow",
+			amountDd: "fieldReferralAmount"
+		});
+	}
+}
+
+function parseApiError(data) {
+	if (!data) {
+		return "정보를 불러오지 못했습니다.";
+	}
+	if (typeof data.detail === "string") {
+		return data.detail;
+	}
+	if (Array.isArray(data.detail) && data.detail.length > 0) {
+		return data.detail.map((item) => item.msg).join("\n");
+	}
+	return "정보를 불러오지 못했습니다.";
+}
+
+(async function initMyPage() {
+	let token = await resolveAuthToken();
+	if (!token) {
+		AxisAuth.redirectToLogin("로그인이 필요합니다.");
+		return;
+	}
+	try {
+		let response = await fetchUserMeWithAuth(token);
+		let data = null;
+		try {
+			data = await response.json();
+		} catch (e) {
+			data = null;
+		}
+		if (AxisAuth.isUnauthorizedStatus(response.status)) {
+			token = await AxisAuth.silentRelogin(AXIS_PUBLIC_API_BASE);
+			if (token) {
+				response = await fetchUserMeWithAuth(token);
+				data = null;
+				try {
+					data = await response.json();
+				} catch (e2) {
+					data = null;
+				}
+			}
+		}
+		if (AxisAuth.isUnauthorizedStatus(response.status)) {
+			await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, "로그인이 만료되었습니다. 다시 로그인해 주세요.");
+			return;
+		}
+		if (!response.ok) {
+			alert(parseApiError(data));
+			document.getElementById("userWelcome").textContent = "정보를 불러올 수 없습니다";
+			return;
+		}
+		if (typeof AxisReferral !== "undefined" && AxisReferral.enrichApplicationPaymentDisplay) {
+			data = AxisReferral.enrichApplicationPaymentDisplay(data);
+		}
+		if (data && data.name && data.mobile) {
+			AxisAuth.saveSessionHint({ name: data.name, mobile: data.mobile });
+		}
+		myPageProfileEmail = data && data.email ? String(data.email) : "";
+		const guideEl = document.getElementById("profileVerifyGuide");
+		if (guideEl && myPageProfileEmail) {
+			guideEl.textContent =
+				"참가자 정보 수정을 위해 " +
+				AxisProfile.maskEmail(myPageProfileEmail) +
+				"(으)로 발송된 인증번호를 입력해 주세요.";
+		}
+		if (typeof console !== "undefined" && console.groupCollapsed) {
+			console.groupCollapsed("[AXIS mypage] GET /api/user/me");
+			console.log("raw object:", data);
+			console.log(
+				"직책 관련 후보:",
+				data && typeof data === "object"
+					? {
+							position: data.position,
+							display_position: data.display_position,
+							job_position: data.job_position,
+							title: data.title
+						}
+					: data
+			);
+			console.log("keys:", data && typeof data === "object" ? Object.keys(data).sort().join(", ") : "(none)");
+			try {
+				console.log("JSON.stringify:\n", JSON.stringify(data, null, 2));
+			} catch (eStr) {
+				console.log("(JSON.stringify 불가)");
+			}
+			console.groupEnd();
+		}
+		renderMyPage(data);
+		await initBoothTour(token);
+	} catch (e) {
+		alert("네트워크 오류가 발생했습니다.");
+		document.getElementById("userWelcome").textContent = "정보를 불러올 수 없습니다";
+	}
+})();
+
+let boothQrScanner = null;
+let boothQrScanBusy = false;
+let boothQrCameraStarting = false;
+let boothQrModalOpen = false;
+let boothQrOpenLock = false;
+let boothQrBgDismissReady = false;
+let boothQrLastGateCode = "";
+let boothQrLastScanAt = 0;
+const BOOTH_QR_SCAN_COOLDOWN_MS = 8000;
+let boothTourState = { visitedCount: 0, closingVisited: false };
+
+function syncBoothTourState(data) {
+	if (typeof AxisBoothTour === "undefined" || !AxisBoothTour.getVisitStatusCounts) {
+		return;
+	}
+	const counts = AxisBoothTour.getVisitStatusCounts(data);
+	boothTourState = {
+		visitedCount: Number(counts.visitedCount) || 0,
+		closingVisited: !!counts.closingVisited
+	};
+}
+
+function setBoothQrScanStatus(text, isError) {
+	const el = document.getElementById("boothQrScanStatus");
+	if (!el) {
+		return;
+	}
+	el.textContent = text || "";
+	el.classList.toggle("is-error", !!isError);
+}
+
+function showBoothQrPanel(panelName) {
+	const intro = document.getElementById("boothQrIntroPanel");
+	const scanner = document.getElementById("boothQrScannerPanel");
+	const help = document.getElementById("boothQrHelpPanel");
+	if (intro) {
+		intro.hidden = panelName !== "intro";
+	}
+	if (scanner) {
+		scanner.hidden = panelName !== "scanner";
+	}
+	if (help) {
+		help.hidden = panelName !== "help";
+	}
+}
+
+function resetBoothQrPanels() {
+	showBoothQrPanel("intro");
+	setBoothQrScanStatus("", false);
+	const helpSteps = document.getElementById("boothQrHelpSteps");
+	if (helpSteps) {
+		helpSteps.innerHTML = "";
+	}
+}
+
+function renderBoothQrPermissionHelp(errorKind) {
+	const helpSteps = document.getElementById("boothQrHelpSteps");
+	if (!helpSteps || typeof AxisBoothTour === "undefined") {
+		return;
+	}
+	helpSteps.innerHTML = "";
+	AxisBoothTour.getCameraPermissionHelpSteps(errorKind).forEach(function (step) {
+		const li = document.createElement("li");
+		li.textContent = step;
+		helpSteps.appendChild(li);
+	});
+	showBoothQrPanel("help");
+}
+
+function getBoothQrScanConfig() {
+	if (typeof AxisBoothTour !== "undefined" && AxisBoothTour.buildHtml5QrcodeScanConfig) {
+		return AxisBoothTour.buildHtml5QrcodeScanConfig();
+	}
+	return { fps: 8, qrbox: { width: 220, height: 220 }, disableFlip: true };
+}
+
+async function prepareBoothQrReader() {
+	await stopBoothQrScanner();
+	if (boothQrScanner) {
+		try {
+			if (typeof boothQrScanner.clear === "function") {
+				boothQrScanner.clear();
+			}
+		} catch (e) {
+			/* ignore */
+		}
+		boothQrScanner = null;
+	}
+	const reader = document.getElementById("boothQrReader");
+	if (reader) {
+		reader.innerHTML = "";
+	}
+}
+
+async function waitForBoothQrReaderLayout() {
+	const reader = document.getElementById("boothQrReader");
+	if (typeof AxisBoothTour !== "undefined" && AxisBoothTour.waitForElementLayout) {
+		return AxisBoothTour.waitForElementLayout(reader, 2000);
+	}
+	await waitForNextFrame();
+	return !!(reader && reader.offsetWidth > 0);
+}
+
+function waitForNextFrame() {
+	return new Promise(function (resolve) {
+		requestAnimationFrame(function () {
+			requestAnimationFrame(resolve);
+		});
+	});
+}
+
+async function pauseBoothQrScanner() {
+	if (boothQrScanner && boothQrScanner.isScanning) {
+		try {
+			await boothQrScanner.pause(true);
+		} catch (e) {
+			await stopBoothQrScanner();
+		}
+	}
+}
+
+async function stopBoothQrScanner() {
+	if (boothQrScanner && boothQrScanner.isScanning) {
+		try {
+			await boothQrScanner.stop();
+		} catch (e) {
+			/* ignore stop errors */
+		}
+	}
+}
+
+async function closeBoothQrScanner() {
+	if (!boothQrModalOpen) {
+		return;
+	}
+	boothQrModalOpen = false;
+	boothQrBgDismissReady = false;
+	await stopBoothQrScanner();
+	const popup = document.getElementById("boothQrScan");
+	if (popup) {
+		popup.style.display = "none";
+	}
+	document.body.style.overflow = "";
+	resetBoothQrPanels();
+	await prepareBoothQrReader();
+	boothQrScanBusy = false;
+	boothQrCameraStarting = false;
+}
+
+function openBoothQrPopup() {
+	const popup = document.getElementById("boothQrScan");
+	if (!popup || boothQrModalOpen) {
+		return;
+	}
+	popup.style.display = "block";
+	document.body.style.overflow = "hidden";
+	boothQrModalOpen = true;
+	boothQrBgDismissReady = false;
+	window.setTimeout(function () {
+		boothQrBgDismissReady = true;
+	}, 400);
+}
+
+function bindBoothTourUiOnce() {
+	document.querySelectorAll(".js-booth-qr-scan").forEach(function (scanBtn) {
+		if (scanBtn.dataset.boothTourBound !== "1") {
+			scanBtn.dataset.boothTourBound = "1";
+			scanBtn.addEventListener("click", function (e) {
+				openBoothQrScanner(e);
+			});
+		}
+	});
+	const bg = document.getElementById("boothQrScanBg");
+	if (bg && bg.dataset.boothTourBound !== "1") {
+		bg.dataset.boothTourBound = "1";
+		bg.addEventListener("click", function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			if (!boothQrBgDismissReady || boothQrCameraStarting) {
+				return;
+			}
+			closeBoothQrScanner();
+		});
+	}
+	const modalCont = document.querySelector("#boothQrScan .boothQrScan_cont");
+	if (modalCont && modalCont.dataset.boothTourBound !== "1") {
+		modalCont.dataset.boothTourBound = "1";
+		modalCont.addEventListener("click", function (e) {
+			e.stopPropagation();
+		});
+	}
+	const closeBtn = document.getElementById("btnCloseBoothQrScan");
+	if (closeBtn && closeBtn.dataset.boothTourBound !== "1") {
+		closeBtn.dataset.boothTourBound = "1";
+		closeBtn.addEventListener("click", function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			closeBoothQrScanner();
+		});
+	}
+	const allowBtn = document.getElementById("btnAllowBoothCamera");
+	if (allowBtn && allowBtn.dataset.boothTourBound !== "1") {
+		allowBtn.dataset.boothTourBound = "1";
+		allowBtn.addEventListener("click", function (e) {
+			startBoothQrCamera(e);
+		});
+	}
+	const retryBtn = document.getElementById("btnRetryBoothCamera");
+	if (retryBtn && retryBtn.dataset.boothTourBound !== "1") {
+		retryBtn.dataset.boothTourBound = "1";
+		retryBtn.addEventListener("click", function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			setBoothQrScanStatus("", false);
+			startBoothQrCamera(e);
+		});
+	}
+}
+
+async function startBoothQrCamera(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+	if (!boothQrModalOpen || boothQrCameraStarting) {
+		return;
+	}
+	if (typeof Html5Qrcode === "undefined") {
+		alert("QR 스캐너를 불러오지 못했습니다. 페이지를 새로고침해 주세요.");
+		return;
+	}
+	if (typeof AxisBoothTour !== "undefined" && !AxisBoothTour.isSecureCameraContext()) {
+		renderBoothQrPermissionHelp("insecure");
+		setBoothQrScanStatus("카메라는 HTTPS 환경에서만 사용할 수 있습니다.", true);
+		return;
+	}
+
+	boothQrCameraStarting = true;
+	boothQrBgDismissReady = false;
+	const allowBtn = document.getElementById("btnAllowBoothCamera");
+	const retryBtn = document.getElementById("btnRetryBoothCamera");
+	if (allowBtn) {
+		allowBtn.disabled = true;
+	}
+	if (retryBtn) {
+		retryBtn.disabled = true;
+	}
+	setBoothQrScanStatus("카메라를 시작하는 중입니다…", false);
+	showBoothQrPanel("scanner");
+
+	try {
+		await waitForNextFrame();
+		await waitForBoothQrReaderLayout();
+
+		const config = getBoothQrScanConfig();
+
+		async function tryStartWith(cameraTarget) {
+			await prepareBoothQrReader();
+			boothQrScanner = new Html5Qrcode("boothQrReader");
+			await boothQrScanner.start(cameraTarget, config, onBoothQrScanSuccess, function () {});
+		}
+
+		function markScanReady() {
+			setBoothQrScanStatus("", false);
+			window.setTimeout(function () {
+				boothQrBgDismissReady = true;
+			}, 400);
+		}
+
+		try {
+			await tryStartWith({ facingMode: { ideal: "environment" } });
+			markScanReady();
+			return;
+		} catch (firstErr) {
+			const firstKind = typeof AxisBoothTour !== "undefined" ? AxisBoothTour.classifyCameraError(firstErr) : "unknown";
+			console.warn("[boothQr] primary camera start failed", firstErr);
+			if (firstKind === "denied") {
+				throw firstErr;
+			}
+
+			const candidates = [];
+			if (typeof AxisBoothTour !== "undefined" && AxisBoothTour.listCameraStartCandidates) {
+				const listed = await AxisBoothTour.listCameraStartCandidates();
+				if (Array.isArray(listed)) {
+					listed.forEach(function (candidate) {
+						candidates.push(candidate);
+					});
+				}
+			}
+			if (!candidates.length) {
+				candidates.push({ facingMode: "user" });
+			}
+
+			let lastError = firstErr;
+			for (let i = 0; i < candidates.length; i++) {
+				try {
+					await tryStartWith(candidates[i]);
+					markScanReady();
+					return;
+				} catch (candidateErr) {
+					lastError = candidateErr;
+					console.warn("[boothQr] camera candidate failed", candidates[i], candidateErr);
+				}
+			}
+			throw lastError || new Error("camera_start_failed");
+		}
+	} catch (err) {
+		console.error("[boothQr] camera start failed", err);
+		await prepareBoothQrReader();
+		const errorKind = typeof AxisBoothTour !== "undefined" ? AxisBoothTour.classifyCameraError(err) : "unknown";
+		if (errorKind === "denied") {
+			renderBoothQrPermissionHelp("denied");
+			setBoothQrScanStatus("카메라 권한이 필요합니다. 아래 안내에 따라 허용해 주세요.", true);
+		} else if (errorKind === "notfound") {
+			showBoothQrPanel("help");
+			renderBoothQrPermissionHelp("notfound");
+			setBoothQrScanStatus("사용 가능한 카메라를 찾을 수 없습니다.", true);
+		} else if (errorKind === "inuse") {
+			showBoothQrPanel("intro");
+			setBoothQrScanStatus("카메라가 다른 앱에서 사용 중입니다. 앱을 종료한 뒤 다시 시도해 주세요.", true);
+		} else if (errorKind === "overconstrained" || errorKind === "notsupported") {
+			showBoothQrPanel("intro");
+			setBoothQrScanStatus("이 기기에서 카메라를 사용할 수 없습니다. 다른 브라우저나 기기에서 시도해 주세요.", true);
+		} else {
+			showBoothQrPanel("intro");
+			setBoothQrScanStatus("카메라를 실행할 수 없습니다. 잠시 후 다시 시도해 주세요.", true);
+		}
+		window.setTimeout(function () {
+			boothQrBgDismissReady = true;
+		}, 400);
+	} finally {
+		boothQrCameraStarting = false;
+		if (allowBtn) {
+			allowBtn.disabled = false;
+		}
+		if (retryBtn) {
+			retryBtn.disabled = false;
+		}
+	}
+}
+
+async function openBoothQrScanner(e) {
+	if (e) {
+		e.preventDefault();
+		e.stopPropagation();
+	}
+	if (boothQrModalOpen || boothQrOpenLock) {
+		return;
+	}
+	const token = await resolveAuthToken();
+	if (!token) {
+		AxisAuth.redirectToLogin("로그인이 필요합니다.");
+		return;
+	}
+	if (typeof Html5Qrcode === "undefined") {
+		alert("QR 스캐너를 불러오지 못했습니다. 페이지를 새로고침해 주세요.");
+		return;
+	}
+
+	boothQrOpenLock = true;
+	try {
+		resetBoothQrPanels();
+		openBoothQrPopup();
+		showBoothQrPanel("intro");
+	} finally {
+		boothQrOpenLock = false;
+	}
+
+	// 이미 카메라 권한이 허용된 경우 안내 화면을 건너뛰고 바로 스캔 시작
+	if (typeof AxisBoothTour !== "undefined" && AxisBoothTour.queryCameraPermission) {
+		try {
+			const permission = await AxisBoothTour.queryCameraPermission();
+			if (permission === "granted" && boothQrModalOpen) {
+				await startBoothQrCamera();
+			}
+		} catch (permErr) {
+			/* 권한 조회 실패 시 안내 화면 유지 */
+		}
+	}
+}
+
+async function onBoothQrScanSuccess(decodedText) {
+	if (!boothQrModalOpen || boothQrScanBusy || boothQrCameraStarting) {
+		return;
+	}
+	if (!boothQrScanner || !boothQrScanner.isScanning) {
+		return;
+	}
+	if (typeof AxisBoothTour === "undefined") {
+		return;
+	}
+	const gateCode = AxisBoothTour.parseGateCodeFromScan(decodedText);
+	if (!gateCode) {
+		return;
+	}
+	const now = Date.now();
+	if (gateCode === boothQrLastGateCode && now - boothQrLastScanAt < BOOTH_QR_SCAN_COOLDOWN_MS) {
+		return;
+	}
+
+	boothQrScanBusy = true;
+	boothQrLastGateCode = gateCode;
+	boothQrLastScanAt = now;
+	await pauseBoothQrScanner();
+	setBoothQrScanStatus("QR 코드를 확인하는 중입니다…", false);
+
+	let token = await resolveAuthToken();
+	const testDate = resolveBoothTourTestDate();
+	try {
+		let result = await AxisBoothTour.scanBoothTourGate(AXIS_PUBLIC_API_BASE, token, gateCode, testDate);
+		if (result.unauthorized) {
+			token = await AxisAuth.silentRelogin(AXIS_PUBLIC_API_BASE);
+			if (token) {
+				result = await AxisBoothTour.scanBoothTourGate(AXIS_PUBLIC_API_BASE, token, gateCode, testDate);
+			}
+		}
+		await closeBoothQrScanner();
+		if (result.unauthorized) {
+			await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, result.message);
+			return;
+		}
+		if (!result.ok) {
+			if (result.alreadyVisited) {
+				togglePopup("already");
+			} else {
+				alert(result.message || "스캔에 실패했습니다.");
+			}
+			return;
+		}
+		const prevState = { visitedCount: boothTourState.visitedCount, closingVisited: boothTourState.closingVisited };
+		await refreshBoothTourVisits(token, result.data);
+		const popupId = AxisBoothTour.resolveScanPopupId(result, prevState);
+		if (popupId) {
+			togglePopup(popupId);
+		}
+	} catch (e) {
+		await closeBoothQrScanner();
+		alert("네트워크 오류가 발생했습니다.");
+	} finally {
+		boothQrScanBusy = false;
+	}
+}
+
+async function refreshBoothTourVisits(token, extraPayload) {
+	let authToken = token || await resolveAuthToken();
+	if (!authToken || typeof AxisBoothTour === "undefined") {
+		return;
+	}
+	const testDate = resolveBoothTourTestDate();
+	let result = await AxisBoothTour.fetchBoothTourVisits(AXIS_PUBLIC_API_BASE, authToken, testDate);
+	if (result.unauthorized) {
+		authToken = await AxisAuth.silentRelogin(AXIS_PUBLIC_API_BASE);
+		if (authToken) {
+			result = await AxisBoothTour.fetchBoothTourVisits(AXIS_PUBLIC_API_BASE, authToken, testDate);
+		}
+	}
+	if (result.unauthorized) {
+		await AxisAuth.reloginOrRedirect(AXIS_PUBLIC_API_BASE, result.message);
+		return;
+	}
+	if (result.ok) {
+		const payload = extraPayload
+			? AxisBoothTour.mergeVisitPayloads(extraPayload, result.data)
+			: result.data;
+		AxisBoothTour.renderVisitStatus(payload);
+		syncBoothTourState(payload);
+	}
+}
+
+async function initBoothTour(token) {
+	if (typeof AxisBoothTour === "undefined") {
+		return;
+	}
+	await refreshBoothTourVisits(token);
+	bindBoothTourUiOnce();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<section class="subWrap form com">
+		<div class="subTit">
+			<h3 id="userWelcome">신청이 완료되었습니다</h3>
+			<p id="userSubtitle">신청 정보를 불러오는 중입니다.</p>
+		</div>
+		<div class="subCont">
+			<span class="line width"></span>
+			<div class="subInfoTit">
+				<p class="calendar">2026. 07. 14 - 16</p>
+				<p class="place">COEX(서울 삼성동) 북문 측 그랜드볼룸 1-3F</p>
+			</div>
+			<span class="line width"></span>
+			<div class="payWrap">
+				<div class="payInfo">
+					<h2>신청 정보</h2>
+					<div class="infoCheckWrap">
+						<div class="inputCheckText com">
+							<div class="qrWrap">
+								<dl>
+									<dt>신청 번호</dt>
+									<dd id="fieldApplicantCode">—</dd>
+								</dl>
+								<div class="qrArea">
+									<p>QR 코드</p>
+									<div class="qr" id="qrCodeImage">
+										<img  src="../static/img/2026/qr.png" alt="QR 코드" style="width: 100%; height: auto;">
+									</div>
+									<div class="qrText" style="display: none" id="qrCodeText">
+										<p>QR 코드는 결제 완료 후 생성되며,<br/>마이페이지에서 확인 가능합니다.</p>
+									</div>
+								</div>
+							</div>
+							<div class="qrRight">
+								<dl id="fieldApplicationTypeRow" style="display: none;">
+									<dt>신청구분</dt>
+									<dd id="fieldApplicationType">—</dd>
+								</dl>
+								<dl>
+									<dt>참가권</dt>
+									<dd id="fieldTicket">—</dd>
+								</dl>
+								<dl>
+									<dt>성명</dt>
+									<dd id="fieldName">—</dd>
+								</dl>
+								<dl>
+									<dt>소속 · 부서</dt>
+									<dd id="fieldAffiliation">—</dd>
+								</dl>
+								<dl>
+									<dt>직책</dt>
+									<dd id="fieldPosition">—</dd>
+								</dl>
+								<dl>
+									<dt>연락처</dt>
+									<dd id="fieldMobile">—</dd>
+								</dl>
+								<dl>
+									<dt>이메일</dt>
+									<dd id="fieldEmail">—</dd>
+								</dl>
+								<dl id="fieldInterestedRow" style="display: none;">
+									<dt>관심 트랙</dt>
+									<dd id="fieldInterested">—</dd>
+								</dl>
+								<dl id="fieldLotteryRow" style="display: none;">
+									<dt>행운번호</dt>
+									<dd id="fieldLottery">—</dd>
+								</dl>
+								<dl>
+									<dt>신청 상태</dt>
+									<dd id="fieldStatus">—</dd>
+								</dl>
+								<dl>
+									<dt>결제 현황</dt>
+									<dd id="fieldPayment">—</dd>
+								</dl>
+								<dl id="fieldReferralRow" style="display: none;">
+									<dt>추천코드 기업</dt>
+									<dd id="fieldReferralCompany">—</dd>
+								</dl>
+								<dl id="fieldReferralDiscountRow" style="display: none;">
+									<dt>할인 정보</dt>
+									<dd id="fieldReferralDiscount">—</dd>
+								</dl>
+								<dl id="fieldReferralAmountRow" style="display: none;">
+									<dt>결제 금액</dt>
+									<dd id="fieldReferralAmount">—</dd>
+								</dl>
+								<p id="footerOnsiteNotice" style="display: none;"></p>
+							</div>
+						</div>
+					</div>
+					<p>신청 내역은 입력하신 이메일 및 문자로 발송됩니다</p>
+				</div>
+			</div>
+			<div class="btn_wrap">
+				<button type="button" id="btnToMypage" disabled="disabled">마이페이지 <i class="mdi mdi-arrow-right"></i></button>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+<script src="/_conference/js/2026/axis-auth.js"></script>
+<script src="/_conference/js/2026/axis-referral.js"></script>
+<script src="/_conference/js/2026/axis-interested-tracks.js"></script>
+<script th:inline="javascript">
+/**
+ * 로그인: POST /api/user/login — https://api.axis2026.eventconference.in/redoc#tag/User/operation/user_login_api_user_login_post
+ * 본인 신청 조회: GET /api/user/me — https://api.axis2026.eventconference.in/redoc#tag/User/operation/get_my_application_api_user_me_get
+ */
+var AXIS_PUBLIC_API_BASE = /*[[${axisApiBaseUrl}]]*/ "https://api.axis2026.eventconference.in";
+const USER_ME_API_URL = AXIS_PUBLIC_API_BASE + "/api/user/me";
+
+function formatMobileDisplay(m) {
+	const d = String(m || "").replace(/\D/g, "");
+	if (d.length === 11) {
+		return d.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
+	}
+	return m || "—";
+}
+
+function ticketTierLabel(ticketType) {
+	const map = { DAY1: "1일권", DAY2: "2일권", DAY3: "3일권" };
+	return map[ticketType] || ticketType || "—";
+}
+
+function dayNumToLabel(n) {
+	const map = { 1: "7월 14일", 2: "7월 15일", 3: "7월 16일" };
+	return map[Number(n)] || `DAY${n}`;
+}
+
+function formatAttendanceDays(days) {
+	if (!Array.isArray(days) || !days.length) {
+		return "";
+	}
+	return [...days].sort((a, b) => a - b).map(dayNumToLabel).join(", ");
+}
+
+function formatTicketLine(d) {
+	const tier = ticketTierLabel(d.ticket_type);
+	const days = formatAttendanceDays(d.attendance_days);
+	return days ? `${tier} · ${days}` : tier;
+}
+
+/** 관리자 수정·표시용 필드가 있으면 우선 (백엔드가 내려주는 키에 맞춤) */
+function effectiveTicketType(d) {
+	if (d == null) {
+		return null;
+	}
+	if (d.display_ticket_type != null && String(d.display_ticket_type).trim() !== "") {
+		return d.display_ticket_type;
+	}
+	if (d.ticket_type_effective != null && String(d.ticket_type_effective).trim() !== "") {
+		return d.ticket_type_effective;
+	}
+	return d.ticket_type;
+}
+
+function effectiveAttendanceDays(d) {
+	if (d == null) {
+		return null;
+	}
+	if (Array.isArray(d.display_attendance_days)) {
+		return d.display_attendance_days;
+	}
+	if (Array.isArray(d.attendance_days_effective)) {
+		return d.attendance_days_effective;
+	}
+	return d.attendance_days;
+}
+
+function formatTicketLineForDisplay(d) {
+	const merged = {
+		ticket_type: effectiveTicketType(d),
+		attendance_days: effectiveAttendanceDays(d)
+	};
+	return formatTicketLine(merged);
+}
+
+/** 신청일(Asia/Seoul) YYYYMMDD */
+function appliedAtToYYYYMMDD(appliedAt) {
+	if (!appliedAt) {
+		return "";
+	}
+	const t = Date.parse(appliedAt);
+	if (Number.isNaN(t)) {
+		return "";
+	}
+	const dt = new Date(t);
+	const iso = dt.toLocaleDateString("en-CA", { timeZone: "Asia/Seoul" });
+	return iso.replace(/-/g, "");
+}
+
+/** 신청 번호 표기: 신청일자 + id (예: 2026042942). applied_at 또는 id 없으면 applicant_code */
+function formatDisplayApplicationNumber(d) {
+	const ymd = appliedAtToYYYYMMDD(d.applied_at);
+	const nid = d.id != null ? String(d.id) : "";
+	if (ymd && nid) {
+		return ymd + nid;
+	}
+	return d.applicant_code != null && String(d.applicant_code).trim() !== ""
+		? String(d.applicant_code).trim()
+		: "—";
+}
+
+function applicationTypeLabel(t) {
+	const map = { GROUP: "단체", PERSONAL: "개인" };
+	return map[t] || t || "—";
+}
+
+function formatAffiliationDept(d) {
+	const af = (d.affiliation || "").trim();
+	const dep = d.department != null ? String(d.department).trim() : "";
+	if (af && dep) {
+		return `${af} | ${dep}`;
+	}
+	return af || dep || "—";
+}
+
+function statusLabelKo(status) {
+	const map = {
+		APPLY_PENDING: "신청·결제 대기",
+		APPLY_COMPLETED: "신청 완료",
+		CANCELLED: "취소됨"
+	};
+	return map[status] || status || "—";
+}
+
+function formatPaymentLine(d) {
+	if (typeof AxisReferral !== "undefined" && AxisReferral.formatApplicationPaymentStatusLine) {
+		return AxisReferral.formatApplicationPaymentStatusLine(d, {
+			footerNoticeId: "footerOnsiteNotice",
+			includeAmountInCompleted: false
+		});
+	}
+	return "—";
+}
+
+function formatInterestedTracksForCompletion(d) {
+	if (typeof AxisInterestedTracks !== "undefined" && AxisInterestedTracks.formatForProfile) {
+		return AxisInterestedTracks.formatForProfile(d);
+	}
+	return "";
+}
+
+function parseApiDetail(data) {
+	if (!data) {
+		return "요청 처리에 실패했습니다.";
+	}
+	if (typeof data.detail === "string") {
+		return data.detail;
+	}
+	if (Array.isArray(data.detail) && data.detail.length > 0) {
+		return data.detail.map((item) => item.msg).join("\n");
+	}
+	return "요청 처리에 실패했습니다.";
+}
+
+async function postLoginThenStoreToken(body) {
+	const result = await AxisAuth.login(AXIS_PUBLIC_API_BASE, body);
+	if (!result.ok) {
+		throw new Error(result.message || "로그인에 실패했습니다.");
+	}
+	return result.token;
+}
+
+async function fetchMyApplication(accessToken) {
+	const response = await fetch(USER_ME_API_URL, {
+		headers: { Authorization: "Bearer " + accessToken }
+	});
+	let data = null;
+	try {
+		data = await response.json();
+	} catch (e) {
+		data = null;
+	}
+	if (response.status === 401 || response.status === 403) {
+		AxisAuth.clearAccessToken();
+		throw new Error("SESSION_EXPIRED");
+	}
+	if (!response.ok) {
+		throw new Error(parseApiDetail(data));
+	}
+	return data;
+}
+
+function renderCompletionPage(d) {
+	document.getElementById("userWelcome").textContent = `${d.name || "회원"} 님, 신청이 완료되었습니다`;
+	document.getElementById("userSubtitle").textContent = "AXIS 2026 참가 신청 정보입니다.";
+	document.getElementById("fieldApplicantCode").textContent = formatDisplayApplicationNumber(d);
+	document.getElementById("fieldTicket").textContent = formatTicketLineForDisplay(d);
+	document.getElementById("fieldName").textContent = d.name || "—";
+	document.getElementById("fieldAffiliation").textContent = formatAffiliationDept(d);
+	const pos =
+		d.display_position != null && String(d.display_position).trim() !== ""
+			? String(d.display_position).trim()
+			: d.position != null && String(d.position).trim() !== ""
+				? String(d.position).trim()
+				: "";
+	document.getElementById("fieldPosition").textContent = pos || "—";
+	document.getElementById("fieldMobile").textContent = formatMobileDisplay(d.mobile);
+	document.getElementById("fieldEmail").textContent = d.email || "—";
+	document.getElementById("fieldStatus").textContent = statusLabelKo(d.status);
+	document.getElementById("fieldPayment").textContent = formatPaymentLine(d);
+
+	const typeRow = document.getElementById("fieldApplicationTypeRow");
+	if (d.application_type != null && d.application_type !== "") {
+		typeRow.style.display = "";
+		document.getElementById("fieldApplicationType").textContent = applicationTypeLabel(d.application_type);
+	} else {
+		typeRow.style.display = "none";
+	}
+
+	const qrImg = document.getElementById("qrCodeImage");
+	const qrText = document.getElementById("qrCodeText");
+	if (qrImg && d.qr_code_number) {
+		const innerImg = qrImg.querySelector("img");
+		console.log(innerImg)
+		// 내부 img 태그가 존재할 때만 src를 적용합니다.
+		if (innerImg) {
+			innerImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(d.qr_code_number)}`;
+		}
+		qrImg.style.display = "";
+		
+		qrText.style.display = "none";
+	} else if (qrImg) {
+		qrImg.removeAttribute("src");
+		qrImg.style.display = "none";
+		
+		qrText.style.display = "";
+		
+	}
+
+	const interestedText = formatInterestedTracksForCompletion(d);
+	const interestedRow = document.getElementById("fieldInterestedRow");
+	const interestedEl = document.getElementById("fieldInterested");
+	if (interestedText) {
+		interestedRow.style.display = "";
+		interestedEl.style.whiteSpace = "pre-line";
+		interestedEl.textContent = interestedText;
+	} else {
+		interestedRow.style.display = "none";
+		interestedEl.style.whiteSpace = "";
+	}
+
+	const lotteryRow = document.getElementById("fieldLotteryRow");
+	if (d.lottery_code != null && d.lottery_code !== "") {
+		lotteryRow.style.display = "";
+		document.getElementById("fieldLottery").textContent = String(d.lottery_code);
+	} else {
+		lotteryRow.style.display = "none";
+	}
+
+	if (typeof AxisReferral !== "undefined") {
+		AxisReferral.renderApplicationReferralFields(d, {
+			companyRow: "fieldReferralRow",
+			companyDd: "fieldReferralCompany",
+			discountRow: "fieldReferralDiscountRow",
+			discountDd: "fieldReferralDiscount",
+			amountRow: "fieldReferralAmountRow",
+			amountDd: "fieldReferralAmount"
+		});
+	}
+}
+
+document.getElementById("btnToMypage").addEventListener("click", function () {
+	location.href = "/_conference/program/mypage";
+});
+
+(async function initApplyInfoCom() {
+	let token = await AxisAuth.ensureAccessToken(AXIS_PUBLIC_API_BASE);
+	let hint = AxisAuth.getSessionHint();
+
+	if (!token && hint && hint.name && hint.mobile) {
+		try {
+			await postLoginThenStoreToken({ name: String(hint.name).trim(), mobile: String(hint.mobile) });
+			token = AxisAuth.getAccessToken();
+		} catch (e) {
+			const msg = e && typeof e.message === "string" ? e.message : "자동 로그인에 실패했습니다.";
+			document.getElementById("userSubtitle").textContent = msg;
+			alert(msg + "\n\n로그인 페이지에서 다시 시도해 주세요.");
+			AxisAuth.redirectToLogin();
+			return;
+		}
+	}
+
+	if (!token) {
+		document.getElementById("userSubtitle").textContent = "신청 확인을 위해 로그인해 주세요.";
+		alert("로그인 정보를 찾을 수 없습니다. 로그인 후 다시 접속해 주세요.");
+		AxisAuth.redirectToLogin();
+		return;
+	}
+
+	try {
+		let profile = await fetchMyApplication(token);
+		if (typeof AxisReferral !== "undefined" && AxisReferral.enrichApplicationPaymentDisplay) {
+			profile = AxisReferral.enrichApplicationPaymentDisplay(profile);
+		}
+		renderCompletionPage(profile);
+	} catch (e) {
+		const msg =
+			e && e.message === "SESSION_EXPIRED"
+				? "로그인이 만료되었습니다."
+				: e && e.message ? e.message : "정보를 불러오지 못했습니다.";
+		document.getElementById("userSubtitle").textContent = msg;
+		alert(msg);
+		if (e && e.message === "SESSION_EXPIRED") {
+			location.href = "/_conference/program/login";
+		}
+	} finally {
+		document.getElementById("btnToMypage").disabled = false;
+	}
+})();
+</script>
+</body>
+</html>

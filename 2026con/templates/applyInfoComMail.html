@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<section class="subWrap form com">
+		<div class="subTit">
+			<h3 id="mailPageTitle">신청이 완료되었습니다</h3>
+			<p id="mailPageSubtitle">감사합니다. AXIS 2026에서의 만남을 기대하겠습니다.</p>
+		</div>
+		<div class="subCont">
+			<span class="line width"></span>
+			<div class="subInfoTit">
+				<p class="calendar">2026. 07. 14 - 16</p>
+				<p class="place">COEX(서울 삼성동) 북문 측 그랜드볼룸 1-3F</p>
+			</div>
+			<span class="line width"></span>
+			<div class="payWrap">
+				<div class="payInfo">
+					<h2>신청 정보</h2>
+					<div class="infoCheckWrap">
+						<div class="infoNum">
+							<h4>신청 번호</h4>
+							<p id="fieldApplicantCode">—</p>
+						</div>
+						<div class="inputCheckText com">
+							<div class="comMailText">
+								<dl>
+									<dt>신청구분</dt>
+									<dd id="fieldApplicationType">—</dd>
+								</dl>
+								<dl>
+									<dt>
+										참가권
+										<span class="caption">
+											상세 신청 내역은 이메일 및 문자로 발송됩니다
+										</span>
+									</dt>
+									<dd id="fieldTicketBlock">—</dd>
+								</dl>
+								<dl>
+									<dt>성명</dt>
+									<dd id="fieldName">—</dd>
+								</dl>
+								<dl>
+									<dt>소속</dt>
+									<dd id="fieldAffiliation">—</dd>
+								</dl>
+								<dl>
+									<dt>직책</dt>
+									<dd id="fieldPosition">—</dd>
+								</dl>
+							</div>
+							<div class="comMailText">
+								<dl>
+									<dt>연락처</dt>
+									<dd id="fieldMobile">—</dd>
+								</dl>
+								<dl>
+									<dt>이메일</dt>
+									<dd id="fieldEmail">—</dd>
+								</dl>
+								<dl>
+									<dt>결제 현황</dt>
+									<dd id="fieldPayment">—</dd>
+								</dl>
+								<dl id="fieldReferralRow" style="display: none;">
+									<dt>추천코드 기업</dt>
+									<dd id="fieldReferralCompany">—</dd>
+								</dl>
+								<dl id="fieldReferralDiscountRow" style="display: none;">
+									<dt>할인율</dt>
+									<dd id="fieldReferralDiscount">—</dd>
+								</dl>
+								<p id="footerPaymentNotice" class="footerPaymentNotice" style="display: none;"></p>
+							</div>
+						</div>
+					</div>
+					<p>신청 내역은 입력하신 이메일 및 문자로 발송됩니다.<br/>
+						단체 참석자는 결제 완료 후 또는 행사일 1일 전에 마이페이지에서 QR 확인이 가능합니다.</p>
+				</div>
+			</div>
+			<div class="btn_wrap">
+				<button type="button" id="btnFooter">마이페이지 <i class="mdi mdi-arrow-right"></i></button>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+<script src="/_conference/js/2026/axis-referral.js"></script>
+<script>
+/** applyInfoPay.html 과 동일 키 — 단체 신청 완료 시 세션 스냅샷 로드로만 표시(로그인·API 불필요) */
+const GROUP_MAIL_COMPLETION_SNAPSHOT_KEY = "axis2026_group_mail_completion_snapshot";
+
+function renderReferralFieldsFromSnapshot(obj) {
+	const company =
+		obj && obj.referral_company_name != null ? String(obj.referral_company_name).trim() : "";
+	const rateRaw = obj && obj.referral_discount_rate != null ? Number(obj.referral_discount_rate) : NaN;
+	const hasRate = Number.isFinite(rateRaw) && rateRaw > 0;
+	const referralRow = document.getElementById("fieldReferralRow");
+	const referralDiscountRow = document.getElementById("fieldReferralDiscountRow");
+	if (!referralRow || !referralDiscountRow) {
+		return;
+	}
+	if (company) {
+		referralRow.style.display = "";
+		document.getElementById("fieldReferralCompany").textContent = company;
+	} else {
+		referralRow.style.display = "none";
+	}
+	if (hasRate) {
+		referralDiscountRow.style.display = "";
+		const rateLabel =
+			typeof AxisReferral !== "undefined"
+				? AxisReferral.formatDiscountRateLabel(rateRaw)
+				: rateRaw + "%";
+		document.getElementById("fieldReferralDiscount").textContent = rateLabel || "—";
+	} else {
+		referralDiscountRow.style.display = "none";
+	}
+}
+
+function renderGroupCompletionFromSnapshot(obj) {
+	if (!obj || typeof obj !== "object") {
+		return false;
+	}
+	document.getElementById("fieldApplicantCode").textContent =
+		obj.parent_application_id != null && String(obj.parent_application_id) !== ""
+			? String(obj.parent_application_id)
+			: "—";
+	document.getElementById("fieldApplicationType").textContent = obj.application_type_display || "—";
+	const ticketEl = document.getElementById("fieldTicketBlock");
+	if (ticketEl && obj.ticket_dd_html != null && String(obj.ticket_dd_html) !== "") {
+		ticketEl.innerHTML = String(obj.ticket_dd_html);
+	} else if (ticketEl) {
+		ticketEl.textContent = "—";
+	}
+	document.getElementById("fieldName").textContent = obj.name || "—";
+	document.getElementById("fieldAffiliation").textContent = obj.affiliation_dept_line || "—";
+	document.getElementById("fieldPosition").textContent = obj.position || "—";
+	document.getElementById("fieldMobile").textContent = obj.mobile || "—";
+	document.getElementById("fieldEmail").textContent = obj.email || "—";
+	document.getElementById("fieldPayment").textContent = obj.payment_dd || "—";
+	const paymentNotice = document.getElementById("footerPaymentNotice");
+	if (paymentNotice && obj.payment_method === "BANK_TRANSFER") {
+		paymentNotice.style.display = "";
+		paymentNotice.innerHTML =
+			typeof AxisReferral !== "undefined" && AxisReferral.BANK_TRANSFER_DEPOSIT_NOTICE
+				? AxisReferral.BANK_TRANSFER_DEPOSIT_NOTICE
+				: "참가 신청이 완료되었습니다.<br>현장 카드 결제를 선택하신 경우, 행사 당일 결제하실 카드를 반드시 지참해 주시기 바랍니다.<br>세금계산서는 행사 종료 이후 순차적으로 발행될 예정입니다.";
+	} else if (paymentNotice && obj.payment_method === "ONSITE_CARD") {
+		paymentNotice.style.display = "";
+		paymentNotice.innerHTML =
+			"현장 카드결제는 행사 당일 리셉션에서 진행됩니다.<br/>결제 시 신청 완료 페이지를 제시해 주세요.";
+	} else if (paymentNotice) {
+		paymentNotice.style.display = "none";
+		paymentNotice.textContent = "";
+	}
+	renderReferralFieldsFromSnapshot(obj);
+	return true;
+}
+
+(function initApplyInfoComMail() {
+	const raw = sessionStorage.getItem(GROUP_MAIL_COMPLETION_SNAPSHOT_KEY);
+	let snap = null;
+	if (raw) {
+		try {
+			snap = JSON.parse(raw);
+		} catch (e) {
+			snap = null;
+		}
+	}
+	if (!snap) {
+		document.getElementById("mailPageSubtitle").textContent =
+			"표시할 신청 정보가 없습니다. 신청·결제 단계를 다시 확인해 주세요.";
+		return;
+	}
+	if (renderGroupCompletionFromSnapshot(snap)) {
+		sessionStorage.removeItem(GROUP_MAIL_COMPLETION_SNAPSHOT_KEY);
+	}
+})();
+
+document.getElementById("btnFooter").addEventListener("click", function () {
+	location.href = "/_conference/program/mypage";
+});
+</script>
+</body>
+</html>

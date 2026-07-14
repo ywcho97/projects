@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+	<title>AXIS 2026</title>
+	
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="../static/css/style_2026.css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-image-attributes@1.0.0/dist/summernote-image-attributes.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote-video-plugin@1.0.0/summernote-video-plugin.min.js"></script>
+</head>
+<body layout:fragment="content">
+<div class="wrap">
+<div class="fixBtn">
+	<div class="fixBtnArea">
+		<div class="dday" id="dday">
+			D-60
+		</div>
+		<a href="./applyInfo.html">신청</a>
+	</div>
+</div>
+<div class="gnb">
+	<div class="gnbWrap">
+		<div class="top_logo logo">
+			<a href="./index.html">
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+			</a>
+		</div>
+		<!-- <div class="noticeText">
+			<p>
+				AXIS 2026 프리오픈 진행 중<br/>
+				<span>Official Launch ㅣ 2026.00.00</span>
+			</p>
+		</div> -->
+		<nav>
+			<ul>
+				<li class="my" id="headerNavAuth">
+					<a href="./login.html" id="headerNavAuthLink">LOGIN</a>
+				</li>
+				<li class="Mabout">
+					<a href="./about.html">ABOUT</a>
+					<ul class="twoD">
+						<li>
+							<a href="./about.html#about">컨퍼런스 개요</a>
+							<a href="./about.html#key">Key Message</a>
+							<a href="./about.html#floor">층별 행사장 안내</a>
+							<a href="./about.html#map">오시는 길</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspeaker">
+					<a href="./speakers.html">SPEAKERS & TRACKS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./speakers.html#keynote">KEYNOTE SPEAKERS</a>
+							<a href="./speakers.html#tracks">TRACKS OVERVIEW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mprogram">
+					<a href="./programs.html">PROGRAMS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./programs.html#schedule">SCHEDULE</a>
+							<a href="./programs.html#timetable">TIME TABLE</a>
+							<a href="./programs.html#kmacPre">KMAC 실태조사 발표</a>
+							<a href="./programs.html#lucky">LUCKY DRAW</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mspon">
+					<a href="./sponsor.html">EXHIBITION & SPONSORS</a>
+					<ul class="twoD">
+						<li>
+							<a href="./sponsor.html#joinInfo">Sponsorship 참가 안내</a>
+							<a href="./sponsor.html#infoDown">부스 참가 안내</a>
+							<a href="./sponsor.html#exhibition">Exhibition</a>
+							<a href="./sponsor.html#sponsor">Previous Sponsors</a>
+						</li>
+					</ul>
+				</li>
+				<li class="Mnews">
+					<a href="./news.html">FAQ</a>
+					<ul class="twoD">
+						<li>
+							<a href="./news.html">FAQ</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="top_right" id="headerAuthNav">
+			<span id="headerGuestNav" class="headerAuthGroup">
+				<a href="./applyInfo.html" style="cursor:pointer;" class="join">참가 신청</a>
+				<a href="./login.html" class="login">LOGIN</a>
+			</span>
+			<span id="headerUserNav" class="headerAuthGroup" hidden>
+				<a href="./mypage.html" class="join mypage">MY PAGE</a>
+			</span>
+		</div>
+	</div>
+	<div class="mob_menu">
+		<!-- <div class="dday mobile_only" id="dday_m">D-60</div> -->
+		<a href="#none" class="hamber">
+			<i></i>
+			<i></i>
+			<i></i>
+		</a>
+	</div>
+</div>
+	<section class="sub">
+		<div class="section">
+			<div class="title">
+				<div class="kicker">Beyond Trends, Toward Action <img src="../static/img/2026/kickerIcon.png" alt="img"></div>
+				<img src="../static/img/2026/whiteLogo.png" alt="img">
+				<img src="../static/img/2026/mainCont.png" alt="img">
+			</div>
+			<p class="aboutCont">
+				<b>
+					AI 시대! 기업·기관·담당자를 위한,<br/>
+					경험 기반의 실제 사례를 통해 <br/>
+					검증된 비즈니스 실행 전략을 제시합니다.
+				</b>
+			</p>
+		</div>
+	</section>
+	<section class="subWrap">
+		<div class="section">
+			<div class="aboutEx">
+				<img src="../static/img/2026/aboutImg01.png" alt="img">
+				<p>
+					<b>기업 경영혁신의 새로운 기준과 실행 해법을 제시합니다.</b><br/>
+					AI는 이제 고객경험(CX), 직원경험(EX), 공공영역(Public),<br/>
+					나아가 물리적 현장(Physical AI)까지 확장되며 기업 운영 방식의 재편을 요구하고 있습니다.<br/><br/>
+					기업의 경쟁력은 기술 자체가 아니라, 경험을 중심으로 전 영역을 통합하는<br/>
+					운영 역량에 달려 있습니다.<br/><br/>
+					AXIS 2026은 AI를 접목한 비즈니스 가치사슬을  하나의 경험 기반 운영체계로 통합하고,<br/>
+					산업별·글로벌 선도기업의 사례를 통해 검증된 실행 전략을 제시합니다.
+				</p>
+			</div>
+			<div class="aboutEx">
+				<p>
+					<b>3일간 펼쳐지는 대규모 글로벌 인사이트</b><br/>
+					올해 컨퍼런스는 기조강연, 전문 세션, 전시·체험을  아우르는<br/>
+					3일 간의 통합 프로그램으로 구성됩니다.<br/><br/>
+					글로벌 리더들과 대한민국 주요 기업·정부·공공기관의 VIP, 그리고 최전선의 의사결정자와<br/>
+					실무진이 한자리에 모여 경영 혁신의 현재와 미래를 공유합니다.<br/><br/>
+					5,000명 이상의 참가자, 500개 이상의 기업, 60명  이상의 강연 전문가가 함께 미래를<br/>
+					이끌 핵심 인사이트를 경험해보시기 바랍니다.
+				</p>
+				<img src="../static/img/2026/aboutImg02.png" alt="img">
+			</div>
+		</div>
+	</section>
+	<section class="subWrap" id="about">
+		<div class="section">
+			<div class="subTit">
+				<h3>WHY AXIS?</h3>
+			</div>
+			<div class="world">
+				<div class="worldBg">
+					<img src="../static/img/2026/worldMap.png" alt="img">
+				</div>
+				<div class="worldGrid">
+					<div class="square">
+						<h3>Asia CSCON</h3>
+						<p>전략 / 경험</p>
+					</div>
+					<div class="square">
+						<h3>KCCM 컨퍼런스</h3>
+						<p>채널 / 운영</p>
+					</div>
+					<div class="square">
+						<h3>AX SUMMIT</h3>
+						<p>AI / DX</p>
+					</div>
+					<div class="square">
+						<h3>공공 컨퍼런스</h3>
+						<p>공공 / 정책</p>
+					</div>
+					<div class="circle">
+						<h3>
+							Total<br/>
+							Business<br/>
+							Eco system
+						</h3>
+					</div>
+				</div>
+				<!-- <p>KMAC의 모든 영역을 통합한 완전한 <b>비즈니스 생태계 플랫폼</b></p> -->
+			</div>
+		</div>
+	</section>
+	<section class="subWrap" id="key">
+		<!-- <div class="lineWrap">
+			<span class="lengthLine"></span>
+		</div> -->
+		<div class="message">
+			<!-- <p class="content">
+				AI 기술이 일상과 산업 전반에 깊숙이 스며들면서,<br/>
+				기업이 경쟁하는 방식 또한 근본적으로 변화하고 있습니다.<br/><br/>
+			</p>
+			<p class="content">
+				이제 고객은 기능이나 성능을 넘어, 브랜드가 제공하는<br/>
+				전반적인 경험을 기준으로 선택을 내리기 시작했습니다.
+			</p>
+			<h3>
+				<strong class="content">
+					이러한 변화의 흐름 속에서<br/>
+					우리는 어떤 전략을 세워야 할까요?<br/><br/>
+				</strong>
+				<strong class="content">
+					그리고 설계한 전략을 어떻게 실행하고 운영해야<br/>
+					실제 비즈니스 성과로 이어질 수 있을까요?
+				</strong>
+			</h3>
+			<p class="content">
+				Asia eXperience & Innovation Summit 2026에서 트랜드를 이해하는 것을 넘어,<br/>
+				고객 경험의 설계부터 실행, 성과로 연결되는 전 과정을 아우르는 해답을 얻어가시길 바랍니다.
+			</p>
+			<div class="lineWrap">
+				<span class="lengthLine"></span>
+			</div> -->
+			<div class="center content">
+				<p>Key Message</p>
+				<h2>
+					BEYOND TRENDS<br/>
+					TOWARD ACTION
+				</h2>
+				<span>트렌드를 넘어, 실행으로</span>
+			</div>
+		</div>
+	</section>
+	
+	<section class="subWrap" id="floor">
+		<div class="section">
+			<div class="subTit">
+				<h3>층별 행사장 안내</h3>
+			</div>
+			<div class="floor">
+				<div class="floorWrap f1">
+					<div class="floorMap">
+						<img src="../static/img/2026/floor1.png" alt="img">
+						<p><span class="circle"></span>북문</p>
+					</div>
+					<div class="floorCont">
+						<h2>1F</h2>
+						<div class="floorText">
+							<h3>RECEPTION &<br/>EXHIBITION <b>그랜드볼룸</b></h3>
+							<p>행사의 시작, 등록과 전시, 네트워킹이 이루어지는 공간</p>
+							<span>Reception</span>
+							<span>Sponsor Booth</span>
+							<span>Networking Area</span>
+						</div>
+					</div>
+				</div>
+				<div class="floorWrap">
+					<div class="floorMap">
+						<img src="../static/img/2026/floor2.png" alt="img">
+					</div>
+					<div class="floorCont">
+						<h2>2F</h2>
+						<div class="floorText">
+							<h3>SPECIAL & VIP <b>아셈볼룸</b></h3>
+							<p>심화 세션과 프라이빗 프로그램이 운영되는 공간</p>
+							<span>Track Session</span>
+							<span>Vip Session</span>
+						</div>
+					</div>
+				</div>
+				<div class="floorWrap">
+					<div class="floorMap">
+						<img src="../static/img/2026/floor3.png" alt="img">
+					</div>
+					<div class="floorCont">
+						<h2>3F</h2>
+						<div class="floorText">
+							<h3>MAIN HALL <b>오디토리움</b></h3>
+							<p>AXIS의 핵심 메시지를 전달하는 기조연설 공간</p>
+							<span>Keynote Session</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="subWrap map" id="map">
+		<div class="section">
+			
+			<div class="subTit">
+				<h3>오시는 길</h3>
+			</div>
+			<div class="mapWrap">
+				<div class="zoomBox">
+					<img src="../static/img/2026/map.png" id="zoomTarget" alt="Train Map">
+				</div>
+				<div class="mapCont">
+					<div class="mapText">
+						<h3>코엑스 삼성</h3>
+						<p>서울 강남구 영동대로 513</p>
+						<p>
+							삼성역 5번 출구에서 도보 6분<br/>
+							한국무역센터 삼성역 정류장
+						</p>
+					</div>
+					<button type="button" class="mapBtn" onclick="window.open('https://www.coex.co.kr/guide/directions/')">
+						<p><i class="mdi mdi-map-marker"></i> 자세히 보기</p>
+						<i class="mdi mdi-arrow-right"></i>
+					</button>
+				</div>
+			</div>
+			<!-- <img src="../static/img/2026/map.png" alt="img"> -->
+		</div>
+	</section>
+	
+</div>
+<div class="footer">
+	<div class="footerCont">
+		<!-- <img src="../static/img/kmacLogo.png" alt="img"> -->
+		<div class="footerTop">
+			<div class="footerText">
+				<h3>AXIS 운영사무국</h3>
+				<p>
+					T. 02-3786-0382   E.conference@kmac.co.kr<br/>
+					(07241) 서울특별시 영등포구 여의공원로 101, 8층
+				</p>
+				<p>
+					사업자등록번호 : 116-81-29581 | 통신판매자 신고번호 : 제 2008-서울영등포구-0368호<br/>
+					한국능률협회컨설팅 대표자 한수희
+				</p>
+				<b>ⓒ 2026 KMAC. All rights reserved.</b>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="../static/js/2026/script.js"></script>
+</body>
+</html>
