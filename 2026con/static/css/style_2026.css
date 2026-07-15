@@ -746,7 +746,7 @@ span.lengthLine{width: 2px; height: 250px; display: inline-block; background: li
 
 .opacityBox>h3{color: #fff; margin-bottom: 50px; font-weight: 900; text-align: center; font-size: 22px;}
 /* #explain1, #explain2, #explain3, #explain4, #explain5{scroll-margin-top: 150px;} */
-.map {overflow: auto; text-align: center; margin: 0 auto;}
+.map {overflow: auto; text-align: center; margin: 0 auto; overflow-y: none;}
 .map::-webkit-scrollbar { height: 9px; }
 .map::-webkit-scrollbar-thumb { background: #D9D9D9; border-radius: 8px; }
 .map::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.5); border-radius: 8px;}
