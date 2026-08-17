@@ -211,7 +211,7 @@ section{width: 100%; height: auto; position: relative; background-color: var(--b
 .mainBotTop h3{color: #fff; font-weight: 900; font-size: 32px;}
 .mainBotTop h3 span{color: var(--pink);}
 .mainBotTop a{background-color: var(--pink3); color: #fff; font-weight: 900; font-size: 20px; padding: 0 10px; border-radius: 20px; border: 2px solid #fff; border-bottom-width: 5px; display: flex; align-items: center; gap: 10px; position: absolute; right: 60px;}
-.mainBotTop a i{font-size: 32px; background: linear-gradient(90deg, #ffffff20, #fff); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.mainBotTop a i{font-size: 28px; background: linear-gradient(90deg, #ffffff20, #fff); -webkit-background-clip: text; background-clip: text; color: transparent;}
 
 .paperCont{background: url(../img/paper.png) no-repeat; width: 100%; height: 240px; display: flex; padding-top: 70px; background-size: contain;}
 .paperCont dl{padding: 0 30px; text-align: center;}
@@ -227,7 +227,7 @@ section{width: 100%; height: auto; position: relative; background-color: var(--b
 .sec02{padding-top: 250px; padding-bottom: 100px;}
 .box{background-color: #fff; border: 1.5px solid #333; padding: 80px 60px;}
 .textarea_wrap{width: 100%;}
-textarea{width: 100%; height: 150px; padding: 10px;}
+textarea{width: 100%; height: 150px; padding: 10px; font-size: 16px; line-height: 24px;}
 .counter{text-align: right; color: #666; font-size: 14px; margin-top: 5px;}
 .qna{padding-bottom: 44px; margin-bottom: 44px; border-bottom: 3px solid #9E9E9E;}
 .qna h3{margin-bottom: 32px; font-size: 32px; letter-spacing: -4%; font-weight: 600; font-family: 'GMarketSans'; word-break: keep-all;}
@@ -326,7 +326,7 @@ textarea{width: 100%; height: 150px; padding: 10px;}
 .sec05 .content_top h2::after{content: ''; display: block; background-color: var(--choco); width: 1px; height: 20px; position: absolute; top: -17px; left: calc(50% - 4px); transform: rotate(-45deg);}
 .sec05 .content_top h3{color: #fff; -webkit-text-stroke: 3px var(--choco); text-stroke: 3px var(--choco);}
 .sec05 .content_top h4{color: var(--choco); font-size: 52px; margin-bottom: 10px; font-weight: 700;}
-.sec05 .btn_wrap button{background-color: var(--choco); border: 3px solid #ffffff30; color: #fff; width: 100%; display: block; padding: 30px 20px; border-radius: 50px; font-size: 40px; font-weight: 900; margin-top: 90px; position: relative; box-shadow: 0 8px 0 0 #331906; cursor: pointer;}
+.sec05 .btn_wrap button{background-color: var(--choco); border: 3px solid #ffffff30; color: #fff; width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 30px 20px; border-radius: 50px; font-size: 40px; font-weight: 900; margin-top: 90px; position: relative; box-shadow: 0 8px 0 0 #331906; cursor: pointer;}
 .sec05 .btn_wrap button i{font-size: 32px;  background: linear-gradient(90deg, #ffffff20, #fff); -webkit-background-clip: text; background-clip: text; color: transparent;}
 .sec05 .btn_wrap button::after{content: ''; position: absolute; bottom: -20px; right: 20px; display: block; background: url(../img/cursor.png) no-repeat; width: 70px; height: 70px; background-size: contain;}
 
@@ -337,8 +337,16 @@ footer span{position: relative; color: #fff;}
 footer span::after{content: ''; display: block; width: 100%; position: absolute; bottom: -3px; left: 0; height: 1px; background: #fff;}
 
 @media only screen and (min-width: 1025px)and (max-width: 1440px){
-    section{padding-left: 50px; padding-right: 50px;}
+    section{padding-left: 20px; padding-right: 20px;}
     .tabBtnBg{display: none;}
+    .content_top h3{font-size: 52px;}
+    .mainBotTop img{left: 0px;}
+    .mainBotTop h3{font-size: 28px;}
+    .paperCont{padding-top: 50px;}
+    .paperCont dl dt{font-size: 20px;}
+    .paperCont dl dd{font-size: 18px;}
+    .tabSubject{padding: 40px;}
+    
 }
 
 @media only screen and (min-width: 1px)and (max-width: 1025px){
@@ -352,6 +360,7 @@ footer span::after{content: ''; display: block; width: 100%; position: absolute;
     .rightNav{display: none;}
     .topFix h3{font-size: 14px;}
     .topFix h3 p{display: none;}
+    .topFix h3 i{font-size: 16px;}
     .topMenu .topRight{gap: 8px;}
     .topMenu .topRight a.login{font-size: 14px; padding: 4px 8px;}
     section{padding: 50px 20px;}
@@ -386,6 +395,7 @@ footer span::after{content: ''; display: block; width: 100%; position: absolute;
     .radio_wrap{flex-direction: column; gap: 8px;}
     .radioArea label{font-size: 16px;}
     .qna input[type="text"]{min-width: auto; width: 100%;}
+    textarea{font-size: 14px; line-height: 20px;}
     .apply button{font-size: 16px;}
 
     .sec03_box{background-size: cover;}
@@ -424,10 +434,13 @@ footer span::after{content: ''; display: block; width: 100%; position: absolute;
     .sec05 .content_top h2{font-size: 18px;}
     .sec05 .content_top h4{font-size: 24px;}
     .sec05 .content_top h3{-webkit-text-stroke: 1px var(--choco); text-stroke: 1px var(--choco);}
-    .sec05 .btn_wrap button{font-size: 16px; line-height: 24px; padding: 15px 10px;}
+    .sec05 .btn_wrap button{font-size: 16px; line-height: 24px; padding: 15px 10px; display: block;}
+    .sec05 .btn_wrap button i{font-size: 14px; display: inline;}
     .sec05 .btn_wrap button::after{width: 40px; height: 40px;}
 
     footer{padding: 50px 20px;}
     footer h3{font-size: 20px; margin-bottom: 20px;}
     footer p{font-size: 14px;}
+    footer span{text-decoration: underline; text-underline-offset: 5px}
+    footer span::after{content: 'none'; display: none;}
 }
